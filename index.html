@@ -150,18 +150,17 @@
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      padding: 6px;
-      box-sizing: border-box;
       overflow: hidden;
     }
 
     .footer-icons img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 50%;
       display: block;
-      mix-blend-mode: multiply;
+      background-color: #ccc;
+      background-blend-mode: multiply;
     }
 
     .footer-icons a:hover {
