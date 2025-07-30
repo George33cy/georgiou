@@ -137,20 +137,20 @@
 
     .footer-icons {
       display: flex;
-      gap: 0.6rem; /* closer together */
+      gap: 0.4rem; /* closer together */
     }
 
     .footer-icons a {
       display: inline-flex;
-      width: 64px;  /* bigger circle */
-      height: 64px;
+      width: 48px;  /* smaller circle */
+      height: 48px;
       border-radius: 50%;
-      background-color: transparent; /* reset */
+      background-color: transparent;
       justify-content: center;
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      padding: 8px; /* remove white space inside */
+      padding: 6px;
       box-sizing: border-box;
     }
 
@@ -167,17 +167,16 @@
     }
 
     .footer-icons img {
-      width: 100%;  /* fill whole circle */
+      width: 100%;
       height: 100%;
-      border-radius: 50%; /* keep circle shape */
-      object-fit: contain; /* keep aspect ratio, scale inside */
+      border-radius: 50%;
+      object-fit: contain;
       display: block;
     }
 
     .footer-icons a:hover {
       transform: translateY(-3px) scale(1.1);
       box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      /* No color or filter changes */
     }
   </style>
 </head>
@@ -234,13 +233,13 @@
     <div class="footer-content">
       <div class="copyright">Georgios P. Georgiou (c) 2025</div>
       <div class="footer-icons">
-        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
+        <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
           <img src="gs.png" alt="Google Scholar" />
         </a>
-        <a href="https://www.researchgate.net/profile/YourProfileName" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
+        <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
           <img src="rg.png" alt="ResearchGate" />
         </a>
-        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email" class="email-icon">
+        <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email" class="email-icon">
           <img src="email.png" alt="Email" />
         </a>
       </div>
