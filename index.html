@@ -11,19 +11,25 @@
       background-color: #ffffff;
       color: #000;
     }
+
     header {
+      background-color: #000;
       text-align: center;
       padding: 2rem 1rem 1rem;
     }
+
     header h1 {
       font-size: 2rem;
       margin: 0;
+      color: #fff;
     }
+
     nav {
       background-color: #000;
       text-align: center;
       padding: 0.5rem 0;
     }
+
     nav a {
       color: white;
       text-decoration: none;
@@ -31,48 +37,64 @@
       font-weight: bold;
       font-size: 1rem;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     main {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
-    }
-    main p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-    .about-section {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
-      margin-top: 2rem;
     }
-    .about-text {
+
+    .main-text {
       flex: 2;
-      min-width: 250px;
+      min-width: 300px;
+      text-align: justify;
     }
-    .about-text ul {
+
+    .main-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .about-links {
+      margin-top: 1rem;
+    }
+
+    .about-links ul {
       padding-left: 1rem;
     }
-    .about-text ul li {
+
+    .about-links li {
       margin-bottom: 0.5rem;
     }
-    .about-photo {
+
+    .main-photo {
       flex: 1;
       min-width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
-    .about-photo img {
+
+    .main-photo img {
       width: 100%;
       max-width: 200px;
       border-radius: 4px;
     }
+
     footer {
+      background-color: #000;
+      color: #fff;
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 1rem;
       font-size: 0.9rem;
-      color: #555;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -94,16 +116,16 @@
   </nav>
 
   <main>
-    <p>Thank you for visiting my website.</p>
+    <div class="main-text">
+      <p>Thank you for visiting my website.</p>
 
-    <p>I currently work as an Assistant Professor in Linguistics. I am the Associate Head of the Department of Languages and Literature, University of Nicosia, Cyprus. I serve as the Director of the Phonetic Lab.</p>
+      <p>I currently work as an Assistant Professor in Linguistics. I am the Associate Head of the Department of Languages and Literature, University of Nicosia, Cyprus. I serve as the Director of the Phonetic Lab.</p>
 
-    <p>I was honored with the Cyprus Research Award - Young Researcher 2023 in the field of Humanities and Social Sciences. In 2024, I was elected Fellow of the Young Academy of Europe.</p>
+      <p>I was honored with the Cyprus Research Award - Young Researcher 2023 in the field of Humanities and Social Sciences. In 2024, I was elected Fellow of the Young Academy of Europe.</p>
 
-    <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
+      <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
 
-    <div class="about-section">
-      <div class="about-text">
+      <div class="about-links">
         <h3>More about me</h3>
         <ul>
           <li><a href="#">My Wikipedia page</a></li>
@@ -112,9 +134,10 @@
           <li><a href="#">My election at the Young Academy of Europe</a></li>
         </ul>
       </div>
-      <div class="about-photo">
-        <img src="georgiou.avif" alt="Georgios P. Georgiou">
-      </div>
+    </div>
+
+    <div class="main-photo">
+      <img src="georgiou.jpg" alt="Georgios P. Georgiou">
     </div>
   </main>
 
