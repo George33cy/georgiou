@@ -115,69 +115,63 @@
     footer {
       background-color: #000;
       color: #fff;
-      text-align: center;
-      padding: 1rem;
+      padding: 1rem 2rem;
       font-size: 0.9rem;
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1.5rem;
     }
 
     .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 1.5rem;
-    }
-
-    .copyright {
-      margin-right: 1.5rem;
     }
 
     .footer-icons {
       display: flex;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .footer-icons a {
-      display: inline-flex;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #fff;
+      display: flex;
       justify-content: center;
       align-items: center;
-      text-decoration: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: #fff;
       transition: all 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .footer-icons a svg {
+      width: 22px;
+      height: 22px;
+      fill: #000;
+      transition: fill 0.3s ease;
     }
 
     .footer-icons a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
     }
 
-    .footer-icons svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .google-scholar-icon {
-      background-color: #4285F4;
-    }
-    
-    .researchgate-icon {
-      background-color: #00CCBB;
-    }
-    
-    .email-icon {
-      background-color: #EA4335;
-    }
-    
     .footer-icons a:hover svg {
       fill: white;
     }
 
+    /* Brand colors on background for each icon */
+    .google-scholar-icon {
+      background-color: #4285F4;
+    }
+
+    .researchgate-icon {
+      background-color: #00CCBB;
+    }
+
+    .email-icon {
+      background-color: #EA4335;
+    }
   </style>
 </head>
 <body>
