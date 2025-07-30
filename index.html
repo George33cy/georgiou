@@ -116,40 +116,62 @@
       background-color: #000;
       color: #fff;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      padding: 1.5rem;
+      font-size: 1.2rem; /* bigger footer text */
       margin-top: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .footer-content {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .copyright {
-      margin-right: 1.5rem;
+      margin-right: 2rem;
     }
 
     .footer-icons {
       display: flex;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
     .footer-icons a {
       display: inline-flex;
-      width: 36px;
-      height: 36px;
+      width: 48px;  /* bigger circle */
+      height: 48px;
       border-radius: 50%;
-      background-color: #fff;
+      background-color: transparent; /* reset */
       justify-content: center;
       align-items: center;
       text-decoration: none;
       transition: all 0.3s ease;
+      padding: 8px; /* remove white space inside */
+      box-sizing: border-box;
+    }
+
+    .google-scholar-icon {
+      background-color: #4285F4;
+    }
+
+    .researchgate-icon {
+      background-color: #00CCBB;
+    }
+
+    .email-icon {
+      background-color: #EA4335;
+    }
+
+    .footer-icons img {
+      width: 100%;  /* fill whole circle */
+      height: 100%;
+      border-radius: 50%; /* keep circle shape */
+      object-fit: contain; /* keep aspect ratio, scale inside */
+      display: block;
     }
 
     .footer-icons a:hover {
@@ -157,28 +179,9 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
-    .footer-icons img {
-      width: 20px;
-      height: 20px;
-      border-radius: 0; /* Remove border radius for images */
-    }
-
-    .google-scholar-icon {
-      background-color: #4285F4;
-    }
-    
-    .researchgate-icon {
-      background-color: #00CCBB;
-    }
-    
-    .email-icon {
-      background-color: #EA4335;
-    }
-    
     .footer-icons a:hover img {
       filter: brightness(0) invert(1);
     }
-
   </style>
 </head>
 <body>
