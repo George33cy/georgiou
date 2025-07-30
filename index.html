@@ -117,7 +117,7 @@
       color: #fff;
       text-align: center;
       padding: 1.5rem;
-      font-size: 1.2rem; /* bigger footer text */
+      font-size: 1.2rem;
       margin-top: 2rem;
       display: flex;
       justify-content: center;
@@ -137,46 +137,36 @@
 
     .footer-icons {
       display: flex;
-      gap: 0.4rem; /* closer together */
+      gap: 0.4rem;
     }
 
     .footer-icons a {
       display: inline-flex;
-      width: 48px;  /* smaller circle */
+      width: 48px;
       height: 48px;
       border-radius: 50%;
-      background-color: transparent;
+      background-color: #ccc;
       justify-content: center;
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       padding: 6px;
       box-sizing: border-box;
-    }
-
-    .google-scholar-icon {
-      background-color: #4285F4;
-    }
-
-    .researchgate-icon {
-      background-color: #00CCBB;
-    }
-
-    .email-icon {
-      background-color: #EA4335;
+      overflow: hidden;
     }
 
     .footer-icons img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
       border-radius: 50%;
-      object-fit: contain;
       display: block;
+      mix-blend-mode: multiply;
     }
 
     .footer-icons a:hover {
       transform: translateY(-3px) scale(1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
   </style>
 </head>
@@ -233,13 +223,13 @@
     <div class="footer-content">
       <div class="copyright">Georgios P. Georgiou (c) 2025</div>
       <div class="footer-icons">
-        <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
+        <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
           <img src="gs.png" alt="Google Scholar" />
         </a>
-        <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
+        <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate">
           <img src="rg.png" alt="ResearchGate" />
         </a>
-        <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email" class="email-icon">
+        <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email">
           <img src="email.png" alt="Email" />
         </a>
       </div>
