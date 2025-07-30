@@ -153,15 +153,17 @@
       overflow: hidden;
     }
 
-    .footer-icons img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-      display: block;
-      background-color: #ccc;
-      background-blend-mode: multiply;
-    }
+.footer-icons img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  display: block;
+  background-color: #ccc;
+  background-blend-mode: multiply;
+  filter: brightness(0) invert(1); /* added */
+  mix-blend-mode: multiply;       /* added */
+}
 
     .footer-icons a:hover {
       transform: translateY(-3px) scale(1.1);
