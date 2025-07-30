@@ -223,22 +223,253 @@
     </div>
   </main>
 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Georgios P. Georgiou</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #ffffff;
+      color: #000;
+      font-size: 1.1rem;
+    }
+
+    header {
+      background-color: #000;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+      color: #fff;
+    }
+
+    nav {
+      background-color: #000;
+      text-align: center;
+      padding: 0.5rem 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 0.75rem;
+      font-size: 1.3rem;
+      font-weight: normal;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .main-text {
+      flex: 2;
+      min-width: 300px;
+      text-align: justify;
+    }
+
+    .main-text h3 {
+      margin-top: 1.5rem;
+    }
+
+    .main-text p {
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .main-text a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .main-text a:hover {
+      text-decoration: underline;
+    }
+
+    .about-links {
+      margin-top: 1rem;
+    }
+
+    .about-links ul {
+      padding-left: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .about-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .about-links a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .about-links a:hover {
+      text-decoration: underline;
+    }
+
+    .main-photo {
+      flex: 1;
+      min-width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .main-photo img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 4px;
+    }
+
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .copyright {
+      margin-right: 1.5rem;
+    }
+
+    .footer-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-icons a {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #fff;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .footer-icons a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .footer-icons svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .google-scholar-icon {
+      background-color: #4285F4;
+    }
+    
+    .researchgate-icon {
+      background-color: #00CCBB;
+    }
+    
+    .email-icon {
+      background-color: #EA4335;
+    }
+    
+    .footer-icons a:hover svg {
+      fill: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Georgios P. Georgiou</h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
+    <a href="#">News</a>
+    <a href="publications.html">Publications</a>
+    <a href="#">Research</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="#">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <div class="main-text">
+      <p>Thank you for visiting my website.</p>
+
+      <p>I currently work as an 
+        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">Assistant Professor in Linguistics</a>. 
+        I am the Associate Head of the 
+        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank">Department of Languages and Literature</a>, 
+        <a href="https://www.unic.ac.cy/" target="_blank">University of Nicosia</a>, Cyprus. I serve as the Director of the 
+        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>.
+      </p>
+
+      <p>I was honored with the Cyprus Research Award - Young Researcher 2023 in the field of Humanities and Social Sciences. In 2024, I was elected Fellow of the Young Academy of Europe.</p>
+
+      <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
+
+      <div class="about-links">
+        <h3>More about me</h3>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">My Wikipedia page</a></li>
+          <li><a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">My profile at the University of Nicosia</a></li>
+          <li><a href="https://paideia-news.com/panepistimio-leykosias/2025/05/12/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy/" target="_blank">Ranked as a leading researcher in linguistics worldwide</a></li>
+          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank">My election at the Young Academy of Europe</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-photo">
+      <img src="georgiou.avif" alt="Georgios P. Georgiou" />
+    </div>
+  </main>
+
   <footer>
     <div class="footer-content">
       <div class="copyright">Georgios P. Georgiou (c) 2025</div>
       <div class="footer-icons">
-        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
+        <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" fill="white"/>
             <path d="M0 12.5v8l7.5-4v-4zm9 4v4l7.5 4v-8z" fill="white"/>
           </svg>
         </a>
-        <a href="https://www.researchgate.net/profile/YourProfileName" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
+        <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.5 11.5v5.5h2.25V12h2.25v5.5h2.25V12h1.5v5.5h2.25V12H20V8.5H8.5v3zm0-7.5v5.5H20V4H8.5z" fill="white"/>
           </svg>
         </a>
-        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email" class="email-icon">
+        <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email" class="email-icon">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
           </svg>
@@ -246,6 +477,9 @@
       </div>
     </div>
   </footer>
+
+</body>
+</html>
 
 </body>
 </html>
