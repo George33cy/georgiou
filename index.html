@@ -119,7 +119,39 @@
       padding: 1rem;
       font-size: 0.9rem;
       margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
     }
+
+    .footer-icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .footer-icons a {
+      display: inline-flex;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background-color: #fff;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .footer-icons a:hover {
+      background-color: #1a0dab;
+    }
+
+    .footer-icons svg {
+      fill: #000;
+      width: 20px;
+      height: 20px;
+    }
+
   </style>
 </head>
 <body>
@@ -167,12 +199,31 @@
     </div>
 
     <div class="main-photo">
-      <img src="georgiou.avif" alt="Georgios P. Georgiou">
+      <img src="georgiou.avif" alt="Georgios P. Georgiou" />
     </div>
   </main>
 
   <footer>
-    Georgios P. Georgiou (c) 2025
+    <div>Georgios P. Georgiou (c) 2025</div>
+    <div class="footer-icons">
+      <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+          10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm3-9h-4v2h4V8z"/>
+        </svg>
+      </a>
+      <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1.33 6.7
+            l1.64 3.07a.49.49 0 00.41.26h.07a.49.49 0 00.42-.25l1.69-2.93v7.6h1.55v-9.47h-2.11l-1.84 3.35-1.39-3.41z"/>
+        </svg>
+      </a>
+      <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
+        </svg>
+      </a>
+    </div>
   </footer>
 
 </body>
