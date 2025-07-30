@@ -125,6 +125,16 @@
       gap: 1.5rem;
     }
 
+    .footer-content {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .copyright {
+      margin-right: 1.5rem;
+    }
+
     .footer-icons {
       display: flex;
       gap: 1rem;
@@ -139,17 +149,33 @@
       justify-content: center;
       align-items: center;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .footer-icons a:hover {
-      background-color: #1a0dab;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .footer-icons svg {
-      fill: #000;
       width: 20px;
       height: 20px;
+    }
+
+    .google-scholar-icon {
+      background-color: #4285F4;
+    }
+    
+    .researchgate-icon {
+      background-color: #00CCBB;
+    }
+    
+    .email-icon {
+      background-color: #EA4335;
+    }
+    
+    .footer-icons a:hover svg {
+      fill: white;
     }
 
   </style>
@@ -204,25 +230,26 @@
   </main>
 
   <footer>
-    <div>Georgios P. Georgiou (c) 2025</div>
-    <div class="footer-icons">
-      <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" aria-label="Google Scholar">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
-          10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm3-9h-4v2h4V8z"/>
-        </svg>
-      </a>
-      <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6?ev=hdr_xprf" target="_blank" aria-label="ResearchGate">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm-1.33 6.7
-            l1.64 3.07a.49.49 0 00.41.26h.07a.49.49 0 00.42-.25l1.69-2.93v7.6h1.55v-9.47h-2.11l-1.84 3.35-1.39-3.41z"/>
-        </svg>
-      </a>
-      <a href="mailto:georgiou.georg@unic.ac.cy" aria-label="Email">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 18V8l8 5 8-5v10H4z"/>
-        </svg>
-      </a>
+    <div class="footer-content">
+      <div class="copyright">Georgios P. Georgiou (c) 2025</div>
+      <div class="footer-icons">
+        <a href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID" target="_blank" aria-label="Google Scholar" class="google-scholar-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" fill="white"/>
+            <path d="M0 12.5v8l7.5-4v-4zm9 4v4l7.5 4v-8z" fill="white"/>
+          </svg>
+        </a>
+        <a href="https://www.researchgate.net/profile/YourProfileName" target="_blank" aria-label="ResearchGate" class="researchgate-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.5 11.5v5.5h2.25V12h2.25v5.5h2.25V12h1.5v5.5h2.25V12H20V8.5H8.5v3zm0-7.5v5.5H20V4H8.5z" fill="white"/>
+          </svg>
+        </a>
+        <a href="mailto:YOUR_EMAIL_HERE" aria-label="Email" class="email-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
