@@ -35,7 +35,6 @@
       text-decoration: none;
       margin: 0 0.75rem;
       font-size: 1.3rem;
-      font-weight: normal;
     }
 
     nav a:hover {
@@ -43,7 +42,7 @@
     }
 
     main {
-      max-width: 700px; /* smaller width */
+      max-width: 700px;
       margin: 2rem auto;
       padding: 0 1rem;
       text-align: center;
@@ -51,7 +50,7 @@
 
     .contact-info {
       line-height: 1.5;
-      font-size: 1rem; /* smaller font */
+      font-size: 1rem;
       margin-bottom: 1.5rem;
     }
 
@@ -71,15 +70,17 @@
     }
 
     iframe {
+      max-width: 100%;
       width: 100%;
-      height: 250px;  /* smaller map */
+      height: 250px;
       border: 0;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
+      display: block;
     }
 
     .map-link {
       margin-top: 0.5rem;
-      font-size: 0.9rem; /* smaller text */
+      font-size: 0.9rem;
     }
 
     .map-link a {
@@ -121,35 +122,42 @@
   <main>
     <div class="contact-info">
       <div class="contact-item">
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M2 4h20v16H2V4zm18 2l-8 5-8-5V6l8 5 8-5v.01z" />
+        <svg class="contact-icon" viewBox="0 0 24 24">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 
+                   0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+                   4-8 5-8-5V6l8 5 8-5v2z"/>
         </svg>
         <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
       </div>
       <div class="contact-item">
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.75 3.87.75a1 1 0 011 1V19a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.34.27 2.66.75 3.87a1 1 0 01-.21 1.11l-2.42 2.41z" />
+        <svg class="contact-icon" viewBox="0 0 24 24">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 
+                   0 011.11-.21c1.21.48 2.53.75 3.87.75a1 1 
+                   0 011 1V19a1 1 0 01-1 1A16 16 0 014 5a1 1 
+                   0 011-1h3.5a1 1 0 011 1c0 1.34.27 2.66.75 
+                   3.87a1 1 0 01-.21 1.11l-2.42 2.41z"/>
         </svg>
         <span>+357 22842231</span>
       </div>
       <div class="contact-item">
-        <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 0110 0c0 2.91-3 7.19-5 9.88C10 16.19 7 11.91 7 9zM12 11a2 2 0 100-4 2 2 0 000 4z" />
+        <svg class="contact-icon" viewBox="0 0 24 24">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 
+                   7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 0110 0c0 
+                   2.91-3 7.19-5 9.88C10 16.19 7 11.91 7 9zm5 
+                   2a2 2 0 100-4 2 2 0 000 4z"/>
         </svg>
         <span>Room 104a, Humanities Building, University of Nicosia, Nicosia, Cyprus</span>
       </div>
     </div>
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.9730674870574!2d33.32744141525886!3d35.18536858027661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dfc9ec68a215ef%3A0xe4d7c409b4730c68!2sHumanities%20Building%2C%20University%20of%20Nicosia!5e0!3m2!1sen!2s!4v1722350912345!5m2!1sen!2s"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Map showing Humanities Building, University of Nicosia">
+    <!-- Embedded map with visible pin -->
+    <iframe 
+      src="https://www.google.com/maps?q=Humanities+Building,+University+of+Nicosia,+Nicosia,+Cyprus&output=embed"
+      title="Humanities Building Map with Pin">
     </iframe>
 
     <div class="map-link">
-      <a href="https://maps.google.com/?q=Humanities+Building,+University+of+Nicosia,+Nicosia,+Cyprus" target="_blank">Open in Google Maps</a>
+      <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank">Open in Google Maps</a>
     </div>
   </main>
 
