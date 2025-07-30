@@ -141,28 +141,25 @@
     }
 
     .footer-icons a {
-      display: inline-flex;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background-color: #ccc;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      overflow: hidden;
-    }
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #ccc; /* uniform gray background */
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* hides any image overflow like white borders */
+}
 
 .footer-icons img {
-  width: 100%;
-  height: 100%;
+  width: 70%; /* slightly smaller to avoid touching edges */
+  height: 70%;
   object-fit: contain;
-  border-radius: 50%;
   display: block;
-  background-color: #ccc;
-  background-blend-mode: multiply;
-  filter: brightness(0) invert(1); /* added */
-  mix-blend-mode: multiply;       /* added */
+  border-radius: 0;
+  background: none;
 }
 
     .footer-icons a:hover {
