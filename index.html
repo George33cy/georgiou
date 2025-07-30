@@ -8,55 +8,71 @@
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: #ffffff;
+      color: #000;
     }
     header {
-      background-color: #004080;
-      color: white;
-      padding: 1rem 2rem;
+      text-align: center;
+      padding: 2rem 1rem 1rem;
     }
     header h1 {
+      font-size: 2rem;
       margin: 0;
-      font-size: 1.8rem;
     }
     nav {
-      background-color: #0066cc;
-      padding: 0.5rem 2rem;
+      background-color: #000;
+      text-align: center;
+      padding: 0.5rem 0;
     }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
+    nav a {
       color: white;
       text-decoration: none;
+      margin: 0 1rem;
       font-weight: bold;
       font-size: 1rem;
-      padding: 0.25rem 0.5rem;
     }
-    nav ul li a:hover {
-      background-color: #004080;
-      border-radius: 4px;
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
-      max-width: 900px;
+      max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
-      background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      border-radius: 8px;
     }
     main p {
       margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .about-text {
+      flex: 2;
+      min-width: 250px;
+    }
+    .about-text ul {
+      padding-left: 1rem;
+    }
+    .about-text ul li {
+      margin-bottom: 0.5rem;
+    }
+    .about-photo {
+      flex: 1;
+      min-width: 200px;
+    }
+    .about-photo img {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
     }
   </style>
 </head>
@@ -67,16 +83,14 @@
   </header>
 
   <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Phonetic Lab</a></li>
-      <li><a href="#">News</a></li>
-      <li><a href="#">Publications</a></li>
-      <li><a href="#">Research</a></li>
-      <li><a href="#">Teaching</a></li>
-      <li><a href="#">CV</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <a href="#">Home</a>
+    <a href="#">Phonetic Lab</a>
+    <a href="#">News</a>
+    <a href="#">Publications</a>
+    <a href="#">Research</a>
+    <a href="#">Teaching</a>
+    <a href="#">CV</a>
+    <a href="#">Contact</a>
   </nav>
 
   <main>
@@ -87,7 +101,27 @@
     <p>I was honored with the Cyprus Research Award - Young Researcher 2023 in the field of Humanities and Social Sciences. In 2024, I was elected Fellow of the Young Academy of Europe.</p>
 
     <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
+
+    <div class="about-section">
+      <div class="about-text">
+        <h3>More about me</h3>
+        <ul>
+          <li><a href="#">My Wikipedia page</a></li>
+          <li><a href="#">My profile at the University of Nicosia</a></li>
+          <li><a href="#">Ranked as a leading researcher in linguistics worldwide</a></li>
+          <li><a href="#">My election at the Young Academy of Europe</a></li>
+        </ul>
+      </div>
+      <div class="about-photo">
+        <img src="georgiou.avif" alt="Georgios P. Georgiou">
+      </div>
+    </div>
   </main>
+
+  <footer>
+    Georgios P. Georgiou &copy; 2025
+  </footer>
 
 </body>
 </html>
+
