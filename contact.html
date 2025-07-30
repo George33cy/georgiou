@@ -46,30 +46,34 @@
       max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
+      text-align: center;
     }
 
     .contact-info {
-      text-align: center;
       line-height: 2;
-    }
-
-    .contact-info a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
     }
 
     iframe {
       width: 100%;
-      height: 450px;
+      height: 300px;
       border: 0;
+      margin-bottom: 1rem;
+    }
+
+    .map-link {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+    }
+
+    .map-link a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .map-link a:hover {
+      text-decoration: underline;
     }
 
     footer {
@@ -106,12 +110,16 @@
       <p>🏠 Room 104a, Humanities Building,<br>University of Nicosia, Nicosia, Cyprus</p>
     </div>
 
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.9617773990727!2d33.32748281547067!3d35.185617660212135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dfc9e62c92d9e7%3A0x5a7f6cbb471bdad7!2sUniversity%20of%20Nicosia!5e0!3m2!1sen!2s!4v1722340219273!5m2!1sen!2s" 
-      allowfullscreen 
-      loading="lazy" 
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3249.9621962121223!2d33.32743731525886!3d35.18560898027661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14dfc9ec68a215ef%3A0xe4d7c409b4730c68!2sHumanities%20Building%2C%20University%20of%20Nicosia!5e0!3m2!1sen!2s!4v1722349019123!5m2!1sen!2s"
+      allowfullscreen=""
+      loading="lazy"
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
+
+    <div class="map-link">
+      <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank">Open in Google Maps</a>
+    </div>
   </main>
 
   <footer>
