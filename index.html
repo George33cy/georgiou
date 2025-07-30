@@ -117,7 +117,7 @@
       color: #fff;
       text-align: center;
       padding: 1.5rem;
-      font-size: 1.2rem; /* bigger footer text */
+      font-size: 1.2rem;
       margin-top: 2rem;
       display: flex;
       justify-content: center;
@@ -137,33 +137,29 @@
 
     .footer-icons {
       display: flex;
-      gap: 0.4rem; /* closer together */
+      gap: 0.4rem;
     }
 
     .footer-icons a {
       display: inline-flex;
-      width: 48px;  /* smaller circle */
+      width: 48px;
       height: 48px;
       border-radius: 50%;
-      background-color: transparent;
+      background-color: #ccc; /* Uniform gray background */
       justify-content: center;
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
       padding: 6px;
       box-sizing: border-box;
     }
 
-    .google-scholar-icon {
-      background-color: #4285F4;
-    }
-
-    .researchgate-icon {
-      background-color: #00CCBB;
-    }
-
+    /* Removed individual icon background colors */
+    .google-scholar-icon,
+    .researchgate-icon,
     .email-icon {
-      background-color: #EA4335;
+      background-color: unset;
     }
 
     .footer-icons img {
