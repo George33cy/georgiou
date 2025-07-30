@@ -6,10 +6,11 @@
   <title>Georgios P. Georgiou</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       margin: 0;
       background-color: #ffffff;
       color: #000;
+      font-size: 1.1rem;
     }
 
     header {
@@ -35,7 +36,6 @@
       text-decoration: none;
       margin: 0 0.75rem;
       font-size: 1.3rem;
-      font-weight: normal;
     }
 
     nav a:hover {
@@ -46,55 +46,37 @@
       max-width: 1000px;
       margin: 2rem auto;
       padding: 0 1rem;
+    }
+
+    .main-text {
       display: flex;
       flex-wrap: wrap;
       gap: 2rem;
     }
 
-    .main-text {
+    .text-content {
       flex: 2;
       min-width: 300px;
       text-align: justify;
     }
 
-    .main-text p {
+    .text-content p {
       line-height: 1.6;
       margin-bottom: 1rem;
     }
 
-    .main-text a {
+    .text-content a {
       color: #1a0dab;
       text-decoration: none;
     }
 
-    .main-text a:hover {
-      text-decoration: underline;
-    }
-
-    .about-links {
-      margin-top: 1rem;
-    }
-
-    .about-links ul {
-      padding-left: 1rem;
-    }
-
-    .about-links li {
-      margin-bottom: 0.5rem;
-    }
-
-    .about-links a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
-
-    .about-links a:hover {
+    .text-content a:hover {
       text-decoration: underline;
     }
 
     .main-photo {
       flex: 1;
-      min-width: 200px;
+      min-width: 250px;
       display: flex;
       justify-content: center;
       align-items: flex-start;
@@ -102,7 +84,7 @@
 
     .main-photo img {
       width: 100%;
-      max-width: 200px;
+      max-width: 300px;
       border-radius: 4px;
     }
 
@@ -135,39 +117,33 @@
 
   <main>
     <div class="main-text">
-      <p>Thank you for visiting my website.</p>
+      <div class="text-content">
+        <p>Thank you for visiting my website.</p>
 
-      <p>I currently work as an 
-        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">Assistant Professor in Linguistics</a>. 
-        I am the Associate Head of the 
-        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank">Department of Languages and Literature</a>, 
-        <a href="https://www.unic.ac.cy/" target="_blank">University of Nicosia</a>, Cyprus. I serve as the Director of the 
-        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>.
-      </p>
+        <p>I currently work as Assistant Professor of Linguistics at the University of Nicosia, Cyprus. My primary research interests lie in phonetics, bilingualism, and language disorders. More specifically, my work focuses on:</p>
 
-      <p>I was honored with the Cyprus Research Award - Young Researcher 2023 in the field of Humanities and Social Sciences. In 2024, I was elected Fellow of the Young Academy of Europe.</p>
-
-      <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
-
-      <div class="about-links">
-        <h3>More about me</h3>
         <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">My Wikipedia page</a></li>
-          <li><a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">My profile at the University of Nicosia</a></li>
-          <li><a href="https://paideia-news.com/panepistimio-leykosias/2025/05/12/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy/" target="_blank">Ranked as a leading researcher in linguistics worldwide</a></li>
-          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank">My election at the Young Academy of Europe</a></li>
+          <li>Second-language speech perception and production</li>
+          <li>Cross-linguistic and cross-dialectal interactions</li>
+          <li>Early identification of speech and language disorders</li>
         </ul>
-      </div>
-    </div>
 
-    <div class="main-photo">
-      <img src="georgiou.avif" alt="Georgios P. Georgiou">
+        <p>My work has appeared in journals such as the <em>Journal of Phonetics</em>, <em>Applied Psycholinguistics</em>, <em>Journal of Speech, Language, and Hearing Research</em>, and <em>Journal of Neurolinguistics</em>.</p>
+
+        <p class="about-links">
+          For a list of recent publications, see the <a href="publications.html">Publications</a> page.<br />
+          For my lab and ongoing projects, visit the <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a> page.
+        </p>
+      </div>
+
+      <div class="main-photo">
+        <img src="photo.jpg" alt="Georgios P. Georgiou" />
+      </div>
     </div>
   </main>
 
   <footer>
-    Georgios P. Georgiou (c) 2025
+    &copy; 2025 Georgios P. Georgiou. All rights reserved.
   </footer>
-
 </body>
 </html>
