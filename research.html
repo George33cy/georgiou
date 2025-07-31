@@ -36,15 +36,19 @@
     }
 
     .topic {
-      color: #1a0dab; /* Google default blue */
+      color: #1a0dab; /* Google blue */
       font-weight: bold;
-      font-size: 1.3rem;
     }
 
-    .images {
+    .topic img {
+      display: block;
       margin-top: 1rem;
-      font-style: italic;
-      color: #666;
+      max-width: 100%;
+      border-radius: 4px;
+    }
+
+    .justified {
+      text-align: justify;
     }
 
     @media (max-width: 768px) {
@@ -64,28 +68,40 @@
     <h2>Research Areas</h2>
     <table>
       <tr>
-        <td class="topic">Speech and language acquisition by nonnative speakers</td>
         <td>
+          <div class="topic">
+            Speech and language acquisition by nonnative speakers
+            <img src="image1.jpg" alt="Image 1" />
+          </div>
+        </td>
+        <td class="justified">
           I examine how second language listeners or learners perceive and produce speech sounds, as well as other language structures (e.g., morphology, syntax). I developed the Universal Perceptual Model (UPM), which predicts the acquisition of speech sounds through computational methods based on perceptual and acoustic similarity.
           <br><br>
           I also examine the effects of cognitive factors, such as nonverbal intelligence, phonological short-term memory, and attention control, on speech acquisition.
-          <div class="images">Image1</div>
         </td>
       </tr>
       <tr>
-        <td class="topic">Speech and language in individuals with communication disorders</td>
         <td>
+          <div class="topic">
+            Speech and language in individuals with communication disorders
+            <img src="image2.jpg" alt="Image 2" />
+          </div>
+        </td>
+        <td class="justified">
           I investigate the speech and language of individuals with communication-affecting conditions, including developmental language disorder, autism spectrum disorders, and others. The goal is to identify biomarkers for these conditions, which will allow for the development of prognostic and diagnostic tools.
-          <div class="images">Image2</div>
         </td>
       </tr>
       <tr>
-        <td class="topic">Machine learning and artificial intelligence</td>
         <td>
+          <div class="topic">
+            Machine learning and artificial intelligence
+            <img src="image3.jpg" alt="Image 3" />
+          </div>
+        </td>
+        <td class="justified">
           I use machine learning algorithms to automate the classification of speakers based on speech and language features and the identification of individuals with language disorders.
           <br><br>
           I also examine the language of artificial intelligence, with an emphasis on how it is distinguished from human language, algorithmic biases, and the development of legal frameworks in educational and clinical settings.
-          <div class="images">Image3</div>
         </td>
       </tr>
     </table>
