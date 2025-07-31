@@ -13,35 +13,15 @@
       font-size: 1.1rem;
     }
 
-    header {
-      background-color: #000;
-      text-align: center;
-      padding: 2rem 1rem 1rem;
-    }
+    <div id="header-container"></div>
 
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-      color: #fff;
-    }
-
-    nav {
-      background-color: #000;
-      text-align: center;
-      padding: 0.5rem 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 0.75rem;
-      font-size: 1.3rem;
-      font-weight: normal;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
+<script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+</script>
 
     main {
       max-width: 1000px;
@@ -114,21 +94,6 @@
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Georgios P. Georgiou</h1>
-  </header>
-
-  <nav>
-    <a href="#">Home</a>
-    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
-    <a href="#">News</a>
-    <a href="publications.html">Publications</a>
-    <a href="#">Research</a>
-    <a href="teaching.html">Teaching</a>
-    <a href="#">CV</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
   <main>
     <div class="main-text">
