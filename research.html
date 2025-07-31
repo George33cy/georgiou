@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Research – Georgios P. Georgiou</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #fff;
+      color: #000;
+      font-size: 1.1rem;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      vertical-align: top;
+      padding: 1.2rem;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .topic {
+      color: #1a0dab; /* Google default blue */
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .images {
+      margin-top: 1rem;
+      font-style: italic;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      table, tr, td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header placeholder -->
+  <div id="header"></div>
+
+  <main>
+    <h2>Research Areas</h2>
+    <table>
+      <tr>
+        <td class="topic">Speech and language acquisition by nonnative speakers</td>
+        <td>
+          I examine how second language listeners or learners perceive and produce speech sounds, as well as other language structures (e.g., morphology, syntax). I developed the Universal Perceptual Model (UPM), which predicts the acquisition of speech sounds through computational methods based on perceptual and acoustic similarity.
+          <br><br>
+          I also examine the effects of cognitive factors, such as nonverbal intelligence, phonological short-term memory, and attention control, on speech acquisition.
+          <div class="images">Image1</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="topic">Speech and language in individuals with communication disorders</td>
+        <td>
+          I investigate the speech and language of individuals with communication-affecting conditions, including developmental language disorder, autism spectrum disorders, and others. The goal is to identify biomarkers for these conditions, which will allow for the development of prognostic and diagnostic tools.
+          <div class="images">Image2</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="topic">Machine learning and artificial intelligence</td>
+        <td>
+          I use machine learning algorithms to automate the classification of speakers based on speech and language features and the identification of individuals with language disorders.
+          <br><br>
+          I also examine the language of artificial intelligence, with an emphasis on how it is distinguished from human language, algorithmic biases, and the development of legal frameworks in educational and clinical settings.
+          <div class="images">Image3</div>
+        </td>
+      </tr>
+    </table>
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load header and footer -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+  </script>
+
+</body>
+</html>
