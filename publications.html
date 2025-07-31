@@ -85,14 +85,6 @@
       text-decoration: underline;
     }
 
-    footer {
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
   </style>
 </head>
 <body>
@@ -648,9 +640,19 @@
     </table>
   </main>
 
-  <footer>
-    Georgios P. Georgiou (c) 2025
-  </footer>
+<!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+
+</body>
+</html>
 
 </body>
 </html>
