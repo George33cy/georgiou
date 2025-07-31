@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News – Georgios P. Georgiou</title>
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #ffffff;
+      color: #000;
+      font-size: 1.1rem;
+    }
+
+    #header, #footer-placeholder {
+      width: 100%;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .post-preview {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+    }
+
+    .post-preview h3 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .post-preview p {
+      margin: 0.5rem 0 0;
+      color: #444;
+    }
+
+    .post-preview a {
+      text-decoration: none;
+      color: #1a0dab;
+    }
+
+    .post-preview a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Load shared header -->
+  <div id="header"></div>
+
+  <main>
+    <h2>News & Blog</h2>
+    <div id="blog-posts">
+      <p>Loading blog posts...</p>
+    </div>
+  </main>
+
+  <!-- Load shared footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load header and footer -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("header").innerHTML = data);
+
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+  </script>
+
+  <!-- Blog post loader from Google Sheets -->
+  <script>
+    const sheetID = "e/2PACX-1vQRzF2Ecg8tun2CsHD_z_yPi1m1JAUdUhllHhDEV3qherRPaTgCGJ2bkioe0zABtBSjKhNEIjpqSJpn"; // Replace with your actual Sheet ID
+    const sheetName = "Sheet1";
+    const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
+
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        const container = document.getElementById("blog-posts");
+        container.innerHTML = "";
+
+        data.reverse().forEach(post => {
+          const div = document.createElement("div");
+          div.className = "post-preview";
+          div.innerHTML = `
+            <h3><a href="${post.Link}">${post.Title}</a></h3>
+            <p>${post.Summary}</p>
+            <p><small>${post.Date}</small></p>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error("Error loading posts", err);
+        document.getElementById("blog-posts").innerText = "Failed to load blog posts.";
+      });
+  </script>
+
+</body>
+</html>
