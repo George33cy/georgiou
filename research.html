@@ -41,10 +41,29 @@
       font-size: 1.1rem;
     }
 
-    .topic img {
+    /* Different image containers with different max-widths */
+    .topic-img-1 img {
       display: block;
       margin-top: 1rem;
-      max-width: 100%;
+      max-width: 50px;  /* First image width */
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .topic-img-2 img {
+      display: block;
+      margin-top: 1rem;
+      max-width: 100px;  /* Second image width */
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .topic-img-3 img {
+      display: block;
+      margin-top: 1rem;
+      max-width: 100px;  /* Third image width */
       height: auto;
       object-fit: contain;
       border-radius: 4px;
@@ -59,10 +78,6 @@
         display: block;
         width: 100%;
       }
-
-      .topic img {
-        margin-bottom: 1rem;
-      }
     }
   </style>
 </head>
@@ -76,7 +91,7 @@
     <table>
       <tr>
         <td>
-          <div class="topic">
+          <div class="topic topic-img-1">
             Speech and language acquisition by nonnative speakers
             <img src="image1.png" alt="Image 1" />
           </div>
@@ -89,7 +104,7 @@
       </tr>
       <tr>
         <td>
-          <div class="topic">
+          <div class="topic topic-img-2">
             Speech and language in individuals with communication disorders
             <img src="image3.png" alt="Image 3" />
           </div>
@@ -100,7 +115,7 @@
       </tr>
       <tr>
         <td>
-          <div class="topic">
+          <div class="topic topic-img-3">
             Machine learning and artificial intelligence
             <img src="image2.png" alt="Image 2" />
           </div>
