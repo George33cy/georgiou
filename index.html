@@ -148,42 +148,44 @@
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Load header and wire up mobile menu -->
-  <script>
-    fetch("header.html?v=4") // cache-bust to force the latest header
-      .then(response => response.text())
-      .then(html => {
-        const headerEl = document.getElementById("header");
-        headerEl.innerHTML = html;
+<!-- Load header & footer (with cache-busting), plus global mobile-menu handler -->
+<script>
+  // 1) Inject header
+  fetch("header.html?v=5") // cache-bust to force newest header
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    })
+    .catch(err => console.error("Error loading header:", err));
 
-        // Wire up hamburger after injection (desktop unaffected)
-        const nav = headerEl.querySelector("#navMenu");
-        const toggleBtn = headerEl.querySelector(".menu-toggle");
+  // 2) Inject footer
+  fetch("footer.html?v=5")
+    .then(r => r.text())
+    .then(html => {
+      document.getElementById("footer-placeholder").innerHTML = html;
+    })
+    .catch(err => console.error("Error loading footer:", err));
 
-        if (toggleBtn && nav) {
-          toggleBtn.addEventListener("click", () => {
-            const open = nav.classList.toggle("active");
-            toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
-          });
+  // 3) GLOBAL click handler (works on mobile & after dynamic injection)
+  document.addEventListener("click", function (e) {
+    const toggleBtn = e.target.closest(".menu-toggle");
+    if (toggleBtn) {
+      const nav = document.getElementById("navMenu");
+      if (!nav) return;
+      const open = nav.classList.toggle("active");
+      toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      e.preventDefault();
+      return;
+    }
 
-          // Close the menu after a link is clicked (mobile UX)
-          nav.querySelectorAll("a").forEach(link => {
-            link.addEventListener("click", () => nav.classList.remove("active"));
-          });
-        }
-      })
-      .catch(error => console.error("Error loading header:", error));
-  </script>
-
-  <!-- Load footer -->
-  <script>
-    fetch("footer.html?v=4")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-      })
-      .catch(error => console.error("Error loading footer:", error));
-  </script>
+    // Close menu after tapping a nav link (mobile UX)
+    const navLink = e.target.closest("#navMenu a");
+    if (navLink) {
+      const nav = document.getElementById("navMenu");
+      if (nav) nav.classList.remove("active");
+    }
+  }, { passive: true });
+</script>
 
 </body>
 </html>
