@@ -85,24 +85,15 @@
       object-fit: cover;
     }
 
+    /* Mobile-only: move photo above text and make it smaller */
     @media (max-width: 600px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .main-photo {
-        order: -1; /* Show photo above text */
-        justify-content: center;
+      .main-photo { 
+        order: -1; 
         margin-bottom: 1rem;
+        justify-content: center;
       }
-
-      .main-photo img {
-        max-width: 150px; /* Smaller image on mobile */
-      }
-
-      .main-text {
-        text-align: justify;
+      .main-photo img { 
+        max-width: 150px; 
       }
     }
   </style>
