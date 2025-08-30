@@ -1,6 +1,6 @@
 <!-- header.html -->
 <style>
-  /* Base header styles */
+  /* Base header styles (mobile-first) */
   header {
     background-color: #000;
     display: flex;
@@ -35,7 +35,7 @@
 
   /* Hamburger button */
   .menu-toggle {
-    display: none;
+    display: none;            /* hidden by default */
     flex-direction: column;
     cursor: pointer;
   }
@@ -55,14 +55,9 @@
       flex-direction: column;
       padding: 1rem;
     }
+    nav.active { display: flex; }
 
-    nav.active {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: flex;
-    }
+    .menu-toggle { display: flex; }
 
     nav a {
       margin: 0.5rem 0;
@@ -70,15 +65,14 @@
     }
   }
 
-  /* Desktop only: center the title */
+  /* Desktop: center the title, hide burger */
   @media (min-width: 769px) {
     header {
-      justify-content: center !important; /* override mobile spacing */
+      display: block;       /* stop flex spacing */
+      text-align: center;   /* center the h1 */
     }
-    header > h1 {
-      text-align: center;
-      margin: 0 auto;
-    }
+    header h1 { margin: 0; }
+    .menu-toggle { display: none !important; }
   }
 </style>
 
