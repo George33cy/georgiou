@@ -148,12 +148,31 @@
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Load header -->
+  <!-- Load header and wire up mobile menu -->
   <script>
     fetch("header.html")
       .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
+      .then(html => {
+        const headerContainer = document.getElementById("header");
+        headerContainer.innerHTML = html;
+
+        // Find the inserted nav and toggle button INSIDE the injected header
+        const nav = headerContainer.querySelector("#navMenu");
+        const toggleBtn = headerContainer.querySelector(".menu-toggle");
+
+        if (toggleBtn && nav) {
+          // Toggle open/close on hamburger tap
+          toggleBtn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+          });
+
+          // Auto-close after selecting a link (common on mobile)
+          nav.querySelectorAll("a").forEach(a => {
+            a.addEventListener("click", () => {
+              nav.classList.remove("active");
+            });
+          });
+        }
       })
       .catch(error => console.error("Error loading header:", error));
   </script>
