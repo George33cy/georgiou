@@ -1,96 +1,19 @@
-<style>
+/* Keep mobile as-is */
+header {
+  background-color: #000;
+  display: flex;
+  justify-content: space-between; /* mobile default */
+  align-items: center;
+  padding: 1.5rem 1rem;
+}
+
+/* Desktop only: center the title */
+@media (min-width: 769px) {
   header {
-    background-color: #000;
-    display: flex;
-    justify-content: center; /* Center by default */
-    align-items: center;
-    padding: 1.5rem 1rem;
+    justify-content: center !important; /* override any earlier rules */
   }
-
-  header h1 {
-    font-size: 2rem;
-    margin: 0;
-    color: #fff;
+  header > h1 {
     text-align: center;
+    margin: 0 auto;
   }
-
-  nav {
-    background-color: #000;
-    text-align: center;
-    padding: 0.5rem 0;
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 0.75rem;
-    font-size: 1.3rem;
-    font-weight: normal;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-
-  /* Hamburger button */
-  .menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    right: 1rem;
-  }
-
-  .menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background: #fff;
-    margin: 4px 0;
-    border-radius: 2px;
-  }
-
-  /* Mobile styles */
-  @media (max-width: 768px) {
-    header {
-      justify-content: space-between; /* restore for mobile */
-    }
-
-    nav {
-      display: none;
-      flex-direction: column;
-      padding: 1rem;
-    }
-
-    nav.active {
-      display: flex;
-    }
-
-    .menu-toggle {
-      display: flex;
-    }
-
-    nav a {
-      margin: 0.5rem 0;
-      font-size: 1.2rem;
-    }
-  }
-</style>
-
-<header>
-  <h1>Georgios P. Georgiou</h1>
-  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
-  <a href="publications.html">Publications</a>
-  <a href="research.html">Research</a>
-  <a href="teaching.html">Teaching</a>
-  <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+}
