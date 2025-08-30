@@ -148,42 +148,39 @@
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Load header and wire up mobile menu -->
-  <script>
-    fetch("header.html?v=2") // cache-busting
-      .then(r => r.text())
-      .then(html => {
-        const headerContainer = document.getElementById("header");
-        headerContainer.innerHTML = html;
+<script>
+  fetch("header.html?v=3") // cache-bust to force fresh header
+    .then(r => r.text())
+    .then(html => {
+      const headerContainer = document.getElementById("header");
+      headerContainer.innerHTML = html;
 
-        // Find elements inside injected header
-        const nav = headerContainer.querySelector("#navMenu") || document.querySelector("#navMenu");
-        const toggleBtn = headerContainer.querySelector(".menu-toggle") || document.querySelector(".menu-toggle");
+      // Find elements *inside the injected header*
+      const nav = headerContainer.querySelector("#navMenu");
+      const toggleBtn = headerContainer.querySelector(".menu-toggle");
 
-        if (toggleBtn && nav) {
-          toggleBtn.addEventListener("click", () => {
-            const isOpen = nav.classList.toggle("active");
-            toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          });
+      if (toggleBtn && nav) {
+        toggleBtn.addEventListener("click", () => {
+          const open = nav.classList.toggle("active");
+          toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        });
 
-          // Close menu after link click
-          nav.querySelectorAll("a").forEach(a => {
-            a.addEventListener("click", () => nav.classList.remove("active"));
-          });
-        }
-      })
-      .catch(err => console.error("Error loading header:", err));
-  </script>
+        // Close after link click (mobile UX)
+        nav.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", () => nav.classList.remove("active"));
+        });
+      }
+    })
+    .catch(err => console.error("Error loading header:", err));
+</script>
 
-  <!-- Load footer -->
-  <script>
-    fetch("footer.html?v=2")
-      .then(r => r.text())
-      .then(html => {
-        document.getElementById("footer-placeholder").innerHTML = html;
-      })
-      .catch(err => console.error("Error loading footer:", err));
-  </script>
+<!-- Load footer (with cache-bust too) -->
+<script>
+  fetch("footer.html?v=3")
+    .then(r => r.text())
+    .then(html => { document.getElementById("footer-placeholder").innerHTML = html; })
+    .catch(err => console.error("Error loading footer:", err));
+</script>
 
 </body>
 </html>
