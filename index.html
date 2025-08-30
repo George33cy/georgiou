@@ -85,16 +85,26 @@
       object-fit: cover;
     }
 
-    /* Mobile-only: move photo above text and make it smaller */
     @media (max-width: 600px) {
-      .main-photo { 
-        order: -1; 
-        margin-bottom: 1rem;
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .main-text {
+        text-align: justify;
+      }
+
+      .main-photo {
+        order: -1;
         justify-content: center;
+        margin-bottom: 1rem;
       }
-      .main-photo img { 
-        max-width: 150px; 
-      }
+      .main-photo img {
+    width: 150px;
+    height: auto;
+    max-width: 150px;
+  }
     }
   </style>
 </head>
@@ -167,6 +177,7 @@
             navEl.classList.toggle("active", open);
           };
 
+          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -179,11 +190,13 @@
             }
           };
 
+          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
+          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
