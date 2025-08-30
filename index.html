@@ -85,35 +85,19 @@
       object-fit: cover;
     }
 
-    /* --- MOBILE VERSION --- */
     @media (max-width: 600px) {
       main {
-        flex-direction: row;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
       }
 
       .main-text {
-        order: 1;
-        flex: 1 1 auto;
         text-align: justify;
       }
 
       .main-photo {
-        order: 2;
-        flex: 0 0 auto;
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-start;
-        margin-left: 12px;
-        margin-bottom: 0;
-      }
-
-      .main-photo img {
-        max-width: 110px;
-        width: 110px;
-        height: auto;
-        border-radius: 4px;
-        object-fit: cover;
+        justify-content: center;
+        margin-bottom: 1rem;
       }
     }
   </style>
@@ -187,6 +171,7 @@
             navEl.classList.toggle("active", open);
           };
 
+          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -199,11 +184,13 @@
             }
           };
 
+          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
+          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
