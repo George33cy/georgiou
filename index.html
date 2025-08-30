@@ -148,44 +148,69 @@
   <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 
-<!-- Load header & footer (with cache-busting), plus global mobile-menu handler -->
-<script>
-  // 1) Inject header
-  fetch("header.html?v=5") // cache-bust to force newest header
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("header").innerHTML = html;
-    })
-    .catch(err => console.error("Error loading header:", err));
+  <!-- Load header -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
 
-  // 2) Inject footer
-  fetch("footer.html?v=5")
-    .then(r => r.text())
-    .then(html => {
-      document.getElementById("footer-placeholder").innerHTML = html;
-    })
-    .catch(err => console.error("Error loading footer:", err));
+        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
+        const headerEl = document.getElementById("header");
+        const navEl = headerEl.querySelector("nav");
+        const toggle = headerEl.querySelector(".menu-toggle");
 
-  // 3) GLOBAL click handler (works on mobile & after dynamic injection)
-  document.addEventListener("click", function (e) {
-    const toggleBtn = e.target.closest(".menu-toggle");
-    if (toggleBtn) {
-      const nav = document.getElementById("navMenu");
-      if (!nav) return;
-      const open = nav.classList.toggle("active");
-      toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
-      e.preventDefault();
-      return;
-    }
+        if (toggle && navEl) {
+          toggle.setAttribute("role", "button");
+          toggle.setAttribute("aria-label", "Toggle menu");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("tabindex", "0");
 
-    // Close menu after tapping a nav link (mobile UX)
-    const navLink = e.target.closest("#navMenu a");
-    if (navLink) {
-      const nav = document.getElementById("navMenu");
-      if (nav) nav.classList.remove("active");
-    }
-  }, { passive: true });
-</script>
+          const setExpanded = (open) => {
+            toggle.setAttribute("aria-expanded", String(open));
+            navEl.classList.toggle("active", open);
+          };
+
+          // Replace inline onclick (if present) to keep logic here
+          toggle.onclick = (e) => {
+            e.preventDefault();
+            setExpanded(!navEl.classList.contains("active"));
+          };
+
+          toggle.onkeydown = (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setExpanded(!navEl.classList.contains("active"));
+            }
+          };
+
+          // Close when a nav link is clicked (mobile)
+          navEl.addEventListener("click", (e) => {
+            const a = e.target.closest("a");
+            if (a) setExpanded(false);
+          });
+
+          // Close on outside click
+          document.addEventListener("click", (e) => {
+            const clickedInside = headerEl.contains(e.target);
+            if (!clickedInside && navEl.classList.contains("active")) {
+              setExpanded(false);
+            }
+          });
+        }
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+
+  <!-- Load footer -->
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading footer:", error));
+  </script>
 
 </body>
 </html>
