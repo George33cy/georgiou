@@ -1,9 +1,8 @@
-<!-- header.html -->
 <style>
   header {
     background-color: #000;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center by default */
     align-items: center;
     padding: 1.5rem 1rem;
   }
@@ -12,6 +11,7 @@
     font-size: 2rem;
     margin: 0;
     color: #fff;
+    text-align: center;
   }
 
   nav {
@@ -37,6 +37,8 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    position: absolute;
+    right: 1rem;
   }
 
   .menu-toggle span {
@@ -49,6 +51,10 @@
 
   /* Mobile styles */
   @media (max-width: 768px) {
+    header {
+      justify-content: space-between; /* restore for mobile */
+    }
+
     nav {
       display: none;
       flex-direction: column;
