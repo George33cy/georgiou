@@ -85,19 +85,25 @@
       object-fit: cover;
     }
 
+    /* Mobile styles */
     @media (max-width: 600px) {
       main {
         flex-direction: column;
         align-items: center;
       }
 
-      .main-text {
-        text-align: justify;
-      }
-
       .main-photo {
+        order: -1; /* Move photo above text */
         justify-content: center;
         margin-bottom: 1rem;
+      }
+
+      .main-photo img {
+        max-width: 150px; /* Smaller image on mobile */
+      }
+
+      .main-text {
+        text-align: justify;
       }
     }
   </style>
