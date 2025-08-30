@@ -80,36 +80,46 @@
     .main-photo img {
       width: 100%;
       height: auto;
-      max-width: 60px;
+      max-width: 200px;
       border-radius: 4px;
       object-fit: cover;
     }
 
-    /* MOBILE VERSION */
+    /* Centered title styles */
+    .centered-title {
+      text-align: center;
+      margin: 0 auto;
+      padding: 1rem 0;
+      max-width: 1000px;
+    }
+
+    .centered-title h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      padding: 0.5rem 0;
+      color: #333;
+      font-weight: 600;
+    }
+
     @media (max-width: 600px) {
       main {
-        flex-direction: row;   /* keep them side by side */
-        align-items: flex-start;
-        flex-wrap: nowrap;     /* prevent wrapping */
-        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
       }
 
       .main-text {
-        flex: 2;
-        min-width: 0;          /* override desktop min-width */
         text-align: justify;
       }
 
       .main-photo {
-        flex: 0 0 60px;        /* fix photo width */
-        max-width: 60px;
-        margin-left: 1rem;
-        margin-bottom: 0;
+        justify-content: center;
+        margin-bottom: 1rem;
       }
-
-      .main-photo img {
-        width: 100%;
-        height: auto;
+      
+      /* Keep mobile version untouched as requested */
+      .centered-title h1 {
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
       }
     }
   </style>
@@ -118,6 +128,11 @@
 
   <!-- Header placeholder -->
   <div id="header"></div>
+
+  <!-- Centered title -->
+  <div class="centered-title">
+    <h1>Georgios P. Georgiou</h1>
+  </div>
 
   <main>
     <div class="main-text">
@@ -167,6 +182,7 @@
       .then(html => {
         document.getElementById("header").innerHTML = html;
 
+        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
         const headerEl = document.getElementById("header");
         const navEl = headerEl.querySelector("nav");
         const toggle = headerEl.querySelector(".menu-toggle");
@@ -182,6 +198,7 @@
             navEl.classList.toggle("active", open);
           };
 
+          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -194,11 +211,13 @@
             }
           };
 
+          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
+          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
