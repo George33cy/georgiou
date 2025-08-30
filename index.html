@@ -85,15 +85,6 @@
       object-fit: cover;
     }
 
-    /* --- Center header title on desktop --- */
-    @media (min-width: 768px) {
-      #header h1, 
-      #header .site-title {
-        text-align: center;
-        margin: 0 auto;
-      }
-    }
-
     @media (max-width: 600px) {
       main {
         flex-direction: column;
@@ -164,6 +155,7 @@
       .then(html => {
         document.getElementById("header").innerHTML = html;
 
+        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
         const headerEl = document.getElementById("header");
         const navEl = headerEl.querySelector("nav");
         const toggle = headerEl.querySelector(".menu-toggle");
@@ -179,6 +171,7 @@
             navEl.classList.toggle("active", open);
           };
 
+          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -191,11 +184,13 @@
             }
           };
 
+          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
+          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
