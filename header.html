@@ -27,11 +27,9 @@
     display: inline-block;
   }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+  nav a:hover { text-decoration: underline; }
 
-  /* --- Mobile menu styles --- */
+  /* Mobile hamburger */
   .menu-toggle {
     display: none;
     background: none;
@@ -48,27 +46,20 @@
       flex-direction: column;
       padding: 0;
     }
-
     nav a {
       display: block;
       padding: 1rem;
       border-top: 1px solid #333;
       margin: 0;
     }
-
-    .menu-toggle {
-      display: block;
-    }
-
-    nav.active {
-      display: flex;
-    }
+    .menu-toggle { display: block; }
+    nav.active { display: flex; }
   }
 </style>
 
 <header>
   <h1>Georgios P. Georgiou</h1>
-  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
 </header>
 
 <nav id="navMenu">
@@ -80,9 +71,3 @@
   <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
   <a href="contact.html">Contact</a>
 </nav>
-
-<script>
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('active');
-  }
-</script>
