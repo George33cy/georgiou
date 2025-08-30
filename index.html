@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Georgios P. Georgiou</title>
   <style>
-    /* ---- Base page ---- */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -29,26 +28,46 @@
       text-align: justify;
     }
 
-    .main-text h3 { margin-top: 1.5rem; }
+    .main-text h3 {
+      margin-top: 1.5rem;
+    }
 
     .main-text p {
       line-height: 1.3;
       margin-bottom: 1rem;
     }
 
-    .main-text a, .about-links a {
+    .main-text a {
       color: #1a0dab;
       text-decoration: none;
     }
-    .main-text a:hover, .about-links a:hover { text-decoration: underline; }
 
-    .about-links { margin-top: 1rem; }
+    .main-text a:hover {
+      text-decoration: underline;
+    }
+
+    .about-links {
+      margin-top: 1rem;
+    }
+
     .about-links ul {
       line-height: 1.3;
       padding-left: 1.2rem;
       margin-top: 0.5rem;
     }
-    .about-links li { margin-bottom: 0.5rem; }
+
+    .about-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .about-links a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .about-links a:hover {
+      text-decoration: underline;
+    }
 
     .main-photo {
       flex: 1;
@@ -57,66 +76,40 @@
       justify-content: center;
       align-items: flex-start;
     }
+
     .main-photo img {
       width: 100%;
       height: auto;
-      max-width: 200px;
+      max-width: 60px;
       border-radius: 4px;
       object-fit: cover;
     }
 
+    /* MOBILE VERSION */
     @media (max-width: 600px) {
       main {
-        flex-direction: column;
-        align-items: center;
-      }
-      .main-text { text-align: justify; }
-      .main-photo {
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-    }
-
-    /* ---- Header defaults (works even if header.html has no CSS) ---- */
-    header.site-header {
-      background-color: #000;
-      color: #fff;
-      display: flex;
-      justify-content: space-between; /* mobile default */
-      align-items: center;
-      padding: 1.25rem 1rem;
-      box-sizing: border-box;
-    }
-    header.site-header h1,
-    header.site-header a,
-    header.site-header button { color: #fff; }
-
-    header.site-header .menu-toggle {
-      background: transparent;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      font-size: 1rem;
-      padding: 0.4rem 0.6rem;
-      cursor: pointer;
-    }
-
-    header.site-header nav {
-      display: none; /* mobile collapsed */
-    }
-    header.site-header nav.active {
-      display: block;
-    }
-
-    @media (min-width: 769px) {
-      header.site-header { justify-content: center !important; }
-      header.site-header > h1 { text-align: center; margin: 0 auto; }
-      header.site-header .menu-toggle { display: none; }
-      header.site-header nav {
-        display: flex !important;
+        flex-direction: row;   /* keep them side by side */
+        align-items: flex-start;
+        flex-wrap: nowrap;     /* prevent wrapping */
         gap: 1rem;
       }
-      header.site-header nav a {
-        text-decoration: none;
+
+      .main-text {
+        flex: 2;
+        min-width: 0;          /* override desktop min-width */
+        text-align: justify;
+      }
+
+      .main-photo {
+        flex: 0 0 60px;        /* fix photo width */
+        max-width: 60px;
+        margin-left: 1rem;
+        margin-bottom: 0;
+      }
+
+      .main-photo img {
+        width: 100%;
+        height: auto;
       }
     }
   </style>
@@ -131,20 +124,20 @@
       <p>Thank you for visiting my website.</p>
 
       <p>I currently work as an 
-        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank" rel="noopener">Assistant Professor in Linguistics</a>. 
+        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">Assistant Professor in Linguistics</a>. 
         I am the Associate Head of the 
-        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank" rel="noopener">Department of Languages and Literature</a>, 
-        <a href="https://www.unic.ac.cy/" target="_blank" rel="noopener">University of Nicosia</a>, Cyprus. I serve as the Director of the 
-        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>.
+        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank">Department of Languages and Literature</a>, 
+        <a href="https://www.unic.ac.cy/" target="_blank">University of Nicosia</a>, Cyprus. I serve as the Director of the 
+        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>.
       </p>
 
       <p>
         I was honored with the 
-        <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank" rel="noopener">
+        <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank">
           Cyprus Research Award – Young Researcher 2023
         </a> 
         in the field of Humanities and Social Sciences. In 2024, I was elected 
-        <a href="https://yacadeuro.org/georgiou/" target="_blank" rel="noopener">Fellow of the Young Academy of Europe</a>.
+        <a href="https://yacadeuro.org/georgiou/" target="_blank">Fellow of the Young Academy of Europe</a>.
       </p>
 
       <p>I use quantitative methods and computational approaches, such as machine learning, to model speech and language acquisition and identify biomarkers for communication-affecting conditions. I aim to optimize learning outcomes in second language acquisition and develop prognostic and diagnostic tools based on speech and language features for communication disorders.</p>
@@ -152,9 +145,9 @@
       <div class="about-links">
         <h3>More about me</h3>
         <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank" rel="noopener">My Wikipedia page</a></li>
-          <li><a href="https://paideia-news.com/panepistimio-leykosias/2025/05/12/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy/" target="_blank" rel="noopener">Ranked as a leading researcher in linguistics worldwide</a></li>
-          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank" rel="noopener">My election at the Young Academy of Europe</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">My Wikipedia page</a></li>
+          <li><a href="https://paideia-news.com/panepistimio-leykosias/2025/05/12/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy/" target="_blank">Ranked as a leading researcher in linguistics worldwide</a></li>
+          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank">My election at the Young Academy of Europe</a></li>
         </ul>
       </div>
     </div>
@@ -170,36 +163,11 @@
   <!-- Load header -->
   <script>
     fetch("header.html")
-      .then((response) => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.text();
-      })
-      .then((html) => {
-        const headerMount = document.getElementById("header");
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
 
-        // Parse the fetched content in a sandbox container
-        const tmp = document.createElement("div");
-        tmp.innerHTML = html;
-
-        // Move any <style> or <link rel="stylesheet"> into <head>
-        tmp.querySelectorAll("style, link[rel='stylesheet']").forEach((el) => {
-          document.head.appendChild(el);
-        });
-
-        // Prefer an actual <header> element; fall back to the first element node
-        let headerNode = tmp.querySelector("header");
-        if (!headerNode) {
-          headerNode = Array.from(tmp.childNodes).find(n => n.nodeType === 1) || document.createElement("header");
-        }
-
-        // Ensure baseline class for styling if author forgot to include one
-        headerNode.classList.add("site-header");
-
-        // Insert header
-        headerMount.replaceChildren(headerNode);
-
-        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
-        const headerEl = headerMount;
+        const headerEl = document.getElementById("header");
         const navEl = headerEl.querySelector("nav");
         const toggle = headerEl.querySelector(".menu-toggle");
 
@@ -214,7 +182,6 @@
             navEl.classList.toggle("active", open);
           };
 
-          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -227,13 +194,11 @@
             }
           };
 
-          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
-          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
@@ -242,20 +207,17 @@
           });
         }
       })
-      .catch((error) => console.error("Error loading header:", error));
+      .catch(error => console.error("Error loading header:", error));
   </script>
 
   <!-- Load footer -->
   <script>
     fetch("footer.html")
-      .then((response) => {
-        if (!response.ok) throw new Error("Network response was not ok");
-        return response.text();
-      })
-      .then((data) => {
+      .then(response => response.text())
+      .then(data => {
         document.getElementById("footer-placeholder").innerHTML = data;
       })
-      .catch((error) => console.error("Error loading footer:", error));
+      .catch(error => console.error("Error loading footer:", error));
   </script>
 
 </body>
