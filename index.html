@@ -13,6 +13,21 @@
       font-size: 1.1rem;
     }
 
+    /* Page title (your name) */
+    .page-title {
+      text-align: center;
+      margin: 2rem 0 1rem 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    @media (max-width: 600px) {
+      .page-title {
+        text-align: left;
+        padding-left: 1rem;
+      }
+    }
+
     main {
       max-width: 1000px;
       margin: 2rem auto;
@@ -107,6 +122,9 @@
   <!-- Header placeholder -->
   <div id="header"></div>
 
+  <!-- Your name in the center -->
+  <h1 class="page-title">Georgios P. Georgiou</h1>
+
   <main>
     <div class="main-text">
       <p>Thank you for visiting my website.</p>
@@ -155,7 +173,6 @@
       .then(html => {
         document.getElementById("header").innerHTML = html;
 
-        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
         const headerEl = document.getElementById("header");
         const navEl = headerEl.querySelector("nav");
         const toggle = headerEl.querySelector(".menu-toggle");
@@ -171,7 +188,6 @@
             navEl.classList.toggle("active", open);
           };
 
-          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -184,13 +200,11 @@
             }
           };
 
-          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
-          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
