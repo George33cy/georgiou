@@ -1,75 +1,96 @@
 <!-- header.html -->
 <style>
-  header {
+  /* Scope everything to avoid collisions */
+  #site-header {
     background-color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 1rem;
-  }
-
-  header h1 {
-    font-size: 2rem;
-    margin: 0;
     color: #fff;
-    text-align: left;
+    font-family: Arial, sans-serif;
   }
 
-  nav {
+  /* Top bar: name (left) + hamburger (right on mobile) */
+  #site-header .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1rem;
+  }
+
+  #site-header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  /* Desktop nav (inline, right of name) */
+  #site-header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 0.5rem 1rem 1rem; /* small breathing room below topbar */
     background-color: #000;
-    text-align: center;
-    padding: 0.5rem 0;
   }
 
-  nav a {
-    color: white;
+  #site-header nav a {
+    color: #fff;
     text-decoration: none;
-    margin: 0 0.75rem;
-    font-size: 1.3rem;
-    font-weight: normal;
-    display: inline-block;
+    font-size: 1.1rem;
   }
 
-  nav a:hover { text-decoration: underline; }
+  #site-header nav a:hover { text-decoration: underline; }
 
-  /* Mobile hamburger */
-  .menu-toggle {
-    display: none;
+  /* Hamburger button (hidden on desktop) */
+  #site-header .menu-toggle {
+    appearance: none;
     background: none;
     border: none;
-    color: white;
+    color: #fff;
     font-size: 2rem;
+    line-height: 1;
     cursor: pointer;
+    display: none; /* shown on mobile */
   }
 
+  /* Mobile layout */
   @media (max-width: 768px) {
-    nav {
+    /* On mobile, hide the desktop nav by default and show hamburger */
+    #site-header nav {
       display: none;
       flex-direction: column;
+      gap: 0;
       padding: 0;
     }
-    nav a {
+
+    #site-header nav a {
       display: block;
       padding: 1rem;
       border-top: 1px solid #333;
-      margin: 0;
     }
-    .menu-toggle { display: block; }
-    nav.active { display: flex; }
+
+    #site-header nav.active {
+      display: flex;
+    }
+
+    #site-header .menu-toggle {
+      display: inline-block;
+    }
   }
 </style>
 
-<header>
-  <h1>Georgios P. Georgiou</h1>
-  <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
-</header>
+<div id="site-header">
+  <div class="topbar">
+    <h1>Georgios P. Georgiou</h1>
+    <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
 
-<nav id="navMenu">
-  <a href="index.html">Home</a>
-  <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
-  <a href="publications.html">Publications</a>
-  <a href="research.html">Research</a>
-  <a href="teaching.html">Teaching</a>
-  <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <!-- Desktop: visible inline; Mobile: hidden until toggled -->
+  <nav id="navMenu" aria-label="Primary">
+    <a href="index.html">Home</a>
+    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="Georgios Georgiou academic cv.pdf" target="_blank" rel="noopener">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
