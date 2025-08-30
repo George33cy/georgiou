@@ -27,7 +27,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1rem;
-    padding: 0.5rem 1rem 1rem; /* small breathing room below topbar */
+    padding: 0.5rem 1rem 1rem; /* keeps nav below topbar */
     background-color: #000;
   }
 
@@ -48,12 +48,12 @@
     font-size: 2rem;
     line-height: 1;
     cursor: pointer;
-    display: none; /* shown on mobile */
+    display: none; /* visible only on mobile */
   }
 
   /* Mobile layout */
   @media (max-width: 768px) {
-    /* On mobile, hide the desktop nav by default and show hamburger */
+    /* On mobile, hide nav until toggled */
     #site-header nav {
       display: none;
       flex-direction: column;
@@ -80,10 +80,11 @@
 <div id="site-header">
   <div class="topbar">
     <h1>Georgios P. Georgiou</h1>
+    <!-- hidden on desktop, shown on mobile -->
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false">☰</button>
   </div>
 
-  <!-- Desktop: visible inline; Mobile: hidden until toggled -->
+  <!-- Desktop: visible inline; Mobile: toggled below -->
   <nav id="navMenu" aria-label="Primary">
     <a href="index.html">Home</a>
     <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>
