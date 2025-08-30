@@ -85,31 +85,35 @@
       object-fit: cover;
     }
 
-    /* Mobile: keep side-by-side, photo on right, smaller image */
+    /* --- MOBILE VERSION --- */
     @media (max-width: 600px) {
       main {
-        flex-direction: row;         /* keep row layout */
+        flex-direction: row;
         align-items: flex-start;
-        gap: 1rem;                   /* tighter gap on mobile */
       }
 
       .main-text {
-        flex: 1 1 auto;              /* take most of the width */
-        min-width: 0;                /* allow shrink */
+        order: 1;
+        flex: 1 1 auto;
         text-align: justify;
-        order: 1;                    /* ensure text is first (left) */
       }
 
       .main-photo {
-        flex: 0 0 auto;              /* right column sized to image */
-        min-width: auto;
-        justify-content: flex-end;   /* push image to the right edge */
+        order: 2;
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-left: 12px;
         margin-bottom: 0;
-        order: 2;                    /* ensure photo is second (right) */
       }
 
       .main-photo img {
-        max-width: 120px;            /* smaller photo on mobile */
+        max-width: 110px;
+        width: 110px;
+        height: auto;
+        border-radius: 4px;
+        object-fit: cover;
       }
     }
   </style>
@@ -183,7 +187,6 @@
             navEl.classList.toggle("active", open);
           };
 
-          // Replace inline onclick (if present) to keep logic here
           toggle.onclick = (e) => {
             e.preventDefault();
             setExpanded(!navEl.classList.contains("active"));
@@ -196,13 +199,11 @@
             }
           };
 
-          // Close when a nav link is clicked (mobile)
           navEl.addEventListener("click", (e) => {
             const a = e.target.closest("a");
             if (a) setExpanded(false);
           });
 
-          // Close on outside click
           document.addEventListener("click", (e) => {
             const clickedInside = headerEl.contains(e.target);
             if (!clickedInside && navEl.classList.contains("active")) {
