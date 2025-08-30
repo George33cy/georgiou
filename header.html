@@ -24,18 +24,54 @@
     margin: 0 0.75rem;
     font-size: 1.3rem;
     font-weight: normal;
+    display: inline-block;
   }
 
   nav a:hover {
     text-decoration: underline;
   }
+
+  /* --- Mobile menu styles --- */
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      padding: 0;
+    }
+
+    nav a {
+      display: block;
+      padding: 1rem;
+      border-top: 1px solid #333;
+      margin: 0;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+
+    nav.active {
+      display: flex;
+    }
+  }
 </style>
 
 <header>
   <h1>Georgios P. Georgiou</h1>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 </header>
 
-<nav>
+<nav id="navMenu">
   <a href="index.html">Home</a>
   <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
   <a href="publications.html">Publications</a>
@@ -44,3 +80,9 @@
   <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
   <a href="contact.html">Contact</a>
 </nav>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('active');
+  }
+</script>
