@@ -3,15 +3,17 @@
   header {
     background-color: #000;
     display: flex;
-    justify-content: space-between; /* mobile default */
+    justify-content: center; /* Center the h1 on desktop */
     align-items: center;
     padding: 1.5rem 1rem;
+    position: relative; /* Needed to position hamburger */
   }
 
   header h1 {
     font-size: 2rem;
     margin: 0;
     color: #fff;
+    text-align: center;
   }
 
   nav {
@@ -37,6 +39,10 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .menu-toggle span {
@@ -49,6 +55,20 @@
 
   /* Mobile styles */
   @media (max-width: 768px) {
+    header {
+      justify-content: space-between; /* Reset: title left, toggle right */
+    }
+
+    header h1 {
+      text-align: left;
+    }
+
+    .menu-toggle {
+      display: flex;
+      position: static;
+      transform: none;
+    }
+
     nav {
       display: none;
       flex-direction: column;
@@ -59,28 +79,9 @@
       display: flex;
     }
 
-    .menu-toggle {
-      display: flex;
-    }
-
     nav a {
       margin: 0.5rem 0;
       font-size: 1.2rem;
-    }
-  }
-
-  /* Desktop only: center the title */
-  @media (min-width: 769px) {
-    header {
-      justify-content: center !important; /* override mobile */
-    }
-    header > h1 {
-      text-align: center;
-      margin: 0 auto;
-    }
-    .menu-toggle {
-      position: absolute;
-      right: 1rem;
     }
   }
 </style>
