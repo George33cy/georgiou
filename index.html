@@ -86,11 +86,13 @@
     }
 
     /* Mobile styles */
-    @media (max-width: 600px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-      }
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* ↓ tighter vertical space (was 2rem) */
+    /* or row-gap: 0.5rem; if you only want to reduce vertical spacing */
+  }
 
       .main-photo {
         order: -1; /* Move photo above text */
