@@ -150,14 +150,15 @@
 
   <!-- Load header and wire up mobile menu -->
   <script>
-    fetch("header.html?v=3") // force latest version
-      .then(r => r.text())
+    fetch("header.html?v=4") // cache-bust to force the latest header
+      .then(response => response.text())
       .then(html => {
-        const headerContainer = document.getElementById("header");
-        headerContainer.innerHTML = html;
+        const headerEl = document.getElementById("header");
+        headerEl.innerHTML = html;
 
-        const nav = headerContainer.querySelector("#navMenu");
-        const toggleBtn = headerContainer.querySelector(".menu-toggle");
+        // Wire up hamburger after injection (desktop unaffected)
+        const nav = headerEl.querySelector("#navMenu");
+        const toggleBtn = headerEl.querySelector(".menu-toggle");
 
         if (toggleBtn && nav) {
           toggleBtn.addEventListener("click", () => {
@@ -165,22 +166,23 @@
             toggleBtn.setAttribute("aria-expanded", open ? "true" : "false");
           });
 
+          // Close the menu after a link is clicked (mobile UX)
           nav.querySelectorAll("a").forEach(link => {
             link.addEventListener("click", () => nav.classList.remove("active"));
           });
         }
       })
-      .catch(err => console.error("Error loading header:", err));
+      .catch(error => console.error("Error loading header:", error));
   </script>
 
   <!-- Load footer -->
   <script>
-    fetch("footer.html?v=3")
-      .then(r => r.text())
+    fetch("footer.html?v=4")
+      .then(response => response.text())
       .then(html => {
         document.getElementById("footer-placeholder").innerHTML = html;
       })
-      .catch(err => console.error("Error loading footer:", err));
+      .catch(error => console.error("Error loading footer:", error));
   </script>
 
 </body>
