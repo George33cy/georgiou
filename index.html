@@ -80,36 +80,29 @@
     .main-photo img {
       width: 100%;
       height: auto;
-      max-width: 60px;
+      max-width: 200px;
       border-radius: 4px;
       object-fit: cover;
     }
 
-    /* MOBILE VERSION */
     @media (max-width: 600px) {
       main {
-        flex-direction: row;   /* keep them side by side */
-        align-items: flex-start;
-        flex-wrap: nowrap;     /* prevent wrapping */
-        gap: 1rem;
-      }
-
-      .main-text {
-        flex: 2;
-        min-width: 0;          /* override desktop min-width */
-        text-align: justify;
+        flex-direction: column;
+        align-items: center;
       }
 
       .main-photo {
-        flex: 0 0 60px;        /* fix photo width */
-        max-width: 60px;
-        margin-left: 1rem;
-        margin-bottom: 0;
+        order: -1; /* Show photo above text */
+        justify-content: center;
+        margin-bottom: 1rem;
       }
 
       .main-photo img {
-        width: 100%;
-        height: auto;
+        max-width: 150px; /* Smaller image on mobile */
+      }
+
+      .main-text {
+        text-align: justify;
       }
     }
   </style>
@@ -167,6 +160,7 @@
       .then(html => {
         document.getElementById("header").innerHTML = html;
 
+        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
         const headerEl = document.getElementById("header");
         const navEl = headerEl.querySelector("nav");
         const toggle = headerEl.querySelector(".menu-toggle");
