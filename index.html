@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,155 +14,158 @@
       font-size: 1.1rem;
     }
 
-    main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
+```
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
-    .main-text {
-      flex: 2;
-      min-width: 300px;
-      text-align: justify;
-    }
+.main-text {
+  flex: 2;
+  min-width: 300px;
+  text-align: justify;
+}
 
-    .main-text h3 {
-      margin-top: 1.5rem;
-    }
+.main-text h3 {
+  margin-top: 1.5rem;
+}
 
-    .main-text p {
-      line-height: 1.3;
-      margin-bottom: 1rem;
-    }
+.main-text p {
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
 
-    .main-text a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
+.main-text a {
+  color: #1a0dab;
+  text-decoration: none;
+}
 
-    .main-text a:hover {
-      text-decoration: underline;
-    }
+.main-text a:hover {
+  text-decoration: underline;
+}
 
-    .about-links {
-      margin-top: 1rem;
-    }
+.about-links {
+  margin-top: 1rem;
+}
 
-    .about-links ul {
-      line-height: 1.3;
-      padding-left: 1.2rem;
-      margin-top: 0.5rem;
-    }
+.about-links ul {
+  line-height: 1.3;
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
 
-    .about-links li {
-      margin-bottom: 0.5rem;
-    }
+.about-links li {
+  margin-bottom: 0.5rem;
+}
 
-    .about-links a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
+.about-links a {
+  color: #1a0dab;
+  text-decoration: none;
+}
 
-    .about-links a:hover {
-      text-decoration: underline;
-    }
+.about-links a:hover {
+  text-decoration: underline;
+}
 
-    .main-photo {
-      flex: 1;
-      min-width: 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-    }
+.main-photo {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
 
-    .main-photo img {
-      width: 100%;
-      height: auto;
-      max-width: 200px;
-      border-radius: 4px;
-      object-fit: cover;
-      display: block;
-    }
+.main-photo img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  border-radius: 4px;
+  object-fit: cover;
+  display: block;
+}
 
-    .contact-card {
-      width: 100%;
-      max-width: 300px;
-      text-align: left;
-    }
+.contact-card {
+  width: 100%;
+  max-width: 300px;
+  text-align: left;
+}
 
-    .contact-info {
-      line-height: 1.5;
-      font-size: 1rem;
-      margin-bottom: 0.75rem;
-    }
+.contact-info {
+  line-height: 1.5;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.8rem;
-    }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
 
-    .contact-icon {
-      width: 20px;
-      height: 20px;
-      fill: #000;
-      flex-shrink: 0;
-    }
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  fill: #000;
+  flex-shrink: 0;
+}
 
-    .contact-card iframe {
-      max-width: 100%;
-      width: 100%;
-      height: 220px;
-      border: 0;
-      margin: 0.25rem auto 0.6rem;
-      display: block;
-      border-radius: 8px;
-    }
+.contact-card iframe {
+  max-width: 100%;
+  width: 100%;
+  height: 220px;
+  border: 0;
+  margin: 0.25rem auto 0.6rem;
+  display: block;
+  border-radius: 8px;
+}
 
-    .map-link {
-      margin-top: 0.25rem;
-      font-size: 0.9rem;
-      text-align: center;
-    }
+.map-link {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
 
-    .map-link a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
+.map-link a {
+  color: #1a0dab;
+  text-decoration: none;
+}
 
-    .map-link a:hover {
-      text-decoration: underline;
-    }
+.map-link a:hover {
+  text-decoration: underline;
+}
 
-    @media (max-width: 600px) {
-      main {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
 
-      .main-photo {
-        order: -1;
-        margin-bottom: 0.25rem;
-      }
+  .main-photo {
+    order: -1;
+    margin-bottom: 0.25rem;
+  }
 
-      .main-photo img {
-        max-width: 150px;
-      }
+  .main-photo img {
+    max-width: 150px;
+  }
 
-      .contact-card {
-        max-width: 360px;
-      }
+  .contact-card {
+    max-width: 360px;
+  }
 
-      .contact-card iframe {
-        height: 200px;
-      }
-    }
+  .contact-card iframe {
+    height: 200px;
+  }
+}
+```
+
   </style>
 </head>
 <body>
@@ -171,75 +175,84 @@
 <main>
   <div class="main-text">
     <p>Thank you for visiting my website.</p>
-    <!-- (text unchanged — kept exactly as you had it) -->
+
+```
+<p>I currently work as an
+  <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank" rel="noopener">Assistant Professor of Linguistics</a>.
+  I am the Associate Head of the
+  <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank" rel="noopener">Department of Languages and Literature</a>,
+  <a href="https://www.unic.ac.cy/" target="_blank" rel="noopener">University of Nicosia</a>, Cyprus. I serve as the Director of the
+  <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>.
+</p>
+
+<p>
+  I was honored with the
+  <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank" rel="noopener">
+    Cyprus Research Award – Young Researcher 2023
+  </a>
+  in the field of Humanities and Social Sciences. In 2024, I was elected
+  <a href="https://yacadeuro.org/georgiou/" target="_blank" rel="noopener">Fellow of the Young Academy of Europe</a>.
+</p>
+
+<p>
+  I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition and neurological conditions...
+</p>
+
+<div class="about-links">
+  <h3>More about me</h3>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">My Wikipedia page</a></li>
+    <li><a href="https://paideia-news.com/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy" target="_blank">Ranked as a leading researcher in linguistics worldwide</a></li>
+    <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank">My election at the Young Academy of Europe</a></li>
+  </ul>
+</div>
+```
+
   </div>
 
   <div class="main-photo">
     <img src="georgiou.avif" alt="Georgios P. Georgiou" />
 
-    <div class="contact-card">
-      <div class="contact-info">
+```
+<div class="contact-card">
+  <div class="contact-info">
 
-        <!-- Email -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-          </svg>
-          <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
-        </div>
-
-        <!-- Wikipedia -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M4 4h16v16H4zM7 17l2.5-8h1L13 17h-1.2l-.6-2H8.7l-.6 2H7zm2-3h1.8L10 11 9 14z"/>
-          </svg>
-          <a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">Wikipedia page</a>
-        </div>
-
-        <!-- Google Scholar -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 13L5 12.73V17h14v-4.27L12 16z"/>
-          </svg>
-          <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        </div>
-
-        <!-- ResearchGate -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M4 4h10a5 5 0 010 10H9v6H4V4zm5 5h4a2 2 0 000-4H9v4z"/>
-          </svg>
-          <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6" target="_blank">ResearchGate</a>
-        </div>
-
-        <!-- Phone -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.75 3.87.75a1 1 0 011 1V19a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.34.27 2.66.75 3.87a1 1 0 01-.21 1.11l-2.42 2.41z"/>
-          </svg>
-          <span>+357 22842231</span>
-        </div>
-
-        <!-- Address -->
-        <div class="contact-item">
-          <svg class="contact-icon" viewBox="0 0 24 24">
-            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-          </svg>
-          <span>Room 104a, Humanities Building, University of Nicosia</span>
-        </div>
-
-      </div>
-
-      <iframe
-        src="https://www.google.com/maps?q=Humanities+Building,+University+of+Nicosia,+Nicosia,+Cyprus&output=embed">
-      </iframe>
-
-      <div class="map-link">
-        <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank">
-          Open in Google Maps
-        </a>
-      </div>
+    <!-- Email -->
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
     </div>
+
+    <!-- Wikipedia -->
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4zM7 17l2.5-8h1L13 17h-1.2l-.6-2H8.7l-.6 2H7zm2-3h1.8L10 11 9 14z"/>
+      </svg>
+      <a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">Wikipedia page</a>
+    </div>
+
+    <!-- Google Scholar -->
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/>
+      </svg>
+      <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+    </div>
+
+    <!-- ResearchGate -->
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24">
+        <path d="M4 4h10a5 5 0 010 10H9v6H4V4z"/>
+      </svg>
+      <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6" target="_blank">ResearchGate</a>
+    </div>
+
+  </div>
+</div>
+```
+
   </div>
 </main>
 
