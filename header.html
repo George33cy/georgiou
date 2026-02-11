@@ -4,26 +4,28 @@
     background-color: #000;
     display: flex;
     align-items: center;
-    padding: 1.5rem 1rem;
-    position: relative; /* For hamburger positioning */
+    justify-content: space-between; /* name left, nav right */
+    padding: 1.2rem 1.5rem;
+    position: relative;
   }
 
   header h1 {
     font-size: 2rem;
     margin: 0;
     color: #fff;
+    white-space: nowrap;
   }
 
+  /* Navigation (desktop) */
   nav {
-    background-color: #000;
-    text-align: center;
-    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
   }
 
   nav a {
     color: white;
     text-decoration: none;
-    margin: 0 0.75rem;
     font-size: 1.3rem;
     font-weight: normal;
   }
@@ -37,10 +39,6 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
   }
 
   .menu-toggle span {
@@ -51,26 +49,22 @@
     border-radius: 2px;
   }
 
-  /* Mobile styles */
+  /* ---------- Mobile styles ---------- */
   @media (max-width: 768px) {
     header {
-      justify-content: space-between; /* h1 left, toggle right */
-    }
-
-    header h1 {
-      text-align: left;
+      padding: 1rem;
     }
 
     .menu-toggle {
       display: flex;
-      position: static;
-      transform: none;
     }
 
     nav {
       display: none;
       flex-direction: column;
-      padding: 1rem;
+      background-color: #000;
+      width: 100%;
+      padding: 1rem 0;
     }
 
     nav.active {
@@ -78,41 +72,29 @@
     }
 
     nav a {
-      margin: 0.5rem 0;
+      padding: 0.5rem 1rem;
       font-size: 1.2rem;
-    }
-  }
-
-  /* Desktop styles (override mobile) */
-  @media (min-width: 769px) {
-    header {
-      justify-content: center; /* h1 centered */
-    }
-
-    header h1 {
       text-align: center;
-    }
-
-    .menu-toggle {
-      display: none; /* Hide hamburger on desktop */
     }
   }
 </style>
 
 <header>
   <h1>Georgios P. Georgiou</h1>
+
   <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
     <span></span>
     <span></span>
     <span></span>
   </div>
-</header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
-  <a href="publications.html">Publications</a>
-  <a href="research.html">Research</a>
-  <a href="teaching.html">Teaching</a>
-  <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
-</nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
+    <a href="publications.html">Publications</a>
+    <a href="research.html">Research</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
