@@ -1,32 +1,31 @@
+<!-- header.html -->
 <style>
   header {
     background-color: #000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 1.5rem;
-    position: relative;
+    padding: 1.5rem 1rem;
+    position: relative; /* For hamburger positioning */
   }
 
   header h1 {
     font-size: 2rem;
     margin: 0;
     color: #fff;
-    flex: 1;              /* allow it to use available space */
-    min-width: 0;         /* prevents overflow issues */
   }
 
-  /* Navigation (desktop) */
   nav {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
+    background-color: #000;
+    text-align: center;
+    padding: 0.5rem 0;
   }
 
   nav a {
     color: white;
     text-decoration: none;
+    margin: 0 0.75rem;
     font-size: 1.3rem;
+    font-weight: normal;
   }
 
   nav a:hover {
@@ -38,7 +37,10 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
-    margin-left: 1rem;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .menu-toggle span {
@@ -49,28 +51,32 @@
     border-radius: 2px;
   }
 
-  /* ---------- Mobile styles ---------- */
+  /* Mobile styles */
   @media (max-width: 768px) {
     header {
-      padding: 1rem;
+      justify-content: space-between; /* h1 left, toggle right */
     }
 
     header h1 {
-      font-size: 1.3rem;     /* smaller for mobile */
-      white-space: normal;   /* allow wrapping */
+      text-align: left;
+      font-size: 1.4rem;
       line-height: 1.2;
+      white-space: normal;
+      flex: 1;
+      min-width: 0;
     }
 
     .menu-toggle {
       display: flex;
+      position: static;
+      transform: none;
+      margin-left: 0.5rem;
     }
 
     nav {
       display: none;
       flex-direction: column;
-      background-color: #000;
-      width: 100%;
-      padding: 1rem 0;
+      padding: 1rem;
     }
 
     nav.active {
@@ -78,9 +84,41 @@
     }
 
     nav a {
-      padding: 0.5rem 1rem;
+      margin: 0.5rem 0;
       font-size: 1.2rem;
+    }
+  }
+
+  /* Desktop styles (override mobile) */
+  @media (min-width: 769px) {
+    header {
+      justify-content: center; /* h1 centered */
+    }
+
+    header h1 {
       text-align: center;
+    }
+
+    .menu-toggle {
+      display: none; /* Hide hamburger on desktop */
     }
   }
 </style>
+
+<header>
+  <h1>Georgios P. Georgiou</h1>
+  <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>
+  <a href="publications.html">Publications</a>
+  <a href="research.html">Research</a>
+  <a href="teaching.html">Teaching</a>
+  <a href="Georgios Georgiou academic cv.pdf" target="_blank">CV</a>
+</nav>
