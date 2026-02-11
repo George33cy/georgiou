@@ -4,10 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Georgios P. Georgiou</title>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -50,6 +46,7 @@
       text-decoration: underline;
     }
 
+    /* Photo column */
     .main-photo {
       flex: 1;
       min-width: 220px;
@@ -68,6 +65,7 @@
       display: block;
     }
 
+    /* Contact block */
     .contact-card {
       width: 100%;
       max-width: 300px;
@@ -88,12 +86,10 @@
       margin-bottom: 0.8rem;
     }
 
-    /* Updated icon style (works for SVG + Font Awesome) */
     .contact-icon {
       width: 20px;
       height: 20px;
-      font-size: 20px;
-      color: #000;
+      fill: #000;
       flex-shrink: 0;
     }
 
@@ -122,6 +118,7 @@
       text-decoration: underline;
     }
 
+    /* Mobile styles */
     @media (max-width: 600px) {
       main {
         flex-direction: column;
@@ -153,7 +150,6 @@
     }
   </style>
 </head>
-
 <body>
 
   <div id="header"></div>
@@ -180,11 +176,11 @@
       </p>
 
       <p>
-        I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition and neurological conditions, with the goal of informing educational and clinical support, respectively.
+        I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition and neurological conditions, with the goal of informing educational and clinical support, respectively. My research develops predictive frameworks to better model second language speech (and language) in typically developing individuals and to optimize learning outcomes. In parallel, I design computational approaches – particularly machine learning and interpretable modeling – to support the automatic detection, assessment, and monitoring of neurodevelopmental and neurodegenerative conditions, including developmental language disorder, mild cognitive impairment, and autism spectrum disorder, among others, using speech- and language-based features.
       </p>
 
       <p>
-        My work integrates modeling speech acquisition, examining cognitive and sociolinguistic factors, and building interpretable machine learning models to identify speech biomarkers of neurological conditions.
+        My work integrates three strands: (1) modeling speech (and language) acquisition processes in second language learners; (2) examining the cognitive, linguistic, and sociolinguistic factors that modulate second language acquisition; and (3) building computational and interpretable machine learning models to identify speech- and language-based biomarkers of neurological conditions. I also examine the language of artificial intelligence (AI), focusing on how it differs from human language and on the algorithmic biases that shape AI-generated communication. Overall, my research is grounded in psycholinguistics, AI, cognitive science, and clinical neurology, with an emphasis on real-world impact and effective intervention in educational and clinical practice.
       </p>
     </div>
 
@@ -196,7 +192,7 @@
 
           <!-- Email -->
           <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 
                        0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
                        4-8 5-8-5V6l8 5 8-5v2z"/>
@@ -204,53 +200,66 @@
             <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
           </div>
 
-          <!-- Wikipedia (Font Awesome) -->
+          <!-- Wikipedia -->
           <div class="contact-item">
-            <i class="fa-brands fa-wikipedia-w contact-icon"></i>
-            <a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">Wikipedia page</a>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="#000000" d="M640 115.2L639.7 127.4C611.6 128.2 594.7 143.2 583.9 167.7C558.9 225.5 480.6 407.7 428.6 526.3L415 526.3L333.1 333.2C300.6 396.8 264.8 463.2 233.9 526.3C233.6 526.6 218.9 526.3 218.9 526C172 416.3 122.8 307.4 75.8 197.4C64.4 170.7 26.4 127.4 .2 127.7C.2 124.6-.1 117.7-.1 113.5L161.8 113.5L161.8 127.4C142.6 128.5 109 140.7 118.5 161.6C140.4 211.3 222.1 401.9 244.1 450.2C259.1 420.5 301.9 341 319.4 307.4C305.5 279.1 260.8 173.5 246.6 147.4C236.9 129.6 210.5 128 190.8 127.7L190.8 113.8L333.3 114.1L333.3 127.2C313.9 127.8 295.2 135 303.9 153.3C322.8 193.3 334.5 221.4 352 258C357.6 247.2 386.7 188.6 400.1 157.2C409 136.6 396.2 128.6 361.5 127.8C361.8 124.2 361.5 117.5 361.8 114.2C406.2 113.9 472.9 113.9 484.9 113.6L484.9 127.2C462.4 128 439.1 140 426.8 158.9L367.6 281.7C374 297.8 430.9 424.5 436.8 438.4L559.2 155.8C550.6 132.7 522.8 127.7 512 127.5L512 113.6L639.8 114.7L640 115.2z"/>
+            </svg>
+            <a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank" rel="noopener">Wikipedia page</a>
           </div>
 
           <!-- Google Scholar -->
           <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24">
-              <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 13L5 12.73V17h14v-4.27L12 16z"/>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="#000000" d="M454.9 362.5C454.9 362.5 454.9 362.6 455 362.6C464.2 382 469.4 403.7 469.4 426.6C469.3 509.1 402.5 576 320 576C237.5 576 170.7 509.1 170.7 426.7C170.7 403.8 175.9 382.1 185.1 362.7C186.8 359.1 188.7 355.5 190.7 352C195.1 344.4 200.1 337.3 205.7 330.7C233.1 298.1 274.2 277.4 320.1 277.4C353.7 277.4 384.7 288.5 409.7 307.3C418.8 314.2 427.1 322 434.5 330.8C440.1 337.4 445.1 344.6 449.5 352.1C451.5 355.5 453.3 359.1 455 362.6L454.9 362.5zM481.3 343.7C451.2 285.3 390.3 245.3 320 245.3C249.7 245.3 188.8 285.3 158.7 343.7L64 266.7L320 64L576 266.7L481.3 343.8L481.3 343.7z"/>
             </svg>
-            <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a href="https://scholar.google.com/citations?user=s4M9GvkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
           </div>
 
           <!-- ResearchGate -->
           <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" fill="none" stroke="#000" stroke-width="2"></circle>
-              <text x="12" y="16" text-anchor="middle" font-size="8.5" font-weight="700">RG</text>
+            <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path fill="#000000" d="M96 96L96 544L544 544L544 96L96 96zM358.2 430.4C351.6 433.4 325 436.4 308.2 416.2C299 405.6 282.9 382.9 266 352.6C257.1 352.6 251.3 352.6 244.6 352L244.6 398.4C244.6 421.9 250.6 419.6 270.4 422.3L270.4 430.4C263.5 430.1 247.3 429.6 234.8 429.6C221.7 429.6 208.7 430.2 201.2 430.4L201.2 422.3C216.7 419.4 223.2 421 223.2 398.4L223.2 289C223.2 266.4 216.8 268 201.2 265.1L201.2 257C227 258 254.3 256.4 272.1 256.4C303.8 256.4 328 270.8 328 302C328 323.1 311.3 344.2 288.8 349.5C302.4 373.7 318.8 395.1 331 408.4C338.2 416.2 348.2 423.1 358.2 423.1L358.2 430.4zM381.1 295.4C357.8 295.4 348.9 279.7 348.9 263.2L348.9 231C348.9 218.8 357.7 200.6 382.9 200.6C408.1 200.6 413.3 218.5 413.3 218.5L402.6 225.7C402.6 225.7 397.1 213.2 382.9 213.2C375 213.2 363.2 220.5 363.2 232.9L363.2 259.7C363.2 273.1 369.8 283 381.1 283C395.2 283 402.6 272.1 402.6 256.2L384.7 256.2L384.7 245.5L415.1 245.5C415.1 266 419.8 295.4 381.1 295.4zM264.6 340.1C255.2 340.1 251 339.8 244.6 339.3L244.6 269.6C251 269 259.6 269 267.1 269C290.4 269 304.3 281.2 304.3 303.5C304.3 325.4 289.3 340.1 264.6 340.1z"/>
             </svg>
-            <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6" target="_blank">ResearchGate</a>
+            <a href="https://www.researchgate.net/profile/Georgios-Georgiou-6" target="_blank" rel="noopener">ResearchGate</a>
           </div>
 
           <!-- Phone -->
           <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24">
-              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2"/>
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 
+                       0 011.11-.21c1.21.48 2.53.75 3.87.75a1 1 
+                       0 011 1V19a1 1 
+                       0 01-1 1A16 16 0 014 5a1 1 
+                       0 011-1h3.5a1 1 
+                       0 011 1c0 1.34.27 2.66.75 
+                       3.87a1 1 
+                       0 01-.21 1.11l-2.42 2.41z"/>
             </svg>
             <span>+357 22842231</span>
           </div>
 
           <!-- Address -->
           <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13"/>
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 
+                       7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 0110 0c0 
+                       2.91-3 7.19-5 9.88C10 16.19 7 11.91 7 9zm5 
+                       2a2 2 0 100-4 2 2 0 000 4z"/>
             </svg>
-            <span>Room 104a, Humanities Building, University of Nicosia</span>
+            <span>Room 104a, Humanities Building, University of Nicosia, Nicosia, Cyprus</span>
           </div>
         </div>
 
         <iframe
           src="https://www.google.com/maps?q=Humanities+Building,+University+of+Nicosia,+Nicosia,+Cyprus&output=embed"
-          loading="lazy">
+          title="Humanities Building Map with Pin"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
 
         <div class="map-link">
-          <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank">Open in Google Maps</a>
+          <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank" rel="noopener">Open in Google Maps</a>
         </div>
       </div>
     </div>
@@ -260,12 +269,60 @@
 
   <script>
     fetch("header.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("header").innerHTML = html);
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
 
+        const headerEl = document.getElementById("header");
+        const navEl = headerEl.querySelector("nav");
+        const toggle = headerEl.querySelector(".menu-toggle");
+
+        if (toggle && navEl) {
+          toggle.setAttribute("role", "button");
+          toggle.setAttribute("aria-label", "Toggle menu");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("tabindex", "0");
+
+          const setExpanded = (open) => {
+            toggle.setAttribute("aria-expanded", String(open));
+            navEl.classList.toggle("active", open);
+          };
+
+          toggle.onclick = (e) => {
+            e.preventDefault();
+            setExpanded(!navEl.classList.contains("active"));
+          };
+
+          toggle.onkeydown = (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setExpanded(!navEl.classList.contains("active"));
+            }
+          };
+
+          navEl.addEventListener("click", (e) => {
+            const a = e.target.closest("a");
+            if (a) setExpanded(false);
+          });
+
+          document.addEventListener("click", (e) => {
+            const clickedInside = headerEl.contains(e.target);
+            if (!clickedInside && navEl.classList.contains("active")) {
+              setExpanded(false);
+            }
+          });
+        }
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+
+  <script>
     fetch("footer.html")
-      .then(r => r.text())
-      .then(html => document.getElementById("footer-placeholder").innerHTML = html);
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading footer:", error));
   </script>
 
 </body>
