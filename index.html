@@ -69,13 +69,14 @@
       text-decoration: underline;
     }
 
+    /* Photo column (now vertical stack: photo + contact block) */
     .main-photo {
       flex: 1;
       min-width: 220px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1rem;
     }
 
     .main-photo img {
@@ -87,58 +88,25 @@
       display: block;
     }
 
-    /* --- Contact card under photo --- */
+    /* Contact block under photo (reused from Contact page, adjusted alignment) */
     .contact-card {
       width: 100%;
-      max-width: 260px;
-      border: 1px solid #e6e6e6;
-      border-radius: 8px;
-      padding: 0.8rem 0.9rem;
-      box-sizing: border-box;
-      background: #fff;
-    }
-
-    .contact-card summary {
-      cursor: pointer;
-      list-style: none;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.75rem;
-      font-weight: 700;
-      font-size: 1rem;
-      margin: -0.2rem 0 0.6rem 0;
-      outline: none;
-    }
-
-    /* Hide default marker (Chrome/Safari) */
-    .contact-card summary::-webkit-details-marker {
-      display: none;
-    }
-
-    /* Custom chevron */
-    .chev {
-      width: 18px;
-      height: 18px;
-      flex: 0 0 18px;
-      transition: transform 0.2s ease;
-    }
-    details[open] .chev {
-      transform: rotate(180deg);
+      max-width: 300px;
+      text-align: left;
     }
 
     .contact-info {
-      line-height: 1.45;
-      font-size: 0.98rem;
+      line-height: 1.5;
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
     }
 
     .contact-item {
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 0.55rem;
-      margin: 0.55rem 0;
+      justify-content: flex-start; /* left align under photo */
+      gap: 0.5rem;
+      margin-bottom: 0.8rem;
     }
 
     .contact-icon {
@@ -148,30 +116,18 @@
       flex-shrink: 0;
     }
 
-    .contact-info a {
-      color: #1a0dab;
-      text-decoration: none;
-      word-break: break-word;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    .map-wrap {
-      margin-top: 0.7rem;
-    }
-
-    .map-wrap iframe {
+    .contact-card iframe {
+      max-width: 100%;
       width: 100%;
-      height: 200px;
+      height: 220px;
       border: 0;
-      border-radius: 8px;
+      margin: 0.25rem auto 0.6rem;
       display: block;
+      border-radius: 8px;
     }
 
     .map-link {
-      margin-top: 0.45rem;
+      margin-top: 0.25rem;
       font-size: 0.9rem;
       text-align: center;
     }
@@ -185,21 +141,22 @@
       text-decoration: underline;
     }
 
-    /* --- Mobile styles --- */
+    /* Mobile styles */
     @media (max-width: 600px) {
       main {
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.5rem; /* tighter vertical space */
       }
 
       .main-photo {
-        order: -1; /* photo above text */
+        order: -1; /* Move photo above text */
+        justify-content: center;
         margin-bottom: 0.25rem;
       }
 
       .main-photo img {
-        max-width: 150px;
+        max-width: 150px; /* Smaller image on mobile */
       }
 
       .main-text {
@@ -207,7 +164,11 @@
       }
 
       .contact-card {
-        max-width: 320px; /* a bit wider on mobile */
+        max-width: 360px;
+      }
+
+      .contact-card iframe {
+        height: 200px;
       }
     }
   </style>
@@ -221,8 +182,7 @@
     <div class="main-text">
       <p>Thank you for visiting my website.</p>
 
-      <p>
-        I currently work as an
+      <p>I currently work as an
         <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank" rel="noopener">Assistant Professor of Linguistics</a>.
         I am the Associate Head of the
         <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank" rel="noopener">Department of Languages and Literature</a>,
@@ -240,19 +200,140 @@
       </p>
 
       <p>
-        I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition
-        and neurological conditions, with the goal of informing educational and clinical support, respectively. My research develops predictive frameworks
-        to better model second language speech (and language) in typically developing individuals and to optimize learning outcomes. In parallel, I design
-        computational approaches – particularly machine learning and interpretable modeling – to support the automatic detection, assessment, and monitoring
-        of neurodevelopmental and neurodegenerative conditions, including developmental language disorder, mild cognitive impairment, and autism spectrum disorder,
-        among others, using speech- and language-based features.
+        I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition and neurological conditions, with the goal of informing educational and clinical support, respectively. My research develops predictive frameworks to better model second language speech (and language) in typically developing individuals and to optimize learning outcomes. In parallel, I design computational approaches – particularly machine learning and interpretable modeling – to support the automatic detection, assessment, and monitoring of neurodevelopmental and neurodegenerative conditions, including developmental language disorder, mild cognitive impairment, and autism spectrum disorder, among others, using speech- and language-based features.
       </p>
 
       <p>
-        My work integrates three strands: (1) modeling speech (and language) acquisition processes in second language learners;
-        (2) examining the cognitive, linguistic, and sociolinguistic factors that modulate second language acquisition; and
-        (3) building computational and interpretable machine learning models to identify speech- and language-based biomarkers of neurological conditions.
-        I also examine the language of artificial intelligence (AI), focusing on how it differs from human language and on the algorithmic biases that shape
-        AI-generated communication. Overall, my research is grounded in psycholinguistics, AI, cognitive science, and clinical neurology, with an emphasis on
-        real-world impact and effective intervention in educational and clinical practice.
+        My work integrates three strands: (1) modeling speech (and language) acquisition processes in second language learners; (2) examining the cognitive, linguistic, and sociolinguistic factors that modulate second language acquisition; and (3) building computational and interpretable machine learning models to identify speech- and language-based biomarkers of neurological conditions. I also examine the language of artificial intelligence (AI), focusing on how it differs from human language and on the algorithmic biases that shape AI-generated communication. Overall, my research is grounded in psycholinguistics, AI, cognitive science, and clinical neurology, with an emphasis on real-world impact and effective intervention in educational and clinical practice.
       </p>
+
+      <div class="about-links">
+        <h3>More about me</h3>
+        <ul>
+          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank" rel="noopener">My Wikipedia page</a></li>
+          <li><a href="https://paideia-news.com/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy" target="_blank" rel="noopener">Ranked as a leading researcher in linguistics worldwide</a></li>
+          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank" rel="noopener">My election at the Young Academy of Europe</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main-photo">
+      <img src="georgiou.avif" alt="Georgios P. Georgiou" />
+
+      <!-- Contact information (icons + map) under photo -->
+      <div class="contact-card">
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 
+                       0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 
+                       4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 
+                       0 011.11-.21c1.21.48 2.53.75 3.87.75a1 1 
+                       0 011 1V19a1 1 
+                       0 01-1 1A16 16 0 014 5a1 1 
+                       0 011-1h3.5a1 1 
+                       0 011 1c0 1.34.27 2.66.75 
+                       3.87a1 1 
+                       0 01-.21 1.11l-2.42 2.41z"/>
+            </svg>
+            <span>+357 22842231</span>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 
+                       7-13c0-3.87-3.13-7-7-7zM7 9a5 5 0 0110 0c0 
+                       2.91-3 7.19-5 9.88C10 16.19 7 11.91 7 9zm5 
+                       2a2 2 0 100-4 2 2 0 000 4z"/>
+            </svg>
+            <span>Room 104a, Humanities Building, University of Nicosia, Nicosia, Cyprus</span>
+          </div>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps?q=Humanities+Building,+University+of+Nicosia,+Nicosia,+Cyprus&output=embed"
+          title="Humanities Building Map with Pin"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+        <div class="map-link">
+          <a href="https://maps.app.goo.gl/k6eHGDF9Yk6S2tU56" target="_blank" rel="noopener">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Load header -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById("header").innerHTML = html;
+
+        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
+        const headerEl = document.getElementById("header");
+        const navEl = headerEl.querySelector("nav");
+        const toggle = headerEl.querySelector(".menu-toggle");
+
+        if (toggle && navEl) {
+          toggle.setAttribute("role", "button");
+          toggle.setAttribute("aria-label", "Toggle menu");
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("tabindex", "0");
+
+          const setExpanded = (open) => {
+            toggle.setAttribute("aria-expanded", String(open));
+            navEl.classList.toggle("active", open);
+          };
+
+          toggle.onclick = (e) => {
+            e.preventDefault();
+            setExpanded(!navEl.classList.contains("active"));
+          };
+
+          toggle.onkeydown = (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setExpanded(!navEl.classList.contains("active"));
+            }
+          };
+
+          navEl.addEventListener("click", (e) => {
+            const a = e.target.closest("a");
+            if (a) setExpanded(false);
+          });
+
+          document.addEventListener("click", (e) => {
+            const clickedInside = headerEl.contains(e.target);
+            if (!clickedInside && navEl.classList.contains("active")) {
+              setExpanded(false);
+            }
+          });
+        }
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+
+  <!-- Load footer -->
+  <script>
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer-placeholder").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading footer:", error));
+  </script>
+
+</body>
+</html>
