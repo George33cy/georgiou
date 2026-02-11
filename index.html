@@ -71,10 +71,11 @@
 
     .main-photo {
       flex: 1;
-      min-width: 200px;
+      min-width: 220px;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
     }
 
     .main-photo img {
@@ -83,29 +84,130 @@
       max-width: 200px;
       border-radius: 4px;
       object-fit: cover;
+      display: block;
     }
 
-    /* Mobile styles */
-@media (max-width: 600px) {
-  main {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem; /* ↓ tighter vertical space (was 2rem) */
-    /* or row-gap: 0.5rem; if you only want to reduce vertical spacing */
-  }
+    /* --- Contact card under photo --- */
+    .contact-card {
+      width: 100%;
+      max-width: 260px;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      padding: 0.8rem 0.9rem;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    .contact-card summary {
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-weight: 700;
+      font-size: 1rem;
+      margin: -0.2rem 0 0.6rem 0;
+      outline: none;
+    }
+
+    /* Hide default marker (Chrome/Safari) */
+    .contact-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Custom chevron */
+    .chev {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 18px;
+      transition: transform 0.2s ease;
+    }
+    details[open] .chev {
+      transform: rotate(180deg);
+    }
+
+    .contact-info {
+      line-height: 1.45;
+      font-size: 0.98rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 0.55rem;
+      margin: 0.55rem 0;
+    }
+
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      fill: #000;
+      flex-shrink: 0;
+    }
+
+    .contact-info a {
+      color: #1a0dab;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .map-wrap {
+      margin-top: 0.7rem;
+    }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 200px;
+      border: 0;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .map-link {
+      margin-top: 0.45rem;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .map-link a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    .map-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Mobile styles --- */
+    @media (max-width: 600px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
       .main-photo {
-        order: -1; /* Move photo above text */
-        justify-content: center;
+        order: -1; /* photo above text */
         margin-bottom: 0.25rem;
       }
 
       .main-photo img {
-        max-width: 150px; /* Smaller image on mobile */
+        max-width: 150px;
       }
 
       .main-text {
         text-align: justify;
+      }
+
+      .contact-card {
+        max-width: 320px; /* a bit wider on mobile */
       }
     }
   </style>
@@ -119,107 +221,38 @@
     <div class="main-text">
       <p>Thank you for visiting my website.</p>
 
-      <p>I currently work as an 
-        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank">Assistant Professor of Linguistics</a>. 
-        I am the Associate Head of the 
-        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank">Department of Languages and Literature</a>, 
-        <a href="https://www.unic.ac.cy/" target="_blank">University of Nicosia</a>, Cyprus. I serve as the Director of the 
-        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank">Phonetic Lab</a>.
+      <p>
+        I currently work as an
+        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank" rel="noopener">Assistant Professor of Linguistics</a>.
+        I am the Associate Head of the
+        <a href="https://www.unic.ac.cy/school-of-humanities-and-social-sciences/department-of-languages-and-literature/" target="_blank" rel="noopener">Department of Languages and Literature</a>,
+        <a href="https://www.unic.ac.cy/" target="_blank" rel="noopener">University of Nicosia</a>, Cyprus. I serve as the Director of the
+        <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>.
       </p>
 
       <p>
-        I was honored with the 
-        <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank">
+        I was honored with the
+        <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank" rel="noopener">
           Cyprus Research Award – Young Researcher 2023
-        </a> 
-        in the field of Humanities and Social Sciences. In 2024, I was elected 
-        <a href="https://yacadeuro.org/georgiou/" target="_blank">Fellow of the Young Academy of Europe</a>.
+        </a>
+        in the field of Humanities and Social Sciences. In 2024, I was elected
+        <a href="https://yacadeuro.org/georgiou/" target="_blank" rel="noopener">Fellow of the Young Academy of Europe</a>.
       </p>
 
-      <p>I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition and neurological conditions, with the goal of informing educational and clinical support, respectively. My research develops predictive frameworks to better model second language speech (and language) in typically developing individuals and to optimize learning outcomes. In parallel, I design computational approaches – particularly machine learning and interpretable modeling – to support the automatic detection, assessment, and monitoring of neurodevelopmental and neurodegenerative conditions, including developmental language disorder, mild cognitive impairment, and autism spectrum disorder, among others, using speech- and language-based features.</p>
-      <p>My work integrates three strands: (1) modeling speech (and language) acquisition processes in second language learners; (2) examining the cognitive, linguistic, and sociolinguistic factors that modulate second language acquisition; and (3) building computational and interpretable machine learning models to identify speech- and language-based biomarkers of neurological conditions. I also examine the language of artificial intelligence (AI), focusing on how it differs from human language and on the algorithmic biases that shape AI-generated communication. Overall, my research is grounded in psycholinguistics, AI, cognitive science, and clinical neurology, with an emphasis on real-world impact and effective intervention in educational and clinical practice.</p>
-      
-      <div class="about-links">
-        <h3>More about me</h3>
-        <ul>
-          <li><a href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou" target="_blank">My Wikipedia page</a></li>
-          <li><a href="https://paideia-news.com/pan-leykosias-stoys-koryfaioys-ereynites-pagkosmios-sti-glossologia-o-ep-kath-g-georgioy" target="_blank">Ranked as a leading researcher in linguistics worldwide</a></li>
-          <li><a href="https://www.unic.ac.cy/unic-assistant-professor-george-georgiou-elected-as-fellow-of-the-young-academy-of-europe/" target="_blank">My election at the Young Academy of Europe</a></li>
-        </ul>
-      </div>
-    </div>
+      <p>
+        I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition
+        and neurological conditions, with the goal of informing educational and clinical support, respectively. My research develops predictive frameworks
+        to better model second language speech (and language) in typically developing individuals and to optimize learning outcomes. In parallel, I design
+        computational approaches – particularly machine learning and interpretable modeling – to support the automatic detection, assessment, and monitoring
+        of neurodevelopmental and neurodegenerative conditions, including developmental language disorder, mild cognitive impairment, and autism spectrum disorder,
+        among others, using speech- and language-based features.
+      </p>
 
-    <div class="main-photo">
-      <img src="georgiou.avif" alt="Georgios P. Georgiou" />
-    </div>
-  </main>
-
-  <!-- Footer placeholder -->
-  <div id="footer-placeholder"></div>
-
-  <!-- Load header -->
-  <script>
-    fetch("header.html")
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById("header").innerHTML = html;
-
-        // Enhance hamburger: ARIA, close-on-click, keyboard, outside click
-        const headerEl = document.getElementById("header");
-        const navEl = headerEl.querySelector("nav");
-        const toggle = headerEl.querySelector(".menu-toggle");
-
-        if (toggle && navEl) {
-          toggle.setAttribute("role", "button");
-          toggle.setAttribute("aria-label", "Toggle menu");
-          toggle.setAttribute("aria-expanded", "false");
-          toggle.setAttribute("tabindex", "0");
-
-          const setExpanded = (open) => {
-            toggle.setAttribute("aria-expanded", String(open));
-            navEl.classList.toggle("active", open);
-          };
-
-          // Replace inline onclick (if present) to keep logic here
-          toggle.onclick = (e) => {
-            e.preventDefault();
-            setExpanded(!navEl.classList.contains("active"));
-          };
-
-          toggle.onkeydown = (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              setExpanded(!navEl.classList.contains("active"));
-            }
-          };
-
-          // Close when a nav link is clicked (mobile)
-          navEl.addEventListener("click", (e) => {
-            const a = e.target.closest("a");
-            if (a) setExpanded(false);
-          });
-
-          // Close on outside click
-          document.addEventListener("click", (e) => {
-            const clickedInside = headerEl.contains(e.target);
-            if (!clickedInside && navEl.classList.contains("active")) {
-              setExpanded(false);
-            }
-          });
-        }
-      })
-      .catch(error => console.error("Error loading header:", error));
-  </script>
-
-  <!-- Load footer -->
-  <script>
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer-placeholder").innerHTML = data;
-      })
-      .catch(error => console.error("Error loading footer:", error));
-  </script>
-
-</body>
-</html>
+      <p>
+        My work integrates three strands: (1) modeling speech (and language) acquisition processes in second language learners;
+        (2) examining the cognitive, linguistic, and sociolinguistic factors that modulate second language acquisition; and
+        (3) building computational and interpretable machine learning models to identify speech- and language-based biomarkers of neurological conditions.
+        I also examine the language of artificial intelligence (AI), focusing on how it differs from human language and on the algorithmic biases that shape
+        AI-generated communication. Overall, my research is grounded in psycholinguistics, AI, cognitive science, and clinical neurology, with an emphasis on
+        real-world impact and effective intervention in educational and clinical practice.
+      </p>
