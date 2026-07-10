@@ -1,13 +1,17 @@
 <!-- header.html -->
-
 <style>
-  /* =========================================================
-     SITE-WIDE CONFIGURATION
-     These rules apply to every page that loads this header.
-  ========================================================= */
-
   * {
     box-sizing: border-box;
+  }
+
+  html,
+  body,
+  body *,
+  #header,
+  #header *,
+  #footer-placeholder,
+  #footer-placeholder * {
+    font-family: Helvetica !important;
   }
 
   html,
@@ -16,17 +20,12 @@
     padding: 0;
     background-color: #ffffff;
     color: #102033;
-    font-family: Helvetica, Arial, sans-serif !important;
     font-size: 17px;
     line-height: 1.6;
   }
 
   body {
     overflow-x: hidden;
-  }
-
-  body * {
-    font-family: Helvetica, Arial, sans-serif !important;
   }
 
   a {
@@ -53,34 +52,27 @@
     padding-bottom: 0 !important;
   }
 
-  /* =========================================================
-     HEADER
-  ========================================================= */
-
   header,
   header *,
   nav,
   nav *,
   .menu-toggle,
   .menu-toggle * {
-    font-family: Helvetica, Arial, sans-serif !important;
+    font-family: Helvetica !important;
   }
 
   header {
     background-color: #000;
-    color: #fff;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 156px;
-    padding: 0 40px 0 50px;
+    padding: 1.2rem 1.5rem;
     position: relative;
-    line-height: 1.2;
-    border-bottom: 1px solid #cfcfcf;
   }
 
   header h1 {
-    font-size: 2.15rem;
+    font-family: Helvetica !important;
+    font-size: 2rem;
     margin: 0;
     color: #fff;
     white-space: nowrap;
@@ -91,16 +83,15 @@
   nav {
     display: flex;
     align-items: center;
-    gap: 1.4rem;
-    white-space: nowrap;
+    gap: 1.2rem;
   }
 
   nav a {
+    font-family: Helvetica !important;
     color: #fff;
     text-decoration: none;
-    font-size: 1.38rem;
+    font-size: 1.3rem;
     font-weight: normal;
-    line-height: 1.2;
   }
 
   nav a:hover {
@@ -111,6 +102,9 @@
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: transparent;
+    border: 0;
+    padding: 0;
   }
 
   .menu-toggle span {
@@ -119,15 +113,11 @@
     background: #fff;
     margin: 4px 0;
     border-radius: 2px;
+    display: block;
   }
-
-  /* =========================================================
-     MOBILE HEADER
-  ========================================================= */
 
   @media (max-width: 768px) {
     header {
-      min-height: auto;
       padding: 1rem;
     }
 
@@ -168,36 +158,27 @@
 <header>
   <h1>Georgios P. Georgiou</h1>
 
-  <div
+  <button
     class="menu-toggle"
+    type="button"
     role="button"
     aria-label="Toggle menu"
+    aria-controls="site-nav"
     aria-expanded="false"
-    tabindex="0"
-    onclick="
-      const nav = this.nextElementSibling;
-      const open = !nav.classList.contains('active');
-      nav.classList.toggle('active', open);
-      this.setAttribute('aria-expanded', String(open));
-    "
-    onkeydown="
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        this.click();
-      }
-    "
+    onclick="const nav = this.nextElementSibling; const open = !nav.classList.contains('active'); nav.classList.toggle('active', open); this.setAttribute('aria-expanded', String(open));"
+    onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
   >
     <span></span>
     <span></span>
     <span></span>
-  </div>
+  </button>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>
-    <a href="publications.html">Publications</a>
-    <a href="research.html">Research</a>
-    <a href="Georgios Georgiou academic cv.pdf" target="_blank" rel="noopener">CV</a>
-    <a href="contact.html">Contact</a>
+  <nav id="site-nav">
+    <a href="index.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Home</a>
+    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Phonetic Lab</a>
+    <a href="publications.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Publications</a>
+    <a href="research.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Research</a>
+    <a href="Georgios Georgiou academic cv.pdf" target="_blank" rel="noopener" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">CV</a>
+    <a href="contact.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Contact</a>
   </nav>
 </header>
