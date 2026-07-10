@@ -7,7 +7,7 @@
 
   <style>
     main.contact-page {
-      max-width: 1050px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 0 20px 40px;
       text-align: center;
@@ -45,12 +45,13 @@
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
+      gap: 12px;
+      align-items: stretch;
     }
 
     .contact-card {
-      min-height: 165px;
-      padding: 24px 14px 22px;
+      min-height: 155px;
+      padding: 22px 12px 20px;
       border: 1px solid #e0e5ea;
       border-radius: 8px;
       background: #ffffff;
@@ -64,24 +65,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      margin-bottom: 16px;
+      gap: 7px;
+      margin-bottom: 14px;
       color: #26394a;
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.2;
       font-weight: 700;
     }
 
     .card-icon {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       fill: #2d8ed6;
       flex-shrink: 0;
     }
 
     .card-text {
       color: #444;
-      font-size: 15.5px;
+      font-size: 14.5px;
       line-height: 1.45;
       font-weight: 400;
       word-break: normal;
@@ -98,26 +99,14 @@
 
     .email-text a {
       white-space: nowrap;
+      font-size: 14px;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 900px) {
       main.contact-page {
-        max-width: 720px;
-      }
-
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      main.contact-page {
+        max-width: 100%;
         padding: 0 14px 36px;
-      }
-
-      .contact-header {
-        padding-bottom: 30px;
+        overflow-x: auto;
       }
 
       .contact-header h1 {
@@ -129,27 +118,31 @@
       }
 
       .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        min-width: 850px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
       }
 
       .contact-card {
-        min-height: auto;
-        padding: 22px 14px 20px;
+        min-height: 145px;
+        padding: 20px 10px 18px;
       }
 
       .card-title {
-        font-size: 18px;
-        margin-bottom: 14px;
+        font-size: 17px;
       }
 
       .card-text {
-        font-size: 15px;
+        font-size: 14px;
+      }
+
+      .email-text a {
+        font-size: 13.5px;
       }
 
       .card-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
       }
     }
   </style>
