@@ -8,7 +8,16 @@
   <style>
     * {
       box-sizing: border-box;
-      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    html,
+    body,
+    body *,
+    #header,
+    #header *,
+    #footer-placeholder,
+    #footer-placeholder * {
+      font-family: Helvetica, Arial, sans-serif !important;
     }
 
     html,
@@ -17,24 +26,12 @@
       padding: 0;
       background-color: #ffffff;
       color: #102033;
-      font-family: Helvetica, Arial, sans-serif;
       font-size: 17px;
       line-height: 1.6;
     }
 
-    body,
-    p,
-    div,
-    span,
-    a,
-    li,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: Helvetica, Arial, sans-serif;
+    body {
+      overflow-x: hidden;
     }
 
     a {
@@ -48,13 +45,23 @@
 
     #header {
       margin-bottom: 18px;
-      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    #footer-placeholder {
+      margin: 0;
+      padding: 0;
+    }
+
+    #footer-placeholder footer {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
     }
 
     main.profile-page {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 28px 22px 55px;
+      padding: 28px 22px 10px;
     }
 
     .profile-top {
@@ -74,7 +81,6 @@
     .profile-photo {
       width: 165px;
       height: auto;
-      max-height: none;
       object-fit: contain;
       object-position: center top;
       border-radius: 3px;
@@ -96,7 +102,7 @@
       line-height: 1.45;
       margin-bottom: 20px;
       padding-bottom: 14px;
-      border-bottom: 1px solid #2d8ed6;
+      border-bottom: 3px solid #2d8ed6;
       max-width: 850px;
       font-weight: 400;
     }
@@ -187,7 +193,7 @@
       }
 
       main.profile-page {
-        padding: 22px 16px 42px;
+        padding: 22px 16px 10px;
       }
 
       .profile-top {
@@ -212,6 +218,7 @@
       .subtitle {
         max-width: 100%;
         font-size: 18px;
+        border-bottom: 3px solid #2d8ed6;
       }
 
       .profile-content p,
