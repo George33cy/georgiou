@@ -14,13 +14,13 @@
     }
 
     .contact-header {
-      padding: 0 0 80px;
+      padding: 0 0 65px;
     }
 
     .contact-header h1 {
-      margin: 0 0 28px;
+      margin: 0 0 24px;
       color: #26394a;
-      font-size: 46px;
+      font-size: 38px;
       line-height: 1.15;
       font-weight: 700;
     }
@@ -28,20 +28,29 @@
     .contact-header p {
       margin: 0;
       color: #2d8ed6;
-      font-size: 34px;
-      line-height: 1.55;
+      font-size: 26px;
+      line-height: 1.5;
       font-weight: 400;
+    }
+
+    .contact-header a {
+      color: #2d8ed6;
+      text-decoration: none;
+    }
+
+    .contact-header a:hover {
+      text-decoration: underline;
     }
 
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 52px;
+      gap: 42px;
     }
 
     .contact-card {
-      min-height: 330px;
-      padding: 58px 34px 42px;
+      min-height: 285px;
+      padding: 46px 28px 36px;
       border: 1px solid #e0e5ea;
       border-radius: 10px;
       background: #ffffff;
@@ -55,24 +64,24 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
-      margin-bottom: 36px;
+      gap: 13px;
+      margin-bottom: 28px;
       color: #26394a;
-      font-size: 32px;
+      font-size: 25px;
       line-height: 1.2;
       font-weight: 700;
     }
 
     .card-icon {
-      width: 44px;
-      height: 44px;
+      width: 36px;
+      height: 36px;
       fill: #2d8ed6;
       flex-shrink: 0;
     }
 
     .card-text {
       color: #444;
-      font-size: 29px;
+      font-size: 22px;
       line-height: 1.55;
       font-weight: 400;
       word-break: break-word;
@@ -90,7 +99,7 @@
     @media (max-width: 1200px) {
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 34px;
+        gap: 30px;
       }
     }
 
@@ -100,34 +109,39 @@
       }
 
       .contact-header {
-        padding-bottom: 45px;
+        padding-bottom: 38px;
       }
 
       .contact-header h1 {
-        font-size: 36px;
+        font-size: 31px;
       }
 
       .contact-header p {
-        font-size: 25px;
+        font-size: 21px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 22px;
       }
 
       .contact-card {
         min-height: auto;
-        padding: 38px 22px 34px;
+        padding: 32px 20px 30px;
       }
 
       .card-title {
-        font-size: 28px;
-        margin-bottom: 24px;
+        font-size: 23px;
+        margin-bottom: 22px;
       }
 
       .card-text {
-        font-size: 23px;
+        font-size: 19px;
+      }
+
+      .card-icon {
+        width: 32px;
+        height: 32px;
       }
     }
   </style>
@@ -141,7 +155,13 @@
 
     <section class="contact-header">
       <h1>Contact Information</h1>
-      <p>Georgios P. Georgiou @ UNIC</p>
+
+      <p>
+        <a href="https://www.unic.ac.cy/georgiou-george/" target="_blank" rel="noopener">
+          Georgios P. Georgiou
+        </a>
+      </p>
+
       <p>Department of Languages and Literature</p>
     </section>
 
