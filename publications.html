@@ -6,6 +6,10 @@
   <title>Publications – Georgios P. Georgiou</title>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -19,10 +23,40 @@
       padding: 0 1rem;
     }
 
+    .publication-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0 auto 2.5rem;
+      padding-top: 0.5rem;
+    }
+
+    .publication-tabs a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border: 1px solid #ddd;
+      border-radius: 40px;
+      background-color: #fafafa;
+      color: #102033;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .publication-tabs a:hover {
+      background-color: #f2f2f2;
+      text-decoration: none;
+    }
+
     h2 {
       border-bottom: 2px solid #000;
       padding-bottom: 0.5rem;
       margin-top: 2rem;
+      scroll-margin-top: 20px;
     }
 
     table {
@@ -56,6 +90,20 @@
     a:hover {
       text-decoration: underline;
     }
+
+    @media (max-width: 768px) {
+      .publication-tabs {
+        gap: 12px;
+        margin-bottom: 2rem;
+      }
+
+      .publication-tabs a {
+        width: 100%;
+        max-width: 340px;
+        font-size: 1.15rem;
+        padding: 0.9rem 1.2rem;
+      }
+    }
   </style>
 </head>
 
@@ -65,7 +113,16 @@
 
   <main>
 
-    <h2>Journal Articles</h2>
+    <nav class="publication-tabs" aria-label="Publication sections">
+      <a href="#journal-articles">Journal Articles</a>
+      <a href="#books">Books</a>
+      <a href="#book-chapters">Book Chapters</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#book-reviews">Book Reviews</a>
+    </nav>
+
+    <h2 id="journal-articles">Journal Articles</h2>
 
     <table>
       <thead>
@@ -216,7 +273,7 @@
       </tbody>
     </table>
 
-    <h2>Monographs and Edited Volumes/Issues</h2>
+    <h2 id="books">Monographs and Edited Volumes/Issues</h2>
 
     <table>
       <thead>
@@ -249,7 +306,7 @@
       </tbody>
     </table>
 
-    <h2>Book Chapters</h2>
+    <h2 id="book-chapters">Book Chapters</h2>
 
     <table>
       <thead>
@@ -278,7 +335,7 @@
       </tbody>
     </table>
 
-    <h2>Conference Proceedings</h2>
+    <h2 id="conferences">Conference Proceedings</h2>
 
     <table>
       <thead>
@@ -297,7 +354,7 @@
       </tbody>
     </table>
 
-    <h2>Thesis</h2>
+    <h2 id="thesis">Thesis</h2>
 
     <table>
       <thead>
@@ -312,7 +369,7 @@
       </tbody>
     </table>
 
-    <h2>Book Reviews</h2>
+    <h2 id="book-reviews">Book Reviews</h2>
 
     <table>
       <thead>
