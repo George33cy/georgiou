@@ -1,24 +1,146 @@
 <style>
   footer {
-    background-color: #000;
-    color: #fff;
+    background: #ffffff;
     text-align: center;
-    padding: 1.5rem;
-    font-size: 1.2rem;
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 22px 16px 28px;
+    margin-top: 35px;
   }
 
   .footer-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 22px;
+  }
+
+  .copyright {
+    color: #8c99a6;
+    font-size: 26px;
+    line-height: 1.3;
+    font-weight: 400;
+  }
+
+  .footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    flex-wrap: wrap;
+  }
+
+  .footer-icon {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    background-color: #00a6d6;
+    color: #1e2f3f;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .footer-icon:hover {
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  }
+
+  .footer-icon svg {
+    width: 38px;
+    height: 38px;
+    fill: #1e2f3f;
+  }
+
+  .footer-icon span {
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .footer-icon .small-text {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 700px) {
+    footer {
+      padding: 20px 12px 26px;
+    }
+
+    .copyright {
+      font-size: 20px;
+    }
+
+    .footer-icons {
+      gap: 16px;
+    }
+
+    .footer-icon {
+      width: 58px;
+      height: 58px;
+    }
+
+    .footer-icon svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .footer-icon span {
+      font-size: 25px;
+    }
+
+    .footer-icon .small-text {
+      font-size: 18px;
+    }
   }
 </style>
 
 <footer>
   <div class="footer-content">
-    <div class="copyright">Georgios P. Georgiou (c) 2026</div>
+
+    <div class="copyright">
+      (c) 2026 Georgios P. Georgiou
+    </div>
+
+    <div class="footer-icons">
+
+      <a
+        class="footer-icon"
+        href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou"
+        target="_blank"
+        rel="noopener"
+        aria-label="Wikipedia"
+        title="Wikipedia"
+      >
+        <span>W</span>
+      </a>
+
+      <a
+        class="footer-icon"
+        href="PASTE_GOOGLE_SCHOLAR_URL_HERE"
+        target="_blank"
+        rel="noopener"
+        aria-label="Google Scholar"
+        title="Google Scholar"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 14.5L5.5 14v3.2c0 2.1 2.9 3.8 6.5 3.8s6.5-1.7 6.5-3.8V14L12 17.5z"></path>
+        </svg>
+      </a>
+
+      <a
+        class="footer-icon"
+        href="PASTE_RESEARCHGATE_URL_HERE"
+        target="_blank"
+        rel="noopener"
+        aria-label="ResearchGate"
+        title="ResearchGate"
+      >
+        <span class="small-text">RG</span>
+      </a>
+
+    </div>
+
   </div>
 </footer>
