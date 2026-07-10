@@ -63,12 +63,12 @@
   }
 
   .menu-toggle span {
+    display: block;
     height: 3px;
     width: 25px;
     background: #fff;
     margin: 4px 0;
     border-radius: 2px;
-    display: block;
   }
 
   @media (max-width: 768px) {
@@ -125,13 +125,39 @@
 <header>
   <h1>Georgios P. Georgiou</h1>
 
-  <div class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
+  <div
+    class="menu-toggle"
+    role="button"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+    tabindex="0"
+    onclick="
+      const nav = this.nextElementSibling;
+      const open = !nav.classList.contains('active');
+      nav.classList.toggle('active', open);
+      this.setAttribute('aria-expanded', String(open));
+    "
+    onkeydown="
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        this.click();
+      }
+    "
+  >
     <span></span>
     <span></span>
     <span></span>
   </div>
 
-  <nav>
+  <nav
+    onclick="
+      const link = event.target.closest('a');
+      if (link) {
+        this.classList.remove('active');
+        this.previousElementSibling.setAttribute('aria-expanded', 'false');
+      }
+    "
+  >
     <a href="index.html">Home</a>
     <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener">Phonetic Lab</a>
     <a href="publications.html">Publications</a>
