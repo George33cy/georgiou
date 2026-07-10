@@ -1,33 +1,26 @@
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-/>
-
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
-/>
-
 <style>
   footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 1.8rem 1rem;
+    padding: 1.5rem;
     font-size: 1.2rem;
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .footer-content {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .copyright {
-    color: #ffffff;
+    color: #fff;
     font-size: 1.2rem;
     font-weight: 400;
   }
@@ -35,14 +28,12 @@
   .footer-icons {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1.2rem;
-    flex-wrap: wrap;
+    gap: 0.55rem;
   }
 
   .footer-icon {
-    width: 52px;
-    height: 52px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background-color: #00a6d6;
     color: #000;
@@ -54,35 +45,39 @@
   }
 
   .footer-icon:hover {
-    transform: translateY(-3px) scale(1.08);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.25);
   }
 
-  .footer-icon i {
-    font-size: 28px;
-    color: #000;
+  .footer-icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  .footer-icon text {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    fill: #000;
   }
 
   @media (max-width: 700px) {
     footer {
-      padding: 1.5rem 1rem;
+      padding: 1.2rem 1rem;
     }
 
     .copyright {
       font-size: 1rem;
     }
 
-    .footer-icons {
-      gap: 0.9rem;
-    }
-
     .footer-icon {
-      width: 46px;
-      height: 46px;
+      width: 30px;
+      height: 30px;
     }
 
-    .footer-icon i {
-      font-size: 24px;
+    .footer-icon svg {
+      width: 19px;
+      height: 19px;
     }
   }
 </style>
@@ -104,18 +99,29 @@
         aria-label="Wikipedia"
         title="Wikipedia"
       >
-        <i class="fa-brands fa-wikipedia-w"></i>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <text x="12" y="17" text-anchor="middle" font-size="17">W</text>
+        </svg>
       </a>
 
       <a
         class="footer-icon"
-        href="PASTE_GOOGLE_SCHOLAR_URL_HERE"
+        href="https://scholar.google.com/citations?hl=en&user=s4M9GvkAAAAJ"
         target="_blank"
         rel="noopener"
         aria-label="Google Scholar"
         title="Google Scholar"
       >
-        <i class="ai ai-google-scholar"></i>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 3L2 9l10 6 10-6-10-6z"
+            fill="#000"
+          />
+          <path
+            d="M6.5 12.2v3.1c0 2 2.5 3.7 5.5 3.7s5.5-1.7 5.5-3.7v-3.1L12 15.5 6.5 12.2z"
+            fill="#000"
+          />
+        </svg>
       </a>
 
       <a
@@ -126,7 +132,9 @@
         aria-label="ResearchGate"
         title="ResearchGate"
       >
-        <i class="ai ai-researchgate"></i>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <text x="12" y="16" text-anchor="middle" font-size="10">RG</text>
+        </svg>
       </a>
 
     </div>
