@@ -7,20 +7,20 @@
 
   <style>
     main.contact-page {
-      max-width: 1250px;
+      max-width: 1050px;
       margin: 0 auto;
-      padding: 0 24px 45px;
+      padding: 0 20px 40px;
       text-align: center;
     }
 
     .contact-header {
-      padding: 0 0 50px;
+      padding: 0 0 38px;
     }
 
     .contact-header h1 {
-      margin: 0 0 22px;
+      margin: 0 0 18px;
       color: #26394a;
-      font-size: 38px;
+      font-size: 34px;
       line-height: 1.15;
       font-weight: 700;
     }
@@ -28,8 +28,8 @@
     .contact-header p {
       margin: 0;
       color: #2d8ed6;
-      font-size: 26px;
-      line-height: 1.5;
+      font-size: 22px;
+      line-height: 1.45;
       font-weight: 400;
     }
 
@@ -45,16 +45,16 @@
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
+      gap: 14px;
     }
 
     .contact-card {
-      min-height: 230px;
-      padding: 34px 20px 28px;
+      min-height: 165px;
+      padding: 24px 14px 22px;
       border: 1px solid #e0e5ea;
-      border-radius: 10px;
+      border-radius: 8px;
       background: #ffffff;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.03);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,27 +64,27 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 11px;
-      margin-bottom: 22px;
+      gap: 8px;
+      margin-bottom: 16px;
       color: #26394a;
-      font-size: 23px;
+      font-size: 19px;
       line-height: 1.2;
       font-weight: 700;
     }
 
     .card-icon {
-      width: 32px;
-      height: 32px;
+      width: 26px;
+      height: 26px;
       fill: #2d8ed6;
       flex-shrink: 0;
     }
 
     .card-text {
       color: #444;
-      font-size: 19px;
-      line-height: 1.5;
+      font-size: 15.5px;
+      line-height: 1.45;
       font-weight: 400;
-      word-break: break-word;
+      word-break: normal;
     }
 
     .card-text a {
@@ -96,52 +96,60 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 1200px) {
+    .email-text a {
+      white-space: nowrap;
+    }
+
+    @media (max-width: 1000px) {
+      main.contact-page {
+        max-width: 720px;
+      }
+
       .contact-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 22px;
+        gap: 14px;
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 600px) {
       main.contact-page {
-        padding: 0 16px 40px;
+        padding: 0 14px 36px;
       }
 
       .contact-header {
-        padding-bottom: 35px;
+        padding-bottom: 30px;
       }
 
       .contact-header h1 {
-        font-size: 31px;
+        font-size: 30px;
       }
 
       .contact-header p {
-        font-size: 21px;
+        font-size: 19px;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 12px;
       }
 
       .contact-card {
         min-height: auto;
-        padding: 28px 18px 26px;
+        padding: 22px 14px 20px;
       }
 
       .card-title {
-        font-size: 22px;
-        margin-bottom: 18px;
+        font-size: 18px;
+        margin-bottom: 14px;
       }
 
       .card-text {
-        font-size: 18px;
+        font-size: 15px;
       }
 
       .card-icon {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
       }
     }
   </style>
@@ -175,10 +183,8 @@
           <span>Email</span>
         </div>
 
-        <div class="card-text">
-          <a href="mailto:georgiou.georg@unic.ac.cy">
-            georgiou.georg<br>@unic.ac.cy
-          </a>
+        <div class="card-text email-text">
+          <a href="mailto:georgiou.georg@unic.ac.cy">georgiou.georg@unic.ac.cy</a>
         </div>
       </div>
 
