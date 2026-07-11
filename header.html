@@ -127,19 +127,25 @@
     }
 
     .header-brand {
-      gap: 0.5rem;
-      max-width: calc(100% - 55px);
-    }
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.5rem;
+  max-width: none;
+}
 
     header h1 {
       font-size: 1.6rem;
       white-space: normal;
     }
 
-    .header-icon {
-      width: 50px;
-      height: 20px;
-    }
+  .header-icon {
+  width: 70px;
+  height: 50px;
+  object-fit: contain;
+  margin-left: auto;
+  margin-right: 0.2rem;
+}
 
     .menu-toggle {
       display: flex;
