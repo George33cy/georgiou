@@ -9,7 +9,7 @@
   body *,
   #header,
   #header * {
-    font-family: Helvetica !important;
+    font-family: Helvetica, Arial, sans-serif !important;
   }
 
   html,
@@ -45,7 +45,7 @@
   nav *,
   .menu-toggle,
   .menu-toggle * {
-    font-family: Helvetica !important;
+    font-family: Helvetica, Arial, sans-serif !important;
   }
 
   header {
@@ -57,14 +57,31 @@
     position: relative;
   }
 
+  /* Name and icon container */
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 0;
+  }
+
   header h1 {
-    font-family: Helvetica !important;
+    font-family: Helvetica, Arial, sans-serif !important;
     font-size: 2rem;
     margin: 0;
     color: #fff;
     white-space: nowrap;
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  /* Image displayed to the right of the name */
+  .header-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
   }
 
   nav {
@@ -74,7 +91,7 @@
   }
 
   nav a {
-    font-family: Helvetica !important;
+    font-family: Helvetica, Arial, sans-serif !important;
     color: #fff;
     text-decoration: none;
     font-size: 1.3rem;
@@ -95,12 +112,12 @@
   }
 
   .menu-toggle span {
-    height: 3px;
-    width: 25px;
-    background: #fff;
-    margin: 4px 0;
-    border-radius: 2px;
     display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background: #fff;
+    border-radius: 2px;
   }
 
   @media (max-width: 768px) {
@@ -109,8 +126,19 @@
       flex-wrap: wrap;
     }
 
+    .header-brand {
+      gap: 0.5rem;
+      max-width: calc(100% - 55px);
+    }
+
     header h1 {
       font-size: 1.6rem;
+      white-space: normal;
+    }
+
+    .header-icon {
+      width: 45px;
+      height: 45px;
     }
 
     .menu-toggle {
@@ -143,17 +171,28 @@
 </style>
 
 <header>
-  <h1>Georgios P. Georgiou</h1>
+  <div class="header-brand">
+    <h1>Georgios P. Georgiou</h1>
+
+    <img
+      src="header_icon.png"
+      alt="Audio waveform and machine learning icon"
+      class="header-icon"
+    >
+  </div>
 
   <button
     class="menu-toggle"
     type="button"
-    role="button"
     aria-label="Toggle menu"
     aria-controls="site-nav"
     aria-expanded="false"
-    onclick="const nav = this.nextElementSibling; const open = !nav.classList.contains('active'); nav.classList.toggle('active', open); this.setAttribute('aria-expanded', String(open));"
-    onkeydown="if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.click(); }"
+    onclick="
+      const nav = this.nextElementSibling;
+      const open = !nav.classList.contains('active');
+      nav.classList.toggle('active', open);
+      this.setAttribute('aria-expanded', String(open));
+    "
   >
     <span></span>
     <span></span>
@@ -161,11 +200,86 @@
   </button>
 
   <nav id="site-nav">
-    <a href="index.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Home</a>
-    <a href="https://www.unic.ac.cy/phonetic-lab/" target="_blank" rel="noopener" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Phonetic Lab</a>
-    <a href="publications.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Publications</a>
-    <a href="research.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Research</a>
-    <a href="Georgios Georgiou academic cv.pdf" target="_blank" rel="noopener" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">CV</a>
-    <a href="contact.html" onclick="this.closest('nav').classList.remove('active'); this.closest('nav').previousElementSibling.setAttribute('aria-expanded', 'false');">Contact</a>
+    <a
+      href="index.html"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      Home
+    </a>
+
+    <a
+      href="https://www.unic.ac.cy/phonetic-lab/"
+      target="_blank"
+      rel="noopener"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      Phonetic Lab
+    </a>
+
+    <a
+      href="publications.html"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      Publications
+    </a>
+
+    <a
+      href="research.html"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      Research
+    </a>
+
+    <a
+      href="Georgios Georgiou academic cv.pdf"
+      target="_blank"
+      rel="noopener"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      CV
+    </a>
+
+    <a
+      href="contact.html"
+      onclick="
+        this.closest('nav').classList.remove('active');
+        this.closest('nav').previousElementSibling.setAttribute(
+          'aria-expanded',
+          'false'
+        );
+      "
+    >
+      Contact
+    </a>
   </nav>
 </header>
