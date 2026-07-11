@@ -3,153 +3,511 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Research program of Georgios P. Georgiou: speech perception and production, neurological biomarkers, and artificial intelligence and computational language analysis."
+  />
   <title>Research – Georgios P. Georgiou</title>
+
   <style>
+    :root {
+      --page-bg: #f7f9fb;
+      --card-bg: #ffffff;
+      --text: #172033;
+      --muted: #4f5d6b;
+      --blue: #1496e2;
+      --blue-dark: #0d6fae;
+      --border: #d9e1e8;
+      --soft-bg: #f2f5f7;
+      --shadow: 0 8px 24px rgba(23, 32, 51, 0.06);
+      --radius: 8px;
+      --content-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #fff;
-      color: #000;
-      font-size: 1.1rem;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--blue-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #084f7d;
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(20, 150, 226, 0.25);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
 
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      width: min(var(--content-width), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0 64px;
     }
 
-    h2 {
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
+    .research-intro {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      text-align: center;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
+    .research-intro h1 {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 0 84px 8px;
+      border-bottom: 2px solid var(--blue);
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
     }
 
-    td {
-      vertical-align: top;
-      padding: 1.2rem;
-      border-bottom: 1px solid #ccc;
+    .research-intro p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
 
-    .topic {
-      color: #1a0dab;
-      font-weight: bold;
-      font-size: 1.1rem;
+    .themes {
+      display: grid;
+      gap: 24px;
     }
 
-    .topic-img-1 img,
-    .topic-img-2 img,
-    .topic-img-3 img {
+    .theme-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 30px 26px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .theme-number {
       display: block;
-      margin-top: 1rem;
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      border-radius: 4px;
+      margin-bottom: 5px;
+      color: var(--blue-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
     }
 
-    .topic-img-1 img { max-width: 150px; }
-    .topic-img-2 img { max-width: 170px; }
-    .topic-img-3 img { max-width: 250px; }
-
-    .justified {
-      text-align: justify;
+    .theme-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.35rem, 3vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
     }
 
-    @media (max-width: 768px) {
+    .theme-card p {
+      margin: 0 0 13px;
+      color: #2d3947;
+    }
+
+    .theme-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .theme-card strong {
+      color: var(--text);
+    }
+
+    .keywords {
+      margin-top: 18px;
+      padding: 12px 14px;
+      background: var(--soft-bg);
+      color: #61707d;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .keywords strong {
+      color: #52606d;
+    }
+
+    .publications {
+      margin-top: 18px;
+      padding-top: 17px;
+      border-top: 1px dashed #cfd8df;
+    }
+
+    .publications h3 {
+      margin: 0 0 9px;
+      font-size: 0.98rem;
+    }
+
+    .publications ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .publications li {
+      margin: 0 0 8px;
+      padding-left: 2px;
+    }
+
+    .publications li::marker {
+      color: var(--blue);
+    }
+
+    .publication-title {
+      font-weight: 600;
+    }
+
+    .journal {
+      color: #44515e;
+      font-style: italic;
+    }
+
+    .no-link {
+      color: #344251;
+    }
+
+    .no-link-note {
+      display: inline-block;
+      margin-left: 5px;
+      color: #77838f;
+      font-size: 0.78rem;
+      font-style: normal;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        font-size: 15px;
+      }
+
       main {
-        padding: 0 1.2rem;
+        width: min(100% - 22px, var(--content-width));
+        padding: 28px 0 44px;
       }
 
-      table, tr, td {
-        display: block;
+      .research-intro {
+        margin-bottom: 20px;
+      }
+
+      .research-intro h1 {
         width: 100%;
+        padding: 0 8px 8px;
       }
 
-      td {
-        padding: 1rem 0;
-        border-bottom: none;
+      .research-intro p {
+        text-align: left;
       }
 
-      td + td {
-        margin-top: -1rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid #ccc;
+      .themes {
+        gap: 18px;
       }
 
-      .topic-img-1 img,
-      .topic-img-2 img,
-      .topic-img-3 img {
-        margin: 1rem auto;
+      .theme-card {
+        padding: 22px 18px 21px;
+        border-left-width: 4px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
       }
     }
   </style>
 </head>
-<body>
 
-  <!-- Header placeholder -->
+<body>
+  <!-- Existing shared site header -->
   <div id="header"></div>
 
   <main>
-    <h2>Research areas</h2>
-    <table>
-      <tr>
-        <td>
-          <div class="topic topic-img-1">
-            Speech and language acquisition by nonnative speakers
-            <img src="image1.png" alt="Image 1" />
-          </div>
-        </td>
-        <td class="justified">
-          I examine how second language listeners or learners perceive and produce speech sounds, as well as other language structures (e.g., morphology, syntax). I developed the Universal Perceptual Model (UPM), which predicts the acquisition of speech sounds through computational methods based on perceptual and acoustic similarity.
-          <br><br>
-          I also examine the effects of cognitive factors, such as nonverbal intelligence, phonological short-term memory, and attention control, on speech acquisition.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="topic topic-img-2">
-            Speech and language in individuals with communication disorders
-            <img src="image3.png" alt="Image 3" />
-          </div>
-        </td>
-        <td class="justified">
-          I investigate the speech and language of individuals with communication-affecting conditions, including developmental language disorder, autism spectrum disorders, and others. The goal is to identify biomarkers for these conditions, which will allow for the development of prognostic and diagnostic tools.
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="topic topic-img-3">
-            Machine learning and artificial intelligence
-            <img src="image2.png" alt="Image 2" />
-          </div>
-        </td>
-        <td class="justified">
-          I use machine learning algorithms to automate the classification of speakers based on speech and language features and the identification of individuals with language disorders.
-          <br><br>
-          I also examine the language of artificial intelligence, with an emphasis on how it is distinguished from human language, algorithmic biases, and the development of legal frameworks in educational and clinical settings.
-        </td>
-      </tr>
-    </table>
+    <header class="research-intro">
+      <h1>Research</h1>
+      <p>
+        My research aims to advance understanding of speech, language, and
+        communication by integrating interdisciplinary perspectives and methods
+        from linguistics, artificial intelligence, psychology, clinical neurology,
+        and related fields. It focuses on real-world challenges, including improving
+        outcomes in nonnative language learning and supporting the assessment,
+        identification, and monitoring of neurological disorders.
+      </p>
+    </header>
+
+    <section class="themes" aria-label="Research themes">
+      <!-- THEME 1 -->
+      <article class="theme-card">
+        <span class="theme-number">Theme 1</span>
+        <h2>Speech Perception and Production</h2>
+
+        <p>
+          <strong>Motivation:</strong> Speech perception and production are central
+          to spoken communication, language learning, and social interaction. In
+          educational contexts, especially in second-language learning,
+          pronunciation, listening comprehension, and spoken interaction can
+          strongly affect learning outcomes. This creates a need to understand how
+          people perceive, categorize, and produce speech sounds, and why these
+          abilities vary across individuals and contexts.
+        </p>
+
+        <p>
+          <strong>Methodology:</strong> My work combines behavioral experiments,
+          acoustic analysis, perceptual testing, and computational modelling,
+          including machine-learning approaches, to examine speech perception and
+          production. A central part of this work is the Universal Perceptual Model,
+          which I developed to predict patterns of nonnative speech acquisition based
+          on acoustic and perceptual similarity, with the goal of improving learning
+          outcomes and explaining individual differences.
+        </p>
+
+        <div class="keywords">
+          <strong>Keywords:</strong> Speech Perception, Speech Production,
+          Second-Language Learning, Universal Perceptual Model, Acoustic Analysis,
+          Machine Learning
+        </div>
+
+        <div class="publications">
+          <h3>Featured publications:</h3>
+          <ul>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1057/s41599-026-07186-z"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Improving nonnative speech perception and production through an AI-powered application</a>
+              <span class="journal">(Humanities and Social Sciences Communications, 2026)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1111/ijal.12859"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Exploring acoustic overlap in second language vowel productions</a>
+              <span class="journal">(International Journal of Applied Linguistics, 2026)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1007/s10936-024-10038-z"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Discrimination of second language vowel contrasts and the role of phonological short-term memory and nonverbal intelligence</a>
+              <span class="journal">(Journal of Psycholinguistic Research, 2024)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1038/s41598-023-42818-3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Comparison of the prediction accuracy of machine learning algorithms in crosslinguistic vowel classification</a>
+              <span class="journal">(Scientific Reports, 2023)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.3758/s13414-023-02781-7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Perception of Dutch vowels by Cypriot Greek listeners: To what extent can listeners’ patterns be predicted by acoustic and perceptual similarity?</a>
+              <span class="journal">(Attention, Perception, &amp; Psychophysics, 2023)</span>.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- THEME 2 -->
+      <article class="theme-card">
+        <span class="theme-number">Theme 2</span>
+        <h2>Speech and Language Biomarkers of Neurological Disorders</h2>
+
+        <p>
+          <strong>Motivation:</strong> Neurological disorders can affect speech and
+          language in subtle ways that are not always captured through traditional
+          assessment. Changes in voice quality, speech timing, phonological
+          processing, grammar, and language use may reveal important information
+          about cognitive and neurological functioning. This creates a need for
+          objective speech and language biomarkers that can support earlier
+          detection, assessment, and monitoring.
+        </p>
+
+        <p>
+          <strong>Methodology:</strong> To address these challenges, my research
+          integrates methods from acoustic analysis, linguistic profiling,
+          perceptual measurement, machine learning, and explainable AI. I examine
+          how speech and language features distinguish typical from atypical
+          communication patterns across different populations, including individuals
+          with developmental language disorder, autism spectrum disorder, and other
+          neurological conditions. By applying interpretable computational models,
+          this work aims to identify reliable digital biomarkers for detection,
+          classification, assessment, and longitudinal tracking.
+        </p>
+
+        <div class="keywords">
+          <strong>Keywords:</strong> Digital Biomarkers, Neurological Disorders,
+          Developmental Language Disorder, Autism, Explainable AI, Clinical Linguistics
+        </div>
+
+        <div class="publications">
+          <h3>Featured publications:</h3>
+          <ul>
+            <li class="no-link">
+              <span class="publication-title">Acoustic analysis of vowel production in adults with autism spectrum disorder: Beyond the notion of a unitary autistic voice</span>
+              <span class="journal">(Frontiers in Psychology, 2026)</span>.
+              <span class="no-link-note">URL not included in the supplied publication list.</span>
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1016/j.ijmedinf.2026.106364"
+                target="_blank"
+                rel="noopener noreferrer"
+              >An AI-assisted framework for the ethical use of machine learning in healthcare</a>
+              <span class="journal">(International Journal of Medical Informatics, 2026)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1007/s10803-025-07176-1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Enhancing developmental language disorder identification with artificial intelligence: Development of an explainable screening app using real and synthetic data</a>
+              <span class="journal">(Journal of Autism and Developmental Disorders, 2025)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1016/j.jneuroling.2024.101228"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Voicing discrimination as a diagnostic marker of developmental language disorder</a>
+              <span class="journal">(Journal of Neurolinguistics, 2025)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1007/s41347-024-00460-4"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Detection of developmental language disorder in Cypriot Greek children using a neural network algorithm</a>
+              <span class="journal">(Journal of Technology in Behavioral Science, 2024)</span>.
+            </li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- THEME 3 -->
+      <article class="theme-card">
+        <span class="theme-number">Theme 3</span>
+        <h2>Artificial Intelligence and Computational Language Analysis</h2>
+
+        <p>
+          <strong>Motivation:</strong> Artificial intelligence is increasingly
+          shaping how language is produced, interpreted, evaluated, and used across
+          social, educational, and technological contexts. This creates a need to
+          better understand the capabilities, limitations, and biases of AI systems,
+          as well as how they compare with human language use and communication.
+        </p>
+
+        <p>
+          <strong>Methodology:</strong> To meet this need, my research combines
+          literature reviews, linguistic analysis, natural language processing,
+          sentiment analysis, and computational approaches. I examine how AI systems
+          process and generate language, how their outputs differ from or resemble
+          human language, and how linguistic and social patterns can be used to
+          evaluate AI performance, reliability, and bias.
+        </p>
+
+        <div class="keywords">
+          <strong>Keywords:</strong> Artificial Intelligence, Natural Language
+          Processing, Human–AI Writing, Sentiment Analysis, Algorithmic Bias,
+          Computational Linguistics
+        </div>
+
+        <div class="publications">
+          <h3>Featured publications:</h3>
+          <ul>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.3390/bdcc10020055"
+                target="_blank"
+                rel="noopener noreferrer"
+              >What distinguishes AI-generated from human writing? A rapid review of the literature</a>
+              <span class="journal">(Big Data and Cognitive Computing, 2026)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1007/s10772-025-10216-x"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Can AI mimic the human ability to define neologisms?</a>
+              <span class="journal">(International Journal of Speech Technology, 2025)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.3390/info16110979"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Differentiating between human-written and AI-generated texts using automatically extracted linguistic features</a>
+              <span class="journal">(Information, 2025)</span>.
+            </li>
+            <li>
+              <a
+                class="publication-title"
+                href="https://doi.org/10.1177/0261927X241298337"
+                target="_blank"
+                rel="noopener noreferrer"
+              >ChatGPT exhibits bias towards developed countries over developing ones, as indicated by a sentiment analysis approach</a>
+              <span class="journal">(Journal of Language and Social Psychology, 2025)</span>.
+            </li>
+          </ul>
+        </div>
+      </article>
+    </section>
   </main>
 
-  <!-- Footer placeholder -->
+  <!-- Existing shared site footer -->
   <div id="footer-placeholder"></div>
 
-  <!-- Load header and footer -->
   <script>
-    fetch("header.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("header").innerHTML = data);
+    async function loadSharedSection(url, elementId) {
+      const target = document.getElementById(elementId);
 
-    fetch("footer.html")
-      .then(res => res.text())
-      .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Could not load ${url}: ${response.status}`);
+        }
+        target.innerHTML = await response.text();
+      } catch (error) {
+        console.warn(error.message);
+      }
+    }
+
+    loadSharedSection("header.html", "header");
+    loadSharedSection("footer.html", "footer-placeholder");
   </script>
-
 </body>
 </html>
