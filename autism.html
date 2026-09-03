@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="DIACNOSE project: speech-based investigation of autism and related communication and neurological disorders using acoustic analysis, statistical modelling, and machine learning."
+  />
+  <title>DIACNOSE Project – Georgios P. Georgiou</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <style>
+    :root {
+      --page-bg: #f7f9fb;
+      --card-bg: #ffffff;
+      --text: #172033;
+      --muted: #4f5d6b;
+      --blue: #1496e2;
+      --blue-dark: #0d6fae;
+      --border: #d9e1e8;
+      --soft-bg: #f2f5f7;
+      --shadow: 0 8px 24px rgba(23, 32, 51, 0.06);
+      --radius: 8px;
+      --content-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.62;
+    }
+
+    a {
+      color: var(--blue-dark);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: #084f7d;
+      text-decoration-thickness: 2px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid rgba(20, 150, 226, 0.25);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    main {
+      width: min(var(--content-width), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 42px 0 64px;
+    }
+
+    .project-intro {
+      max-width: 920px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .project-intro h1 {
+      display: inline-block;
+      margin: 0 0 14px;
+      padding: 0 72px 8px;
+      border-bottom: 2px solid var(--blue);
+      font-size: clamp(1.8rem, 4vw, 2.35rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .project-intro .project-name {
+      max-width: 850px;
+      margin: 0 auto;
+      color: #2d3947;
+      font-size: 1.08rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .project-intro .acronym {
+      color: var(--blue-dark);
+      font-weight: 800;
+    }
+
+    .sections {
+      display: grid;
+      gap: 24px;
+    }
+
+    .section-card {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 30px 26px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--blue);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--blue-dark);
+      font-size: clamp(1.12rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+
+    .section-card h2 {
+      margin: 0 0 18px;
+      font-size: clamp(1.7rem, 3.6vw, 2.15rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .section-card h2.compact-heading {
+      font-size: clamp(1.35rem, 2.8vw, 1.65rem);
+    }
+
+    .section-card h3 {
+      margin: 24px 0 11px;
+      font-size: clamp(1.22rem, 2.4vw, 1.45rem);
+      line-height: 1.3;
+    }
+
+    .section-card p {
+      margin: 0 0 14px;
+      color: #2d3947;
+    }
+
+    .section-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      margin: 0;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+
+    .project-meta > div {
+      min-width: 0;
+      padding: 13px 15px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #fbfcfd;
+    }
+
+    .project-meta dt {
+      margin: 0 0 2px;
+      color: #52606d;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .project-meta dd {
+      margin: 0;
+      color: #263442;
+    }
+
+    .outputs {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .outputs li {
+      margin: 0 0 11px;
+      padding-left: 2px;
+      color: #2d3947;
+    }
+
+    .outputs li::marker {
+      color: var(--blue);
+    }
+
+    .publication-title {
+      font-weight: 600;
+    }
+
+    .journal {
+      color: #44515e;
+      font-style: italic;
+    }
+
+    .conference-title {
+      font-style: italic;
+    }
+
+    @media (max-width: 680px) {
+      body {
+        font-size: 15px;
+      }
+
+      main {
+        width: min(100% - 22px, var(--content-width));
+        padding: 28px 0 44px;
+      }
+
+      .project-intro {
+        margin-bottom: 20px;
+      }
+
+      .project-intro h1 {
+        width: 100%;
+        padding: 0 8px 8px;
+      }
+
+      .project-intro .project-name {
+        text-align: left;
+      }
+
+      .sections {
+        gap: 18px;
+      }
+
+      .section-card {
+        padding: 22px 18px 21px;
+        border-left-width: 4px;
+      }
+
+      .project-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Existing shared site header -->
+  <div id="header"></div>
+
+  <main>
+    <header class="project-intro">
+      <h1>DIACNOSE Project</h1>
+      <p class="project-name">
+        DIAgnosis of Communication and Neurological disorders based On Speech Elements
+        <span class="acronym">(DIACNOSE)</span>
+      </p>
+    </header>
+
+    <section class="sections" aria-label="DIACNOSE project details">
+      <article class="section-card">
+        <span class="section-label">Project</span>
+        <h2>Project information</h2>
+
+        <dl class="project-meta">
+          <div>
+            <dt>Project</dt>
+            <dd>DIAgnosis of Communication and Neurological disorders based On Speech Elements (DIACNOSE)</dd>
+          </div>
+          <div>
+            <dt>Number</dt>
+            <dd>CULTURE/AWARD-YR/0523</dd>
+          </div>
+          <div>
+            <dt>Funder</dt>
+            <dd>Cyprus Research and Innovation Foundation</dd>
+          </div>
+          <div>
+            <dt>Host Organisation</dt>
+            <dd>University of Nicosia</dd>
+          </div>
+          <div>
+            <dt>Period</dt>
+            <dd>2024–2026</dd>
+          </div>
+          <div>
+            <dt>Principal Investigator</dt>
+            <dd>
+              <a href="http://georgiougeorg.com" target="_blank" rel="noopener noreferrer">Dr Georgios P. Georgiou</a>
+            </dd>
+          </div>
+          <div>
+            <dt>Researchers</dt>
+            <dd>
+              <a href="https://logouerga.com/gr/en/company.html" target="_blank" rel="noopener noreferrer">Dr Maria Paphiti</a>
+            </dd>
+          </div>
+        </dl>
+      </article>
+
+      <article class="section-card">
+        <span class="section-label">Overview</span>
+        <h2 class="compact-heading">Project description</h2>
+        <p>
+          The DIACNOSE project investigates speech characteristics in adult native speakers of Cypriot Greek with autism and neurotypical controls. It combines speech analysis, statistical modelling and machine-learning methods to examine whether patterns in speech can support the study and assessment of autism and related communication or neurological disorders.
+        </p>
+      </article>
+
+      <article class="section-card">
+        <span class="section-label">Results</span>
+        <h2 class="compact-heading">Main findings and implications</h2>
+        <p>
+          The project showed that autism is associated with measurable and systematic differences in adult speech, but not with a single uniform autistic voice. Autistic speakers displayed a more expanded and dispersed vowel space, while other differences were selective, vowel-specific and multidimensional, with HNR emerging as one of the more consistent group-level markers.
+        </p>
+        <p>
+          Machine-learning models further demonstrated that speech patterns contain meaningful information for distinguishing autistic from neurotypical speech, reaching an AUC of about 0.89 under token-level validation. However, performance fell to around 0.60 when tested on previously unseen speakers, showing that individual speaker characteristics strongly affect generalisation.
+        </p>
+        <p>
+          The key implication is that speech has strong potential as an objective, non-invasive source of information for autism research and future assessment-support tools, but reliable clinical application will require larger samples, cross-speaker validation and language-sensitive models rather than assuming a universal acoustic profile of autism.
+        </p>
+      </article>
+
+      <article class="section-card">
+        <span class="section-label">Dissemination</span>
+        <h2 class="compact-heading">Outputs</h2>
+
+        <h3>Journal Articles</h3>
+        <ul class="outputs">
+          <li>
+            <a
+              class="publication-title"
+              href="https://www.sciencedirect.com/science/article/pii/S3050656526002099"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Machine learning classification of autistic adults using vowel acoustic features</a>
+            <span class="journal">(Research in Autism, 2026)</span>.
+          </li>
+          <li>
+            <a
+              class="publication-title"
+              href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1854297/full"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Acoustic analysis of vowel production in adults with autism spectrum disorder: Beyond the notion of a unitary autistic voice</a>
+            <span class="journal">(Frontiers in Psychology, 2026)</span>.
+          </li>
+        </ul>
+
+        <h3>Conference presentations</h3>
+        <ul class="outputs">
+          <li>
+            <span class="conference-title">Ακουστικοί δείκτες της ομιλίας για την αναγνώριση διαταραχών αυτιστικού φάσματος σε ενήλικες με μητρική την κυπριακή ελληνική: Μοντελοποίηση με μηχανική μάθηση και ερμηνεύσιμη τεχνητή νοημοσύνη</span>, Language Disorders in Greek 10, Cyprus University of Technology, 25–26 September 2026.
+          </li>
+          <li>
+            <span class="conference-title">Speech-based detection of adult autism: an interpretable machine learning analysis of vowel production</span>, Cognitive Linguistics in the Year 2026, University of Gdańsk, 14–16 September 2026.
+          </li>
+          <li>
+            <span class="conference-title">Acoustic patterns of vowel production in Cypriot Greek adults with autism spectrum disorder</span>, 13th Novi Sad Workshop on Psycholinguistic, Neurolinguistic and Clinical Linguistic Research, University of Novi Sad, Serbia, 25 April 2026.
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <!-- Existing shared site footer -->
+  <div id="footer-placeholder"></div>
+
+  <script>
+    async function loadSharedSection(url, elementId) {
+      const target = document.getElementById(elementId);
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Could not load ${url}: ${response.status}`);
+        }
+        target.innerHTML = await response.text();
+      } catch (error) {
+        console.warn(error.message);
+      }
+    }
+
+    loadSharedSection("header.html", "header");
+    loadSharedSection("footer.html", "footer-placeholder");
+  </script>
+</body>
+</html>
