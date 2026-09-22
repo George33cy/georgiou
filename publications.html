@@ -28,7 +28,7 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
-      overflow-x: hidden;
+      overflow-x: visible;
     }
 
     .publication-tabs {
@@ -36,10 +36,15 @@
       justify-content: center;
       gap: 12px;
       flex-wrap: nowrap;
-      margin: 0 auto 2rem;
+      width: max-content;
+      position: relative;
+      left: 50%;
+      margin: 0 0 2rem;
       padding-top: 0.5rem;
       overflow: visible;
       white-space: nowrap;
+      transform: translateX(-50%) scale(var(--menu-scale, 1));
+      transform-origin: center top;
     }
 
     .publication-tabs a {
@@ -125,7 +130,7 @@
         width: 100%;
         max-width: 100%;
         padding: 0 0.8rem;
-        overflow-x: hidden;
+        overflow-x: visible;
       }
 
       .publication-tabs {
@@ -133,10 +138,15 @@
         justify-content: center;
         gap: 12px;
         flex-wrap: nowrap;
-        margin: 0 auto 1.8rem;
+        width: max-content;
+        position: relative;
+        left: 50%;
+        margin: 0 0 1.8rem;
         padding-top: 0.5rem;
         overflow: visible;
         white-space: nowrap;
+        transform: translateX(-50%) scale(var(--menu-scale, 1));
+        transform-origin: center top;
       }
 
       .publication-tabs a {
@@ -502,6 +512,23 @@
         document.getElementById("footer-placeholder").innerHTML = data;
       })
       .catch(error => console.error("Error loading footer:", error));
+  </script>
+
+
+  <script>
+    function fitPublicationMenu() {
+      const menu = document.querySelector('.publication-tabs');
+      if (!menu) return;
+
+      menu.style.setProperty('--menu-scale', '1');
+      const naturalWidth = menu.scrollWidth;
+      const availableWidth = Math.max(0, window.innerWidth - 24);
+      const scale = naturalWidth > availableWidth ? availableWidth / naturalWidth : 1;
+      menu.style.setProperty('--menu-scale', scale.toFixed(4));
+    }
+
+    window.addEventListener('load', fitPublicationMenu);
+    window.addEventListener('resize', fitPublicationMenu);
   </script>
 
 </body>
