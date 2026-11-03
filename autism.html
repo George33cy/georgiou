@@ -8,7 +8,7 @@
     content="DIACNOSE project: speech-based investigation of autism and related communication and neurological disorders using acoustic analysis, statistical modelling, and machine learning."
   />
   <title>DIACNOSE Project – Georgios P. Georgiou</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
     :root {
@@ -180,6 +180,34 @@
       color: #263442;
     }
 
+    .project-funding {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-family: inherit;
+    }
+
+    .project-funding h3 {
+      margin: 0 0 16px;
+      color: var(--blue-dark);
+    }
+
+    .project-funding p {
+      margin-bottom: 16px;
+    }
+
+    .funding-logos {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 0 24px;
+      overflow: hidden;
+    }
+
+    .funding-logos:last-child {
+      margin-bottom: 0;
+    }
+
     .outputs {
       margin: 0;
       padding-left: 1.25rem;
@@ -275,35 +303,98 @@
             <dt>Project</dt>
             <dd>DIAgnosis of Communication and Neurological disorders based On Speech Elements (DIACNOSE)</dd>
           </div>
+
           <div>
             <dt>Number</dt>
             <dd>CULTURE/AWARD-YR/0523</dd>
           </div>
+
           <div>
             <dt>Funder</dt>
             <dd>Cyprus Research and Innovation Foundation</dd>
           </div>
+
           <div>
             <dt>Host Organisation</dt>
             <dd>University of Nicosia</dd>
           </div>
+
           <div>
             <dt>Period</dt>
             <dd>2024–2026</dd>
           </div>
+
           <div>
             <dt>Principal Investigator</dt>
             <dd>
-              <a href="http://georgiougeorg.com" target="_blank" rel="noopener noreferrer">Dr Georgios P. Georgiou</a>
+              <a
+                href="http://georgiougeorg.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Dr Georgios P. Georgiou</a>
             </dd>
           </div>
+
           <div>
             <dt>Researchers</dt>
             <dd>
-              <a href="https://logouerga.com/gr/en/company.html" target="_blank" rel="noopener noreferrer">Dr Maria Paphiti</a>
+              <a
+                href="https://logouerga.com/gr/en/company.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Dr Maria Paphiti</a>
             </dd>
           </div>
         </dl>
+
+        <div class="project-funding">
+          <h3 lang="el">Εθνική Χρηματοδότηση:</h3>
+
+          <p lang="el">
+            Το Έργο χρηματοδοτείται από την Κυπριακή Δημοκρατία,
+            μέσω του Ιδρύματος Έρευνας και Καινοτομίας.
+          </p>
+
+          <!-- Displays the Greek logos from the attached image. -->
+          <svg
+            class="funding-logos"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 180 895 105"
+            role="img"
+            aria-label="Κυπριακή Δημοκρατία — Ίδρυμα Έρευνας και Καινοτομίας"
+            lang="el"
+          >
+            <image
+              href="funding-notice.png"
+              x="0"
+              y="0"
+              width="895"
+              height="567"
+            />
+          </svg>
+
+          <p>
+            The Project is funded by the Republic of Cyprus, through
+            the Research and Innovation Foundation.
+          </p>
+
+          <!-- Displays the English logos from the attached image. -->
+          <svg
+            class="funding-logos"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 455 895 110"
+            role="img"
+            aria-label="Republic of Cyprus — Research and Innovation Foundation"
+          >
+            <image
+              href="funding-notice.png"
+              x="0"
+              y="0"
+              width="895"
+              height="567"
+            />
+          </svg>
+        </div>
       </article>
 
       <article class="section-card">
@@ -354,7 +445,7 @@
         <h3>Conference presentations</h3>
         <ul class="outputs">
           <li>
-            <span class="conference-title">Ακουστικοί δείκτες της ομιλίας για την αναγνώριση διαταραχών αυτιστικού φάσματος σε ενήλικες με μητρική την κυπριακή ελληνική: Μοντελοποίηση με μηχανική μάθηση και ερμηνεύσιμη τεχνητή νοημοσύνη</span>, Language Disorders in Greek 10, Cyprus University of Technology, 25–26 September 2026.
+            <span class="conference-title" lang="el">Ακουστικοί δείκτες της ομιλίας για την αναγνώριση διαταραχών αυτιστικού φάσματος σε ενήλικες με μητρική την κυπριακή ελληνική: Μοντελοποίηση με μηχανική μάθηση και ερμηνεύσιμη τεχνητή νοημοσύνη</span>, Language Disorders in Greek 10, Cyprus University of Technology, 25–26 September 2026.
           </li>
           <li>
             <span class="conference-title">Speech-based detection of adult autism: an interpretable machine learning analysis of vowel production</span>, Cognitive Linguistics in the Year 2026, University of Gdańsk, 14–16 September 2026.
@@ -376,9 +467,11 @@
 
       try {
         const response = await fetch(url);
+
         if (!response.ok) {
           throw new Error(`Could not load ${url}: ${response.status}`);
         }
+
         target.innerHTML = await response.text();
       } catch (error) {
         console.warn(error.message);
