@@ -149,6 +149,63 @@
       margin-bottom: 0;
     }
 
+    /* Funding notice beneath Project and above the table */
+    .project-funding {
+      margin: 18px 0 24px;
+      padding: 0 0 22px;
+      border-bottom: 1px solid var(--border);
+      font-family: inherit;
+    }
+
+    .project-funding h3 {
+      margin: 0 0 16px;
+      color: var(--blue-dark);
+    }
+
+    .project-funding p {
+      margin: 0 0 16px;
+    }
+
+    /* Display only the logo areas of the supplied image. */
+    .funding-logo-window {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin: 0 0 24px;
+    }
+
+    .funding-logo-window img {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .funding-logo-window--greek {
+      aspect-ratio: 895 / 105;
+    }
+
+    .funding-logo-window--greek img {
+      top: -171.428571%;
+    }
+
+    .funding-logo-window--english {
+      aspect-ratio: 895 / 110;
+    }
+
+    .funding-logo-window--english img {
+      top: -413.636364%;
+    }
+
+    .funding-logo-window:last-child {
+      margin-bottom: 0;
+    }
+
     .project-meta {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -178,34 +235,6 @@
     .project-meta dd {
       margin: 0;
       color: #263442;
-    }
-
-    .project-funding {
-      margin-top: 24px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-family: inherit;
-    }
-
-    .project-funding h3 {
-      margin: 0 0 16px;
-      color: var(--blue-dark);
-    }
-
-    .project-funding p {
-      margin-bottom: 16px;
-    }
-
-    .funding-logos {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 0 24px;
-      overflow: hidden;
-    }
-
-    .funding-logos:last-child {
-      margin-bottom: 0;
     }
 
     .outputs {
@@ -288,6 +317,7 @@
   <main>
     <header class="project-intro">
       <h1>DIACNOSE Project</h1>
+
       <p class="project-name">
         DIAgnosis of Communication and Neurological disorders based On Speech Elements
         <span class="acronym">(DIACNOSE)</span>
@@ -298,10 +328,45 @@
       <article class="section-card">
         <span class="section-label">Project</span>
 
+        <div class="project-funding">
+          <h3 lang="el">Εθνική Χρηματοδότηση:</h3>
+
+          <p lang="el">
+            Το Έργο χρηματοδοτείται από την Κυπριακή Δημοκρατία,
+            μέσω του Ιδρύματος Έρευνας και Καινοτομίας.
+          </p>
+
+          <div class="funding-logo-window funding-logo-window--greek">
+            <img
+              src="funding-notice.png"
+              alt="Κυπριακή Δημοκρατία — Ίδρυμα Έρευνας και Καινοτομίας"
+              width="895"
+              height="567"
+            />
+          </div>
+
+          <p>
+            The Project is funded by the Republic of Cyprus, through
+            the Research and Innovation Foundation.
+          </p>
+
+          <div class="funding-logo-window funding-logo-window--english">
+            <img
+              src="funding-notice.png"
+              alt="Republic of Cyprus — Research and Innovation Foundation"
+              width="895"
+              height="567"
+            />
+          </div>
+        </div>
+
         <dl class="project-meta">
           <div>
             <dt>Project</dt>
-            <dd>DIAgnosis of Communication and Neurological disorders based On Speech Elements (DIACNOSE)</dd>
+            <dd>
+              DIAgnosis of Communication and Neurological disorders based On
+              Speech Elements (DIACNOSE)
+            </dd>
           </div>
 
           <div>
@@ -346,74 +411,49 @@
             </dd>
           </div>
         </dl>
-
-        <div class="project-funding">
-          <h3 lang="el">Εθνική Χρηματοδότηση:</h3>
-
-          <p lang="el">
-            Το Έργο χρηματοδοτείται από την Κυπριακή Δημοκρατία,
-            μέσω του Ιδρύματος Έρευνας και Καινοτομίας.
-          </p>
-
-          <!-- Displays the Greek logos from the attached image. -->
-          <svg
-            class="funding-logos"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 180 895 105"
-            role="img"
-            aria-label="Κυπριακή Δημοκρατία — Ίδρυμα Έρευνας και Καινοτομίας"
-            lang="el"
-          >
-            <image
-              href="funding-notice.png"
-              x="0"
-              y="0"
-              width="895"
-              height="567"
-            />
-          </svg>
-
-          <p>
-            The Project is funded by the Republic of Cyprus, through
-            the Research and Innovation Foundation.
-          </p>
-
-          <!-- Displays the English logos from the attached image. -->
-          <svg
-            class="funding-logos"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 455 895 110"
-            role="img"
-            aria-label="Republic of Cyprus — Research and Innovation Foundation"
-          >
-            <image
-              href="funding-notice.png"
-              x="0"
-              y="0"
-              width="895"
-              height="567"
-            />
-          </svg>
-        </div>
       </article>
 
       <article class="section-card">
         <span class="section-label">Overview</span>
+
         <p>
-          The DIACNOSE project investigates speech characteristics in adult native speakers of Cypriot Greek with autism and neurotypical controls. It combines speech analysis, statistical modelling and machine-learning methods to examine whether patterns in speech can support the study and assessment of autism and related communication or neurological disorders.
+          The DIACNOSE project investigates speech characteristics in adult
+          native speakers of Cypriot Greek with autism and neurotypical
+          controls. It combines speech analysis, statistical modelling and
+          machine-learning methods to examine whether patterns in speech can
+          support the study and assessment of autism and related communication
+          or neurological disorders.
         </p>
       </article>
 
       <article class="section-card">
         <span class="section-label">Results</span>
+
         <p>
-          The project showed that autism is associated with measurable and systematic differences in adult speech, but not with a single uniform autistic voice. Autistic speakers displayed a more expanded and dispersed vowel space, while other differences were selective, vowel-specific and multidimensional, with HNR emerging as one of the more consistent group-level markers.
+          The project showed that autism is associated with measurable and
+          systematic differences in adult speech, but not with a single uniform
+          autistic voice. Autistic speakers displayed a more expanded and
+          dispersed vowel space, while other differences were selective,
+          vowel-specific and multidimensional, with HNR emerging as one of the
+          more consistent group-level markers.
         </p>
+
         <p>
-          Machine-learning models further demonstrated that speech patterns contain meaningful information for distinguishing autistic from neurotypical speech, reaching an AUC of about 0.89 under token-level validation. However, performance fell to around 0.60 when tested on previously unseen speakers, showing that individual speaker characteristics strongly affect generalisation.
+          Machine-learning models further demonstrated that speech patterns
+          contain meaningful information for distinguishing autistic from
+          neurotypical speech, reaching an AUC of about 0.89 under token-level
+          validation. However, performance fell to around 0.60 when tested on
+          previously unseen speakers, showing that individual speaker
+          characteristics strongly affect generalisation.
         </p>
+
         <p>
-          The key implication is that speech has strong potential as an objective, non-invasive source of information for autism research and future assessment-support tools, but reliable clinical application will require larger samples, cross-speaker validation and language-sensitive models rather than assuming a universal acoustic profile of autism.
+          The key implication is that speech has strong potential as an
+          objective, non-invasive source of information for autism research and
+          future assessment-support tools, but reliable clinical application
+          will require larger samples, cross-speaker validation and
+          language-sensitive models rather than assuming a universal acoustic
+          profile of autism.
         </p>
       </article>
 
@@ -421,6 +461,7 @@
         <span class="section-label">Dissemination</span>
 
         <h3>Journal Articles</h3>
+
         <ul class="outputs">
           <li>
             <a
@@ -431,6 +472,7 @@
             >Machine learning classification of autistic adults using vowel acoustic features</a>
             <span class="journal">(Research in Autism, 2026)</span>.
           </li>
+
           <li>
             <a
               class="publication-title"
@@ -443,15 +485,25 @@
         </ul>
 
         <h3>Conference presentations</h3>
+
         <ul class="outputs">
           <li>
-            <span class="conference-title" lang="el">Ακουστικοί δείκτες της ομιλίας για την αναγνώριση διαταραχών αυτιστικού φάσματος σε ενήλικες με μητρική την κυπριακή ελληνική: Μοντελοποίηση με μηχανική μάθηση και ερμηνεύσιμη τεχνητή νοημοσύνη</span>, Language Disorders in Greek 10, Cyprus University of Technology, 25–26 September 2026.
+            <span class="conference-title" lang="el">Ακουστικοί δείκτες της ομιλίας για την αναγνώριση διαταραχών αυτιστικού φάσματος σε ενήλικες με μητρική την κυπριακή ελληνική: Μοντελοποίηση με μηχανική μάθηση και ερμηνεύσιμη τεχνητή νοημοσύνη</span>,
+            Language Disorders in Greek 10, Cyprus University of Technology,
+            25–26 September 2026.
           </li>
+
           <li>
-            <span class="conference-title">Speech-based detection of adult autism: an interpretable machine learning analysis of vowel production</span>, Cognitive Linguistics in the Year 2026, University of Gdańsk, 14–16 September 2026.
+            <span class="conference-title">Speech-based detection of adult autism: an interpretable machine learning analysis of vowel production</span>,
+            Cognitive Linguistics in the Year 2026, University of Gdańsk,
+            14–16 September 2026.
           </li>
+
           <li>
-            <span class="conference-title">Acoustic patterns of vowel production in Cypriot Greek adults with autism spectrum disorder</span>, 13th Novi Sad Workshop on Psycholinguistic, Neurolinguistic and Clinical Linguistic Research, University of Novi Sad, Serbia, 25 April 2026.
+            <span class="conference-title">Acoustic patterns of vowel production in Cypriot Greek adults with autism spectrum disorder</span>,
+            13th Novi Sad Workshop on Psycholinguistic, Neurolinguistic and
+            Clinical Linguistic Research, University of Novi Sad, Serbia,
+            25 April 2026.
           </li>
         </ul>
       </article>
@@ -464,6 +516,8 @@
   <script>
     async function loadSharedSection(url, elementId) {
       const target = document.getElementById(elementId);
+
+      if (!target) return;
 
       try {
         const response = await fetch(url);
