@@ -149,11 +149,11 @@
       margin-bottom: 0;
     }
 
-    /* Funding notice beneath Project and above the table */
+    /* Funding notice: below Project, before the table. */
     .project-funding {
       margin: 18px 0 24px;
-      padding: 0 0 22px;
-      border-bottom: 1px solid var(--border);
+      padding: 0;
+      border: none;
       font-family: inherit;
     }
 
@@ -166,43 +166,22 @@
       margin: 0 0 16px;
     }
 
-    /* Display only the logo areas of the supplied image. */
-    .funding-logo-window {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      margin: 0 0 24px;
-    }
-
-    .funding-logo-window img {
-      position: absolute;
-      left: 0;
+    /* Show the complete image without cropping. */
+    .project-funding .funding-image {
       display: block;
-      width: 100%;
-      max-width: none;
+      position: static;
+      width: 420px;
+      max-width: 100%;
       height: auto;
-      margin: 0;
+      margin: 0 0 24px;
       padding: 0;
-      border: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      transform: none;
     }
 
-    .funding-logo-window--greek {
-      aspect-ratio: 895 / 105;
-    }
-
-    .funding-logo-window--greek img {
-      top: -171.428571%;
-    }
-
-    .funding-logo-window--english {
-      aspect-ratio: 895 / 110;
-    }
-
-    .funding-logo-window--english img {
-      top: -413.636364%;
-    }
-
-    .funding-logo-window:last-child {
+    .project-funding .funding-image:last-child {
       margin-bottom: 0;
     }
 
@@ -336,28 +315,22 @@
             μέσω του Ιδρύματος Έρευνας και Καινοτομίας.
           </p>
 
-          <div class="funding-logo-window funding-logo-window--greek">
-            <img
-              src="funding-notice.png"
-              alt="Κυπριακή Δημοκρατία — Ίδρυμα Έρευνας και Καινοτομίας"
-              width="895"
-              height="567"
-            />
-          </div>
+          <img
+            class="funding-image"
+            src="funding-notice.png"
+            alt="Κυπριακή Δημοκρατία — Ίδρυμα Έρευνας και Καινοτομίας"
+          />
 
           <p>
             The Project is funded by the Republic of Cyprus, through
             the Research and Innovation Foundation.
           </p>
 
-          <div class="funding-logo-window funding-logo-window--english">
-            <img
-              src="funding-notice.png"
-              alt="Republic of Cyprus — Research and Innovation Foundation"
-              width="895"
-              height="567"
-            />
-          </div>
+          <img
+            class="funding-image"
+            src="funding-notice.png"
+            alt="Republic of Cyprus — Research and Innovation Foundation"
+          />
         </div>
 
         <dl class="project-meta">
