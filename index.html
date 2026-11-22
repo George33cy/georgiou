@@ -1,121 +1,304 @@
+Here is the entire updated HTML code. All text now consistently uses **Arial**, including headings, biography, research keywords, contact details, academic links, and positions. The three contact emojis remain included.
+
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Georgios P. Georgiou</title>
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="favicon.png" />
 
   <style>
-    main.profile-page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 28px 22px 10px;
+    /* Consistent font throughout the page */
+
+    body,
+    body * {
+      font-family: Arial, Helvetica, sans-serif !important;
     }
 
-    .profile-top {
+    main.profile-page {
+      --navy: #0d2942;
+      --ink: #102033;
+      --muted: #50677a;
+      --blue: #2d8ed6;
+      --red: #ff2b1c;
+      --line: #d8dee5;
+
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 30px 24px 20px;
+      box-sizing: border-box;
+    }
+
+    .profile-page *,
+    .profile-page *::before,
+    .profile-page *::after {
+      box-sizing: border-box;
+    }
+
+    .profile-page .profile-top {
       display: grid;
-      grid-template-columns: 175px 1fr;
-      gap: 32px;
+      grid-template-columns: 230px minmax(0, 1fr);
+      gap: 42px;
       align-items: start;
     }
 
-    .photo-wrap {
-      width: 165px;
+    /* LEFT COLUMN */
+
+    .profile-page .profile-sidebar {
+      min-width: 0;
+    }
+
+    .profile-page .photo-wrap {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      margin: 0 0 20px;
     }
 
-    .profile-photo {
-      width: 165px;
+    .profile-page .profile-photo {
+      display: block;
+      width: 100%;
+      max-width: 205px;
       height: auto;
       object-fit: contain;
-      object-position: center top;
-      border-radius: 3px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
-      display: block;
+      border-radius: 4px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
     }
 
-    .profile-content h1 {
-      margin: 0 0 7px;
-      color: #0d2942;
+    /* Contact details */
+
+    .profile-page .contact-card {
+      margin: 0;
+      padding: 15px 12px;
+      border-top: 3px solid var(--blue);
+      background: #f3f6f9;
+      color: var(--ink);
+      font-size: 14px;
+      font-style: normal;
+      line-height: 1.55;
+    }
+
+    .profile-page .contact-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .profile-page .contact-block + .contact-block {
+      margin-top: 13px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .profile-page .contact-icon {
+      flex-shrink: 0;
+      font-size: 16px;
+      line-height: 1.5;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji",
+        "Noto Color Emoji", sans-serif !important;
+    }
+
+    .profile-page .contact-details {
+      min-width: 0;
+    }
+
+    .profile-page .contact-details strong {
+      display: block;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .profile-page .contact-card a {
+      color: #1b6094;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-page .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Academic profile links */
+
+    .profile-page .academic-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 15px;
+    }
+
+    .profile-page .academic-links a {
+      flex: 1 1 auto;
+      padding: 8px 9px;
+      border: 1px solid #c9d5e0;
+      border-radius: 3px;
+      color: var(--navy);
+      background: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.3;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .profile-page .academic-links a:hover {
+      background: #eaf3fa;
+      border-color: var(--blue);
+    }
+
+    .profile-page a:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: 3px;
+    }
+
+    /* RIGHT COLUMN */
+
+    .profile-page .profile-content {
+      min-width: 0;
+    }
+
+    .profile-page .profile-content h1 {
+      margin: 0 0 8px;
+      color: var(--navy);
       font-size: 34px;
       line-height: 1.15;
       font-weight: 700;
     }
 
-    .subtitle {
-      color: #50677a;
+    .profile-page .profile-heading {
+      margin-bottom: 22px;
+      padding-bottom: 15px;
+      border-bottom: 3px solid var(--blue);
+    }
+
+    .profile-page .subtitle {
+      margin: 0 0 7px;
+      color: var(--muted);
       font-size: 20px;
       line-height: 1.45;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 3px solid #2d8ed6;
-      max-width: 850px;
       font-weight: 400;
     }
 
-    .profile-content p {
+    .profile-page .affiliation {
+      color: #31495d;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* Research keywords */
+
+    .profile-page .research-keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 0 0 21px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .profile-page .research-keywords li {
+      margin: 0;
+      padding: 5px 10px;
+      border: 1px solid #d3e2ee;
+      border-radius: 4px;
+      background: #eef5fa;
+      color: #244a69;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    /* Biography */
+
+    .profile-page .profile-content p {
       margin: 0 0 17px;
-      color: #102033;
+      color: var(--ink);
       font-size: 17px;
+      font-weight: 400;
       line-height: 1.65;
     }
 
-    .highlight-box {
-      margin: 24px 0;
+    /* Awards and research impact */
+
+    .profile-page .highlight-box {
+      margin: 23px 0 0;
       padding: 16px 18px;
-      border-left: 3px solid #ff2b1c;
+      border-left: 3px solid var(--red);
       background-color: #ffffff;
+      color: var(--ink);
       box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
       font-size: 17px;
+      font-weight: 400;
       line-height: 1.65;
     }
 
-    main.profile-page section {
+    .profile-page .highlight-box + .highlight-box {
+      margin-top: 17px;
+    }
+
+    .profile-page .highlight-box a {
+      color: #d71912;
+      text-decoration: none;
+    }
+
+    .profile-page .highlight-box a:hover {
+      text-decoration: underline;
+    }
+
+    .profile-page .highlight-box strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    /* Academic positions */
+
+    .profile-page .profile-content section {
       margin-top: 30px;
     }
 
-    main.profile-page h2 {
+    .profile-page .profile-content h2 {
       margin: 0 0 15px;
       padding-bottom: 8px;
-      border-bottom: 2px solid #d8dee5;
-      color: #0d2942;
+      border-bottom: 2px solid var(--line);
+      color: var(--navy);
       font-size: 22px;
       font-weight: 700;
       line-height: 1.3;
     }
 
-    .position-list {
+    .profile-page .position-list {
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-    .position {
+    .profile-page .position {
       position: relative;
       margin: 0 0 22px 28px;
     }
 
-    .position::before {
+    .profile-page .position::before {
       content: "";
       position: absolute;
       left: -16px;
       top: 11px;
       width: 5px;
       height: 5px;
-      background-color: #2d8ed6;
+      background-color: var(--blue);
     }
 
-    .position-title {
-      color: #102033;
+    .profile-page .position-title {
+      color: var(--ink);
       font-size: 18px;
       font-weight: 700;
       line-height: 1.4;
     }
 
-    .year-badge {
+    .profile-page .year-badge {
       display: inline-block;
       margin-left: 8px;
       padding: 4px 9px;
@@ -127,62 +310,68 @@
       vertical-align: middle;
     }
 
-    .institution {
+    .profile-page .institution {
       margin-top: 5px;
       color: #26394a;
       font-size: 16px;
       font-style: italic;
+      font-weight: 400;
       line-height: 1.5;
     }
 
-    @media (max-width: 700px) {
+    /* MOBILE LAYOUT */
+
+    @media (max-width: 760px) {
       main.profile-page {
         padding: 22px 16px 10px;
       }
 
-      .profile-top {
-        grid-template-columns: 1fr;
-        gap: 20px;
+      .profile-page .profile-top {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
       }
 
-      .photo-wrap {
+      .profile-page .profile-sidebar {
         width: 100%;
+        max-width: 320px;
+      }
+
+      .profile-page .photo-wrap {
         justify-content: flex-start;
       }
 
-      .profile-photo {
-        width: 155px;
-        height: auto;
+      .profile-page .profile-photo {
+        max-width: 175px;
       }
 
-      .profile-content h1 {
+      .profile-page .profile-content h1 {
         font-size: 30px;
       }
 
-      .subtitle {
-        max-width: 100%;
+      .profile-page .subtitle {
         font-size: 18px;
-        border-bottom: 3px solid #2d8ed6;
       }
 
-      .profile-content p,
-      .highlight-box {
+      .profile-page .affiliation,
+      .profile-page .profile-content p,
+      .profile-page .highlight-box {
         font-size: 16px;
       }
 
-      main.profile-page h2 {
+      .profile-page .profile-content h2 {
         font-size: 20px;
       }
 
-      .position-title {
+      .profile-page .position-title {
         font-size: 17px;
       }
 
-      .institution {
+      .profile-page .institution {
         font-size: 15px;
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -193,101 +382,281 @@
 
     <div class="profile-top">
 
-      <div class="photo-wrap">
-        <img
-          class="profile-photo"
-          src="georgiou.avif"
-          alt="Georgios P. Georgiou"
-        />
-      </div>
+      <!-- LEFT COLUMN -->
+
+      <aside
+        class="profile-sidebar"
+        aria-label="Contact details and academic profiles"
+      >
+
+        <!-- Profile photograph -->
+
+        <div class="photo-wrap">
+          <img
+            class="profile-photo"
+            src="georgiou.avif"
+            alt="Georgios P. Georgiou"
+          />
+        </div>
+
+        <!-- Contact details -->
+
+        <address class="contact-card">
+
+          <div class="contact-block">
+
+            <span class="contact-icon" aria-hidden="true">🏛️</span>
+
+            <div class="contact-details">
+              <strong>University of Nicosia</strong>
+              Department of Languages and Literature
+            </div>
+
+          </div>
+
+          <div class="contact-block">
+
+            <span class="contact-icon" aria-hidden="true">📍</span>
+
+            <div class="contact-details">
+              Makedonitissis 46, 2417<br />
+              Office 104a (Humanities Building)<br />
+              Nicosia, Cyprus
+            </div>
+
+          </div>
+
+          <div class="contact-block">
+
+            <span class="contact-icon" aria-hidden="true">✉️</span>
+
+            <div class="contact-details">
+              <a href="mailto:georgiou.georg@unic.ac.cy">
+                georgiou.georg@unic.ac.cy
+              </a>
+            </div>
+
+          </div>
+
+        </address>
+
+        <!-- Academic profiles -->
+
+        <nav class="academic-links" aria-label="Academic profiles">
+
+          <a
+            href="https://en.wikipedia.org/wiki/Georgios_P._Georgiou"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wikipedia
+          </a>
+
+          <a
+            href="https://scholar.google.com/citations?hl=en&amp;user=s4M9GvkAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google Scholar
+          </a>
+
+          <a
+            href="https://www.researchgate.net/profile/Georgios-Georgiou-6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ResearchGate
+          </a>
+
+        </nav>
+
+      </aside>
+
+      <!-- RIGHT COLUMN -->
 
       <div class="profile-content">
 
-        <h1>Georgios P. Georgiou</h1>
+        <!-- Name and academic titles -->
 
-        <div class="subtitle">
-          Assistant Professor at the University of Nicosia | Director of the Phonetic Lab
+        <div class="profile-heading">
+
+          <h1>Georgios P. Georgiou</h1>
+
+          <div class="subtitle">
+            Assistant Professor of Linguistics | Associate Head | Director of the Phonetic Lab
+          </div>
+
+          <div class="affiliation">
+            Department of Languages and Literature, University of Nicosia
+          </div>
+
         </div>
 
+        <!-- Research keywords -->
+
+        <ul class="research-keywords" aria-label="Research keywords">
+
+          <li>Experimental phonetics/phonology</li>
+
+          <li>Second language acquisition</li>
+
+          <li>Speech-language disorders</li>
+
+          <li>Machine learning</li>
+
+          <li>Artificial intelligence</li>
+
+        </ul>
+
+        <!-- Biography -->
+
         <p>
-          I am a psycholinguist investigating how speech and language can be leveraged to advance our understanding of second language acquisition, with the aim of informing educational support, and of neurological conditions, with the aim of improving clinical support. My work is grounded in the interface of linguistics and other fields, such as artificial intelligence, education, cognitive science, and clinical neurology.
+          I am a tenured Assistant Professor of Linguistics, Associate Head of the Department of Languages and Literature, and Director of the Phonetic Lab at the University of Nicosia. Drawing on linguistics, artificial intelligence, education, cognitive science, and neurology, my research explores how speech and language can be analyzed and computationally modeled to advance second language acquisition research and support the assessment of neurological conditions.
         </p>
 
         <p>
-          My research focuses on the development of predictive frameworks to better model second language speech and language in typically developing individuals and to optimize learning outcomes. In parallel, it focuses on the design of computational approaches — particularly machine learning and interpretable modeling — to support the automatic detection, assessment, and monitoring of neurodevelopmental and neurodegenerative conditions, using speech- and language-based features. At its core, my interdisciplinary research program aims to generate real-world impact by informing effective interventions in educational and clinical practice.
+          The first strand of my research focuses on developing predictive frameworks to characterize second language speech and optimize learning outcomes. The second strand leverages machine learning and interpretable modeling to identify speech- and language-based markers of neurodevelopmental and neurodegenerative conditions, facilitating their automatic detection, assessment, and monitoring. Through these complementary research strands, I aim to generate scientific insights that inform evidence-based educational and clinical practice.
         </p>
+
+        <!-- Awards and distinctions -->
 
         <div class="highlight-box">
+
           In recognition of my research trajectory and its impact, I was honored with the
-          <a href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif" target="_blank" rel="noopener">
-            Cyprus Research Award – Young Researcher 2023
-          </a>
+
+          <a
+            href="https://knews.kathimerini.com.cy/en/news/dr-george-georgiou-of-unic-awarded-the-cyprus-research-award-%E2%80%93-young-researcher-2023-by-rif"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Cyprus Research Award – Young Researcher 2023</a>
+
           in the field of Humanities and Social Sciences. In 2024, I was elected
-          <a href="https://yacadeuro.org/georgiou/" target="_blank" rel="noopener">
-            Fellow of the Young Academy of Europe.
-          </a>
+
+          <a
+            href="https://yacadeuro.org/georgiou/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Fellow of the Young Academy of Europe</a>.
+
         </div>
 
+        <!-- Research impact -->
+
+        <div class="highlight-box">
+
+          My pioneering interdisciplinary research has resulted in
+
+          <strong>+100 peer-reviewed publications</strong>
+
+          (including more than
+
+          <strong>70 articles in highly ranked scientific journals</strong>),
+
+          as well as
+
+          <strong>+110 presentations at scientific conferences</strong>.
+
+        </div>
+
+        <!-- Current positions -->
+
         <section>
+
           <h2>Current Positions</h2>
 
           <ul class="position-list">
+
             <li class="position">
+
               <div class="position-title">
                 Assistant Professor of Linguistics
                 <span class="year-badge">2022</span>
               </div>
+
               <div class="institution">
                 Department of Languages and Literature, University of Nicosia
               </div>
+
             </li>
 
             <li class="position">
+
+              <div class="position-title">
+                Associate Head of the Department of Languages and Literature
+              </div>
+
+              <div class="institution">
+                University of Nicosia
+              </div>
+
+            </li>
+
+            <li class="position">
+
               <div class="position-title">
                 Director of the Phonetic Lab
                 <span class="year-badge">2023</span>
               </div>
+
               <div class="institution">
                 University of Nicosia
               </div>
+
             </li>
+
           </ul>
+
         </section>
 
+        <!-- Past positions -->
+
         <section>
+
           <h2>Past Positions</h2>
 
           <ul class="position-list">
+
             <li class="position">
+
               <div class="position-title">
                 Postdoctoral Fellow of Speech-Language Disorders
                 <span class="year-badge">2021</span>
               </div>
+
               <div class="institution">
                 Cyprus University of Technology
               </div>
+
             </li>
 
             <li class="position">
+
               <div class="position-title">
                 Associate Lecturer of Linguistics
                 <span class="year-badge">2020</span>
               </div>
+
               <div class="institution">
                 University of Central Lancashire
               </div>
+
             </li>
 
             <li class="position">
+
               <div class="position-title">
                 Postdoctoral Fellow of Linguistics
                 <span class="year-badge">2018</span>
               </div>
+
               <div class="institution">
                 RUDN University
               </div>
+
             </li>
+
           </ul>
+
         </section>
 
       </div>
@@ -298,6 +667,8 @@
 
   <div id="footer-placeholder"></div>
 
+  <!-- Load header -->
+
   <script>
     fetch("header.html")
       .then(response => response.text())
@@ -306,6 +677,8 @@
       })
       .catch(error => console.error("Error loading header:", error));
   </script>
+
+  <!-- Load footer -->
 
   <script>
     fetch("footer.html")
@@ -318,3 +691,4 @@
 
 </body>
 </html>
+```
