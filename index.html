@@ -318,10 +318,10 @@
 
     .profile-page .appointment-card {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 14px 13px;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 12px;
       border: 1px solid #d8e1e9;
       border-radius: 8px;
       background: #ffffff;
@@ -335,60 +335,53 @@
       box-shadow: 0 4px 12px rgba(13, 41, 66, 0.09);
     }
 
-    /* University logos */
+    /* Equal-sized university logos on the left */
 
-    .profile-page .university-logo {
+    .profile-page .university-logo,
+    .profile-page .university-logo.rudn-logo {
       display: block;
-      width: 160px;
-      height: 80px;
+      width: 85px;
+      height: 75px;
       max-width: 100%;
       object-fit: contain;
       object-position: center;
-      align-self: center;
       flex-shrink: 0;
-      margin: 0 auto;
+      margin: 0;
       background: transparent;
       border: none;
       box-shadow: none;
       mix-blend-mode: multiply;
     }
 
-    /* Slightly larger RUDN logo */
-
-    .profile-page .university-logo.rudn-logo {
-      width: 185px;
-      height: 80px;
-    }
-
     .profile-page .appointment-details {
+      flex: 1;
       min-width: 0;
-      width: 100%;
     }
 
     .profile-page .university-name {
       margin: 0 0 6px;
       color: var(--navy);
-      font-size: 16px;
+      font-size: 15px;
       font-weight: 700;
-      line-height: 1.4;
+      line-height: 1.35;
     }
 
     .profile-page .appointment-role {
       margin: 0 0 4px;
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .profile-page .appointment-department {
       margin: 0 0 4px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.4;
     }
 
     .profile-page .appointment-year {
-      white-space: nowrap;
+      white-space: normal;
     }
 
     /* TABLET LAYOUT */
