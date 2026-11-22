@@ -310,8 +310,8 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 13px;
-      padding: 18px 15px;
+      gap: 16px;
+      padding: 20px 15px;
       border: 1px solid #d8e1e9;
       border-radius: 8px;
       background: #ffffff;
@@ -324,20 +324,23 @@
       box-shadow: 0 4px 12px rgba(13, 41, 66, 0.09);
     }
 
-    /* University logos */
+    /* Larger, centered university logos */
 
     .profile-page .university-logo {
       display: block;
-      width: 120px;
-      height: 65px;
+      width: 190px;
+      height: 105px;
       max-width: 100%;
       object-fit: contain;
-      object-position: left center;
+      object-position: center;
+      align-self: center;
       flex-shrink: 0;
+      margin: 0 auto;
     }
 
     .profile-page .appointment-details {
       min-width: 0;
+      width: 100%;
     }
 
     .profile-page .university-name {
@@ -422,15 +425,16 @@
       }
 
       .profile-page .appointment-card {
-        flex-direction: row;
-        align-items: center;
-        padding: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 18px;
       }
 
       .profile-page .university-logo {
-        width: 85px;
-        height: 65px;
+        width: 170px;
+        height: 90px;
         object-position: center;
+        margin: 0 auto;
       }
 
       .profile-page .university-name {
@@ -766,8 +770,12 @@
             </div>
 
             <div class="appointment-role">
-              Associate Lecturer of Linguistics
+              Associate Lecturer
               <span class="appointment-year">(2020–2021)</span>
+            </div>
+
+            <div class="appointment-department">
+              Division of Linguistics
             </div>
 
           </div>
