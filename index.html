@@ -90,10 +90,21 @@
 
     .profile-page .contact-icon {
       flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      min-height: 22px;
       font-size: 16px;
       line-height: 1.5;
       font-family: "Apple Color Emoji", "Segoe UI Emoji",
         "Noto Color Emoji", sans-serif !important;
+    }
+
+    .profile-page .contact-icon svg {
+      display: block;
+      width: 19px;
+      height: 19px;
     }
 
     .profile-page .contact-details {
@@ -127,6 +138,10 @@
     }
 
     .profile-page .academic-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       flex: 1 1 auto;
       padding: 8px 9px;
       border: 1px solid #c9d5e0;
@@ -139,6 +154,15 @@
       text-align: center;
       text-decoration: none;
       transition: background-color 0.2s, border-color 0.2s;
+    }
+
+    .profile-page .academic-links a img,
+    .profile-page .academic-links a svg {
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+      display: block;
+      flex-shrink: 0;
     }
 
     .profile-page .academic-links a:hover {
@@ -260,14 +284,14 @@
       font-weight: 700;
     }
 
-    /* Academic positions */
+    /* ACADEMIC APPOINTMENTS */
 
-    .profile-page .profile-content section {
-      margin-top: 30px;
+    .profile-page .appointments-section {
+      margin-top: 35px;
     }
 
-    .profile-page .profile-content h2 {
-      margin: 0 0 15px;
+    .profile-page .appointments-section h2 {
+      margin: 0 0 20px;
       padding-bottom: 8px;
       border-bottom: 2px solid var(--line);
       color: var(--navy);
@@ -276,53 +300,78 @@
       line-height: 1.3;
     }
 
-    .profile-page .position-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .profile-page .appointments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
     }
 
-    .profile-page .position {
-      position: relative;
-      margin: 0 0 22px 28px;
+    .profile-page .appointment-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 18px 15px;
+      border: 1px solid #d8e1e9;
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(13, 41, 66, 0.06);
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
     }
 
-    .profile-page .position::before {
-      content: "";
-      position: absolute;
-      left: -16px;
-      top: 11px;
-      width: 5px;
-      height: 5px;
-      background-color: var(--blue);
+    .profile-page .appointment-card:hover {
+      border-color: #9cbfdb;
+      box-shadow: 0 4px 12px rgba(13, 41, 66, 0.09);
     }
 
-    .profile-page .position-title {
-      color: var(--ink);
+    /* University logos */
+
+    .profile-page .university-logo {
+      display: block;
+      width: 120px;
+      height: 65px;
+      max-width: 100%;
+      object-fit: contain;
+      object-position: left center;
+      flex-shrink: 0;
+    }
+
+    .profile-page .appointment-details {
+      min-width: 0;
+    }
+
+    .profile-page .university-name {
+      margin: 0 0 8px;
+      color: var(--navy);
       font-size: 18px;
       font-weight: 700;
       line-height: 1.4;
     }
 
-    .profile-page .year-badge {
-      display: inline-block;
-      margin-left: 8px;
-      padding: 4px 9px;
-      border-radius: 2px;
-      background-color: #eef3f7;
-      color: #1b3d5d;
-      font-size: 14px;
-      font-weight: 400;
-      vertical-align: middle;
+    .profile-page .appointment-role {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
     }
 
-    .profile-page .institution {
-      margin-top: 5px;
-      color: #26394a;
-      font-size: 16px;
-      font-style: italic;
-      font-weight: 400;
+    .profile-page .appointment-department {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 14px;
       line-height: 1.5;
+    }
+
+    .profile-page .appointment-year {
+      white-space: nowrap;
+    }
+
+    /* TABLET LAYOUT */
+
+    @media (max-width: 1000px) {
+      .profile-page .appointments-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     /* MOBILE LAYOUT */
@@ -364,15 +413,31 @@
         font-size: 16px;
       }
 
-      .profile-page .profile-content h2 {
+      .profile-page .appointments-section h2 {
         font-size: 20px;
       }
 
-      .profile-page .position-title {
+      .profile-page .appointments-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-page .appointment-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 16px;
+      }
+
+      .profile-page .university-logo {
+        width: 85px;
+        height: 65px;
+        object-position: center;
+      }
+
+      .profile-page .university-name {
         font-size: 17px;
       }
 
-      .profile-page .institution {
+      .profile-page .appointment-role {
         font-size: 15px;
       }
     }
@@ -432,9 +497,43 @@
 
           </div>
 
+          <!-- Email icon -->
+
           <div class="contact-block">
 
-            <span class="contact-icon" aria-hidden="true">✉️</span>
+            <span class="contact-icon" aria-hidden="true">
+
+              <svg viewBox="0 0 24 24">
+
+                <rect
+                  x="2"
+                  y="5"
+                  width="20"
+                  height="14"
+                  rx="2"
+                  fill="#ffffff"
+                  stroke="#202020"
+                  stroke-width="1.3"
+                />
+
+                <path
+                  d="M2.5 6L12 13L21.5 6"
+                  fill="none"
+                  stroke="#202020"
+                  stroke-width="1.5"
+                  stroke-linejoin="round"
+                />
+
+                <path
+                  d="M2.5 18L9 12M21.5 18L15 12"
+                  fill="none"
+                  stroke="#202020"
+                  stroke-width="1.2"
+                />
+
+              </svg>
+
+            </span>
 
             <div class="contact-details">
               <a href="mailto:georgiou.georg@unic.ac.cy">
@@ -455,6 +554,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+            <img src="wiki.png" alt="" />
             Wikipedia
           </a>
 
@@ -463,7 +563,23 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+
+              <path
+                d="M12 3L2 9l10 6 10-6-10-6z"
+                fill="currentColor"
+              />
+
+              <path
+                d="M6.5 12.2v3.1c0 2 2.5 3.7 5.5 3.7s5.5-1.7 5.5-3.7v-3.1L12 15.5 6.5 12.2z"
+                fill="currentColor"
+              />
+
+            </svg>
+
             Google Scholar
+
           </a>
 
           <a
@@ -471,6 +587,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+            <img src="rg2.png" alt="" />
             ResearchGate
           </a>
 
@@ -513,10 +630,7 @@
         <!-- Biography -->
 
         <p>
-          I am a tenured <strong>Assistant Professor of Linguistics</strong>,
-          <strong>Associate Head of the Department of Languages and Literature</strong>,
-          and <strong>Director of the Phonetic Lab</strong>
-          at the <strong>University of Nicosia</strong>. Drawing on linguistics, artificial intelligence, education, cognitive science, and neurology, my research explores how speech and language can be analyzed and computationally modeled to advance second language acquisition research and support the assessment of neurological conditions.
+          Drawing on linguistics, artificial intelligence, education, cognitive science, and neurology, my research explores how speech and language can be analyzed and computationally modeled to advance second language acquisition research and support the assessment of neurological conditions.
         </p>
 
         <p>
@@ -565,110 +679,133 @@
 
         </div>
 
-        <!-- Current positions -->
-
-        <section>
-
-          <h2>Current Positions</h2>
-
-          <ul class="position-list">
-
-            <li class="position">
-
-              <div class="position-title">
-                Assistant Professor of Linguistics
-                <span class="year-badge">2022</span>
-              </div>
-
-              <div class="institution">
-                Department of Languages and Literature, University of Nicosia
-              </div>
-
-            </li>
-
-            <li class="position">
-
-  <div class="position-title">
-  Associate Head of the Department of Languages and Literature
-  <span class="year-badge">2024</span>
-</div>
-              <div class="institution">
-                University of Nicosia
-              </div>
-
-            </li>
-
-            <li class="position">
-
-              <div class="position-title">
-                Director of the Phonetic Lab
-                <span class="year-badge">2023</span>
-              </div>
-
-              <div class="institution">
-                University of Nicosia
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-        <!-- Past positions -->
-
-        <section>
-
-          <h2>Past Positions</h2>
-
-          <ul class="position-list">
-
-            <li class="position">
-
-              <div class="position-title">
-                Postdoctoral Fellow of Speech-Language Disorders
-                <span class="year-badge">2021</span>
-              </div>
-
-              <div class="institution">
-                Cyprus University of Technology
-              </div>
-
-            </li>
-
-            <li class="position">
-
-              <div class="position-title">
-                Associate Lecturer of Linguistics
-                <span class="year-badge">2020</span>
-              </div>
-
-              <div class="institution">
-                University of Central Lancashire
-              </div>
-
-            </li>
-
-            <li class="position">
-
-              <div class="position-title">
-                Postdoctoral Fellow of Linguistics
-                <span class="year-badge">2018</span>
-              </div>
-
-              <div class="institution">
-                RUDN University
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
       </div>
 
     </div>
+
+    <!-- ACADEMIC APPOINTMENTS -->
+
+    <section class="appointments-section">
+
+      <h2>Academic Appointments</h2>
+
+      <div class="appointments-grid">
+
+        <!-- University of Nicosia -->
+
+        <div class="appointment-card">
+
+          <img
+            class="university-logo"
+            src="logos/unic.png"
+            alt="University of Nicosia logo"
+          />
+
+          <div class="appointment-details">
+
+            <div class="university-name">
+              University of Nicosia
+            </div>
+
+            <div class="appointment-role">
+              Assistant Professor
+              <span class="appointment-year">(2022–Present)</span>
+            </div>
+
+            <div class="appointment-role">
+              Adjunct Lecturer
+              <span class="appointment-year">(2019–2021)</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Cyprus University of Technology -->
+
+        <div class="appointment-card">
+
+          <img
+            class="university-logo"
+            src="logos/cut.png"
+            alt="Cyprus University of Technology logo"
+          />
+
+          <div class="appointment-details">
+
+            <div class="university-name">
+              Cyprus University of Technology
+            </div>
+
+            <div class="appointment-role">
+              Postdoctoral Fellow (2021)
+            </div>
+
+            <div class="appointment-department">
+              Department of Rehabilitation Science
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- University of Central Lancashire -->
+
+        <div class="appointment-card">
+
+          <img
+            class="university-logo"
+            src="logos/uclan.png"
+            alt="University of Central Lancashire logo"
+          />
+
+          <div class="appointment-details">
+
+            <div class="university-name">
+              University of Central Lancashire
+            </div>
+
+            <div class="appointment-role">
+              Associate Lecturer of Linguistics
+              <span class="appointment-year">(2020–2021)</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- RUDN University -->
+
+        <div class="appointment-card">
+
+          <img
+            class="university-logo"
+            src="logos/rudn.png"
+            alt="RUDN University logo"
+          />
+
+          <div class="appointment-details">
+
+            <div class="university-name">
+              RUDN University
+            </div>
+
+            <div class="appointment-role">
+              Postdoctoral Fellow of Linguistics
+              <span class="appointment-year">(2018–2020)</span>
+            </div>
+
+            <div class="appointment-department">
+              Department of General and Russian Linguistics
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
 
   </main>
 
