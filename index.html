@@ -335,7 +335,7 @@
       box-shadow: 0 4px 12px rgba(13, 41, 66, 0.09);
     }
 
-    /* Equal-sized university logos on the left */
+    /* University logos */
 
     .profile-page .university-logo,
     .profile-page .university-logo.rudn-logo {
@@ -351,6 +351,13 @@
       border: none;
       box-shadow: none;
       mix-blend-mode: multiply;
+    }
+
+    /* Larger UCLan logo on desktop and mobile */
+
+    .profile-page .university-logo.uclan-logo {
+      transform: scale(1.15);
+      transform-origin: center;
     }
 
     .profile-page .appointment-details {
@@ -503,6 +510,10 @@
       .profile-page .university-logo.rudn-logo {
         width: 130px;
         height: 75px;
+      }
+
+      .profile-page .university-logo.uclan-logo {
+        transform: scale(1.15);
       }
 
       .profile-page .appointment-details {
@@ -850,7 +861,7 @@
         <div class="appointment-card">
 
           <img
-            class="university-logo"
+            class="university-logo uclan-logo"
             src="logos/uclan.png"
             alt="University of Central Lancashire logo"
           />
