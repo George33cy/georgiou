@@ -62,6 +62,10 @@
       white-space: nowrap;
     }
 
+    .books-label-mobile {
+      display: none;
+    }
+
     .publication-tabs a:hover {
       background-color: #f2f2f2;
       text-decoration: none;
@@ -183,6 +187,14 @@
     }
 
     @media (max-width: 768px) {
+      .books-label-desktop {
+        display: none;
+      }
+
+      .books-label-mobile {
+        display: inline;
+      }
+
       main {
         width: 100%;
         max-width: 100%;
@@ -278,15 +290,6 @@
 
   <main>
 
-    <nav class="publication-tabs" aria-label="Publication sections">
-      <a href="#journal-articles">Journal Articles</a>
-      <a href="#books">Monographs/Edited Volumes</a>
-      <a href="#book-chapters">Book Chapters</a>
-      <a href="#conferences">Proceedings</a>
-      <a href="#thesis">Thesis</a>
-      <a href="#book-reviews">Book Reviews</a>
-    </nav>
-
     <section class="publication-summary" aria-label="Publication summary">
       <p class="publication-summary-title">
         <strong>100+</strong> scientific publications
@@ -297,6 +300,15 @@
         <span>Other scholarly contributions</span>
       </div>
     </section>
+
+    <nav class="publication-tabs" aria-label="Publication sections">
+      <a href="#journal-articles">Journal Articles</a>
+      <a href="#books"><span class="books-label-desktop">Monographs/Edited Volumes</span><span class="books-label-mobile">Books/Volumes</span></a>
+      <a href="#book-chapters">Book Chapters</a>
+      <a href="#conferences">Proceedings</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#book-reviews">Book Reviews</a>
+    </nav>
 
     <h2 id="journal-articles">Journal Articles</h2>
 
